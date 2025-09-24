@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Coffee Please",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -27,6 +27,7 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"display.ttf","CopyToMask":-1,"filePath":"datafiles","name":"display.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"s_fey_strip5.png","CopyToMask":-1,"filePath":"datafiles","name":"s_fey_strip5.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -34,11 +35,12 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Coffee Please",
   "resources":[
-    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},},
+    {"id":{"name":"o_controller","path":"objects/o_controller/o_controller.yy",},},
+    {"id":{"name":"o_fey_chu","path":"objects/o_fey_chu/o_fey_chu.yy",},},
     {"id":{"name":"dummy","path":"rooms/dummy/dummy.yy",},},
     {"id":{"name":"s_fey_base","path":"sprites/s_fey_base/s_fey_base.yy",},},
   ],

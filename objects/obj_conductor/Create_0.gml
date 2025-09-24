@@ -1,0 +1,11 @@
+global.BASE_WIDTH = 640;
+global.BASE_HEIGHT = 360;
+window_set_size(global.BASE_WIDTH, global.BASE_HEIGHT);
+surface_resize(application_surface, global.BASE_WIDTH, global.BASE_HEIGHT);
+view_enabled = true;
+view_visible[0] = true;
+view_wview[0] = global.BASE_WIDTH;
+view_hview[0] = global.BASE_HEIGHT;
+view_wport[0] = global.BASE_WIDTH;
+view_hport[0] = global.BASE_HEIGHT;
+gpu_set_texfilter(false);
