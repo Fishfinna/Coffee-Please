@@ -10,8 +10,8 @@
   "name":"o_fey_chu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"character_objects",
+    "path":"folders/Objects/character_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
