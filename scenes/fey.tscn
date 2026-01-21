@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8kufaifh4tdi"]
+
+[ext_resource type="Texture2D" uid="uid://c6jnfrvbgrp1h" path="res://assets/wip/project files/fey-base.png" id="1_mxnc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vdk4"]
+size = Vector2(144, 324)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Fey-base" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("1_mxnc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_5vdk4")
