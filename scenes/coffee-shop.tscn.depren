@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dbo33q6tr6sh0"]
+[gd_scene load_steps=7 format=4 uid="uid://dbo33q6tr6sh0"]
 
 [ext_resource type="Texture2D" uid="uid://epgvbi5eio2m" path="res://assets/tiles/TX Tileset Stone Ground.png" id="1_d0viw"]
-[ext_resource type="Script" uid="uid://cobhcku26e3ki" path="res://scenes/coffee_shop.gd" id="1_p2lyf"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/fey.tscn" id="2_ouk1o"]
+[ext_resource type="Script" uid="uid://dj385phhuqus1" path="res://scripts/camera.gd" id="2_p2lyf"]
+
+[sub_resource type="GDScript" id="GDScript_ouk1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2lyf"]
 texture = ExtResource("1_d0viw")
@@ -211,10 +213,10 @@ texture = ExtResource("1_d0viw")
 sources/0 = SubResource("TileSetAtlasSource_p2lyf")
 
 [node name="Coffee Shop" type="Node2D"]
-script = ExtResource("1_p2lyf")
 
 [node name="tiles" type="Node2D" parent="."]
 position = Vector2(128, -96)
+script = SubResource("GDScript_ouk1o")
 
 [node name="ground" type="TileMapLayer" parent="tiles"]
 position = Vector2(-128, 96)
@@ -223,6 +225,7 @@ tile_set = SubResource("TileSet_m5ye2")
 
 [node name="camera" type="Camera2D" parent="."]
 offset = Vector2(0, 4)
+script = ExtResource("2_p2lyf")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_ouk1o")]
 position = Vector2(1.19209e-07, 4.76837e-07)
