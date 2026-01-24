@@ -3,6 +3,8 @@ extends Node
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_fullscreen"):
 		toggle_fullscreen()
+	if event.is_action_pressed('exit_game'):
+		exit()
 
 func toggle_fullscreen():
 	var mode := DisplayServer.window_get_mode()
@@ -16,3 +18,6 @@ func toggle_fullscreen():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+func exit():
+	get_tree().quit()
