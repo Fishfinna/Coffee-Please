@@ -3,9 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cfn2notirsyp4" path="res://assets/project-files/characters/register.png" id="1_gvynn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37wl2"]
-size = Vector2(26, 4)
+size = Vector2(26, 9)
 
 [node name="Register" type="Node2D"]
+y_sort_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -13,5 +14,5 @@ size = Vector2(26, 4)
 texture = ExtResource("1_gvynn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, 10)
+position = Vector2(-1, 7.5)
 shape = SubResource("RectangleShape2D_37wl2")

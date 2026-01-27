@@ -4,16 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://c6jnfrvbgrp1h" path="res://assets/wip/project files/fey-base.png" id="1_mxnc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vdk4"]
-size = Vector2(81, 42)
+size = Vector2(81, 38)
 
 [node name="fey chu" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_5vdk4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Fey-base" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -160)
 texture = ExtResource("1_mxnc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 140)
+position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_5vdk4")
