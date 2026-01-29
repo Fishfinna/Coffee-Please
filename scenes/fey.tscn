@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://8kufaifh4tdi"]
+[gd_scene format=3 uid="uid://8kufaifh4tdi"]
 
 [ext_resource type="Script" uid="uid://dvc4u20fjldgt" path="res://scripts/fey.gd" id="1_5vdk4"]
 [ext_resource type="Texture2D" uid="uid://c6jnfrvbgrp1h" path="res://assets/wip/project files/fey-base.png" id="1_mxnc3"]
@@ -6,16 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vdk4"]
 size = Vector2(81, 38)
 
-[node name="fey chu" type="CharacterBody2D"]
+[node name="fey chu" type="CharacterBody2D" unique_id=122533714 groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_5vdk4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814033569]
 
-[node name="Fey-base" type="Sprite2D" parent="Sprite2D"]
+[node name="Fey-base" type="Sprite2D" parent="Sprite2D" unique_id=1694982798]
 position = Vector2(0, -160)
 texture = ExtResource("1_mxnc3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237841117]
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_5vdk4")

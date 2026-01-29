@@ -19,6 +19,10 @@ run/main_scene="uid://dbo33q6tr6sh0"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [display]
 
 window/size/viewport_width=640
@@ -28,6 +32,10 @@ window/size/sharp_corners=true
 window/size/window_width_override=640
 window/size/window_height_override=360
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+player="main player logic"
 
 [input]
 

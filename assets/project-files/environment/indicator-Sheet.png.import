@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf8vem45xuw77"
-path="res://.godot/imported/loading-sheet.png-4cd429e4288f0bc6c88db0fb18ace96b.ctex"
+uid="uid://b28kjnrnqy45k"
+path="res://.godot/imported/indicator-Sheet.png-947273bc313dcd1fd304b4944ff22753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/project-files/loading-sheet.png"
-dest_files=["res://.godot/imported/loading-sheet.png-4cd429e4288f0bc6c88db0fb18ace96b.ctex"]
+source_file="res://assets/project-files/environment/indicator-Sheet.png"
+dest_files=["res://.godot/imported/indicator-Sheet.png-947273bc313dcd1fd304b4944ff22753.ctex"]
 
 [params]
 

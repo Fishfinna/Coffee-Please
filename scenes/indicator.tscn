@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b4me8nw6ia6p7"]
+
+[ext_resource type="Script" uid="uid://bp5i5g5ge3vyo" path="res://scripts/indicator.gd" id="1_t3fs7"]
+[ext_resource type="Texture2D" uid="uid://b28kjnrnqy45k" path="res://assets/project-files/environment/indicator-Sheet.png" id="2_dik84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2w5e"]
+atlas = ExtResource("2_dik84")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ar7"]
+atlas = ExtResource("2_dik84")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7sfs"]
+atlas = ExtResource("2_dik84")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6wqx"]
+atlas = ExtResource("2_dik84")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv4ey"]
+atlas = ExtResource("2_dik84")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y787s"]
+atlas = ExtResource("2_dik84")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugs73"]
+atlas = ExtResource("2_dik84")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x72o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2w5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ar7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7sfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6wqx")
+}],
+"loop": false,
+"name": &"load-in",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv4ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y787s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugs73")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"load-out",
+"speed": 18.0
+}]
+
+[node name="Indicator" type="Node2D" unique_id=1503045415]
+script = ExtResource("1_t3fs7")
+
+[node name="indicator" type="AnimatedSprite2D" parent="." unique_id=840192343]
+y_sort_enabled = true
+position = Vector2(0, -31)
+sprite_frames = SubResource("SpriteFrames_x72o7")
+animation = &"load-out"
+autoplay = "load-in"
+
+[node name="popup_sound" type="AudioStreamPlayer2D" parent="." unique_id=176953675]
+volume_db = -8.177
+max_distance = 3406.0

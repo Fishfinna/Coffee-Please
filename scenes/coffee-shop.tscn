@@ -229,9 +229,8 @@ offset = Vector2(0, 4)
 [node name="envrionment" type="Node2D" parent="." unique_id=1960842609]
 y_sort_enabled = true
 
-[node name="Register" parent="envrionment" unique_id=1784829664 node_paths=PackedStringArray("player") instance=ExtResource("4_m5ye2")]
+[node name="Register" parent="envrionment" unique_id=1784829664 instance=ExtResource("4_m5ye2")]
 position = Vector2(42, 19)
-player = NodePath("../fey")
 
 [node name="robin" parent="envrionment" unique_id=454574201 instance=ExtResource("3_bjjnp")]
 position = Vector2(70, 1)
