@@ -233,7 +233,7 @@ y_sort_enabled = true
 position = Vector2(42, 19)
 
 [node name="robin" parent="envrionment" unique_id=454574201 instance=ExtResource("3_bjjnp")]
-position = Vector2(70, 1)
+position = Vector2(128, 0)
 
 [node name="fey" parent="envrionment" unique_id=1942933985 instance=ExtResource("2_ouk1o")]
 z_as_relative = false

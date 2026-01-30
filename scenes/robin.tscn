@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vlwsmf4n3xm"]
 
 [ext_resource type="Texture2D" uid="uid://ngxyd14fcs8g" path="res://assets/project-files/characters/robin-base.png" id="1_ga2fa"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/indicator.tscn" id="2_4uxls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga2fa"]
 size = Vector2(17, 6)
@@ -17,3 +18,7 @@ texture = ExtResource("1_ga2fa")
 y_sort_enabled = true
 position = Vector2(1.5, -3)
 shape = SubResource("RectangleShape2D_ga2fa")
+
+[node name="Indicator" parent="." unique_id=1503045415 instance=ExtResource("2_4uxls")]
+position = Vector2(0, -39)
+trigger_distance = 100.0
