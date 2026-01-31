@@ -43,5 +43,9 @@ func _process(_delta):
 func hide_after_load_out() -> void:
 	sprite.play("load-out")
 	await sprite.animation_finished
-	sprite.visible = false
+
+	if global_position.distance_to(player.global_position) > trigger_distance:
+		sprite.visible = false
+		is_showing = false
+	
 	is_hiding = false
