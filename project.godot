@@ -23,6 +23,11 @@ config/icon="uid://jo6vmbwp8mkw"
 
 buses/default_bus_layout=""
 
+[autoload]
+
+window_exit="*uid://d2qd1s3il2aiu"
+IndicatorManager="*uid://2i8uwi1yvk06"
+
 [display]
 
 window/size/viewport_width=640

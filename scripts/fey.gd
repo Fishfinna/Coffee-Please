@@ -9,7 +9,6 @@ var last_y := 0
 
 @onready var camera := get_viewport().get_camera_2d()
 
-
 func get_input():
 	if Input.is_action_just_pressed("left"):
 		last_x = -1

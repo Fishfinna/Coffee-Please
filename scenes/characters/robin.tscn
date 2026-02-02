@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://vlwsmf4n3xm"]
+
+[ext_resource type="Texture2D" uid="uid://ihu8x7flbf4h" path="res://assets/art/characters/robin-base.png" id="1_ga2fa"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_4uxls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga2fa"]
+size = Vector2(17, 6)
+
+[node name="robin" type="CharacterBody2D" unique_id=524308441]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803818623]
+
+[node name="Robin-base" type="Sprite2D" parent="Sprite2D" unique_id=955566840]
+position = Vector2(1, -32)
+texture = ExtResource("1_ga2fa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245024819]
+y_sort_enabled = true
+position = Vector2(1.5, -3)
+shape = SubResource("RectangleShape2D_ga2fa")
+
+[node name="Indicator" parent="." unique_id=1503045415 instance=ExtResource("2_4uxls")]
+position = Vector2(0, -39)

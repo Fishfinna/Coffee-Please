@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://1qvl5dqyfb42"]
+
+[ext_resource type="Texture2D" uid="uid://kofb4b8dldny" path="res://assets/art/objects/register.png" id="1_gvynn"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_th0y5"]
+[ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="3_ul2ju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37wl2"]
+size = Vector2(26, 9)
+
+[node name="Register" type="Node2D" unique_id=684012640]
+y_sort_enabled = true
+
+[node name="body" type="StaticBody2D" parent="." unique_id=74552736]
+
+[node name="Register" type="Sprite2D" parent="body" unique_id=1188261056]
+position = Vector2(1, -12)
+texture = ExtResource("1_gvynn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body" unique_id=100129909]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_37wl2")
+
+[node name="Indicator" parent="body" unique_id=1503045415 instance=ExtResource("2_th0y5")]
+appear_audio = ExtResource("3_ul2ju")
