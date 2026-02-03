@@ -212,6 +212,7 @@ texture = ExtResource("2_k1eqc")
 sources/0 = SubResource("TileSetAtlasSource_p2lyf")
 
 [node name="Coffee Shop" type="Node2D" unique_id=1103702953]
+position = Vector2(320, 176)
 
 [node name="tiles" type="Node2D" parent="." unique_id=815819975]
 position = Vector2(128, -96)

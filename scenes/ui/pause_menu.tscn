@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://7jf6e4julwkk"]
+
+[ext_resource type="Script" uid="uid://qvv7o44v7if3" path="res://scripts/ui/menus/pause_menu.gd" id="1_6tw0m"]
+
+[node name="Pause Menu" type="Node2D" unique_id=714995692]
+script = ExtResource("1_6tw0m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=766350285]
+
+[node name="button_manager" type="Control" parent="." unique_id=1392847875]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="save" type="MenuButton" parent="button_manager" unique_id=2137585243]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 120.0
+offset_right = 436.0
+offset_bottom = 156.0
+text = "Save"
+
+[node name="resume" type="Button" parent="button_manager" unique_id=1463987343]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 176.0
+offset_right = 436.0
+offset_bottom = 219.0
+text = "Resume"
+
+[node name="exit" type="Button" parent="button_manager" unique_id=1957362745]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 231.0
+offset_right = 436.0
+offset_bottom = 274.0
+text = "Exit"
+
+[connection signal="pressed" from="button_manager/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="button_manager/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="button_manager/exit" to="." method="_on_exit_pressed"]
