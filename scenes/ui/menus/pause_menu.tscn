@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://7jf6e4julwkk"]
+
+[ext_resource type="Script" uid="uid://qvv7o44v7if3" path="res://scripts/ui/menus/pause_menu.gd" id="1_6tw0m"]
+[ext_resource type="Shader" uid="uid://dlip7xu7lb1mo" path="res://scripts/shaders/pause_menu.gdshader" id="2_0lmf7"]
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
+shader = ExtResource("2_0lmf7")
+shader_parameter/lod = 0.0
+shader_parameter/tint_color = Color(0.9799101, 0.9718495, 0.96782416, 1)
+
+[sub_resource type="Animation" id="Animation_n4ldv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dd7lr"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur2:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.046976235, -0.13333334, 0, 0),
+"times": PackedFloat32Array(0, 0.2818574)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8uki6"]
+_data = {
+&"RESET": SubResource("Animation_n4ldv"),
+&"blur": SubResource("Animation_dd7lr")
+}
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=250378609]
+process_mode = 3
+follow_viewport_enabled = true
+script = ExtResource("1_6tw0m")
+
+[node name="blur2" type="ColorRect" parent="." unique_id=1803990581]
+material = SubResource("ShaderMaterial_f6eus")
+offset_left = -320.0
+offset_top = -176.0
+offset_right = 320.0
+offset_bottom = 192.0
+
+[node name="button_manager" type="Control" parent="." unique_id=1392847875]
+modulate = Color(0.9818199, 0.8988141, 0.90041614, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 92.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_idy5m")
+
+[node name="PanelContainer" type="PanelContainer" parent="button_manager" unique_id=421051270]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.75
+anchor_top = 1.5833334
+anchor_right = 2.21875
+anchor_bottom = 4.9
+offset_left = -18.0
+offset_top = -197.66667
+offset_right = -18.0
+offset_bottom = -197.66667
+
+[node name="save" type="MenuButton" parent="button_manager" unique_id=2137585243]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.328125
+anchor_top = 2.0
+anchor_right = 1.78125
+anchor_bottom = 2.6
+offset_left = -15.875
+offset_top = -200.0
+offset_right = -15.25
+offset_bottom = -194.4
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+text = "Save"
+flat = false
+
+[node name="resume" type="Button" parent="button_manager" unique_id=1463987343]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.328125
+anchor_top = 2.9333334
+anchor_right = 1.78125
+anchor_bottom = 3.65
+offset_left = -15.875
+offset_top = -201.06667
+offset_right = -15.875
+offset_bottom = -201.06667
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "Resume"
+
+[node name="exit" type="Button" parent="button_manager" unique_id=1957362745]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.328125
+anchor_top = 3.85
+anchor_right = 1.78125
+anchor_bottom = 4.5666666
+offset_left = -16.0
+offset_top = -201.0
+offset_right = -16.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "Exit"
+
+[node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
+libraries/ = SubResource("AnimationLibrary_8uki6")
+
+[connection signal="pressed" from="button_manager/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="button_manager/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="button_manager/exit" to="." method="_on_exit_pressed"]

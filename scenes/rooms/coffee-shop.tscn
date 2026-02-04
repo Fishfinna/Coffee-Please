@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://epgvbi5eio2m" path="res://assets/temp-tiles/TX Tileset Stone Ground.png" id="2_k1eqc"]
 [ext_resource type="PackedScene" uid="uid://1qvl5dqyfb42" path="res://scenes/objects/register.tscn" id="3_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
+[ext_resource type="PackedScene" uid="uid://7jf6e4julwkk" path="res://scenes/ui/menus/pause_menu.tscn" id="5_kjusl"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/characters/fey.tscn" id="5_yo8p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2lyf"]
@@ -212,7 +213,6 @@ texture = ExtResource("2_k1eqc")
 sources/0 = SubResource("TileSetAtlasSource_p2lyf")
 
 [node name="Coffee Shop" type="Node2D" unique_id=1103702953]
-position = Vector2(320, 176)
 
 [node name="tiles" type="Node2D" parent="." unique_id=815819975]
 position = Vector2(128, -96)
@@ -238,3 +238,5 @@ position = Vector2(112, 157)
 z_as_relative = false
 position = Vector2(0.99999994, 124)
 scale = Vector2(0.2, 0.2)
+
+[node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("5_kjusl")]
