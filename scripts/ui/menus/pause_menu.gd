@@ -1,42 +1,42 @@
 extends CanvasLayer
 
-#func resume():
-	#get_tree().paused = false;
-	#$blur.play_backwards("blur")
-#
-#func pause():
-	#get_tree().paused = true;
-	#$blur.play("blur")
+@onready var blur_anim: AnimationPlayer = $blur
+var is_transitioning := false
 
-#func escape():
-	#if Input.is_action_just_pressed("exit_game") and get_tree().pause == false:
-		#pause()
-	#elif Input.is_action_just_pressed("exit_game") and get_tree().paused:
-		#resume()
-#
 func _ready():
-	hide() 
+	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and not is_transitioning:
 		if get_tree().paused:
 			_resume_game()
 		else:
 			_pause_game()
 
 func _pause_game():
-	get_tree().paused = true
-	$blur.play("blur")
+	is_transitioning = true
 	show()
 
+	blur_anim.play("blur")
+	await blur_anim.animation_finished
+
+	get_tree().paused = true
+	is_transitioning = false
+
 func _resume_game():
-	get_tree().paused = false
-	$blur.play_backwards("blur")
+	is_transitioning = true
+
+	blur_anim.play_backwards("blur")
+	await blur_anim.animation_finished
+
 	hide()
+	get_tree().paused = false
+	is_transitioning = false
 
 func _on_resume_pressed() -> void:
-	_resume_game()
+	if not is_transitioning:
+		_resume_game()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
