@@ -1,18 +1,31 @@
 class_name Indicator
 extends Node2D
 
-@export var trigger_distance := 50.0
+@export var interactable: Interactable
 @export var appear_audio: AudioStream
 
 @onready var appear_sound: AudioStreamPlayer2D = $popup_sound
 @onready var sprite: AnimatedSprite2D = $indicator
-@onready var player: Node2D = get_tree().get_first_node_in_group("player")
 
-var is_showing: bool = false
-var is_hiding: bool = false
-var is_in_range: bool = false
-var enter_id: int = 0
+var is_showing := false
+var is_hiding := false
+var is_in_range := false
+var enter_id := 0
 
+func _on_player_entered() -> void:
+	if is_in_range:
+		return
+
+	is_in_range = true
+	IndicatorManager.register(self)
+
+
+func _on_player_exited() -> void:
+	if not is_in_range:
+		return
+
+	is_in_range = false
+	IndicatorManager.unregister(self)
 
 func _ready() -> void:
 	sprite.visible = false
@@ -21,25 +34,14 @@ func _ready() -> void:
 	if appear_audio:
 		appear_sound.stream = appear_audio
 
+	if interactable:
+		interactable.player_entered.connect(_on_player_entered)
+		interactable.player_exited.connect(_on_player_exited)
 
-func _process(_delta: float) -> void:
-	if player == null:
-		return
-
-	var distance := distance_to_player()
-
-	if distance <= trigger_distance and not is_in_range:
-		is_in_range = true
-		IndicatorManager.register(self)
-
-	elif distance > trigger_distance and is_in_range:
-		is_in_range = false
-		IndicatorManager.unregister(self)
-
-
-func distance_to_player() -> float:
-	return global_position.distance_to(player.global_position)
-
+func play_audio() -> void:
+	if appear_sound.playing:
+		appear_sound.stop()
+	appear_sound.play()
 
 func force_show() -> void:
 	if is_showing:
@@ -68,7 +70,7 @@ func hide_after_load_out() -> void:
 	sprite.play("load-out")
 	await sprite.animation_finished
 
-	if distance_to_player() > trigger_distance:
+	if not is_in_range:
 		sprite.visible = false
 
 	is_hiding = false

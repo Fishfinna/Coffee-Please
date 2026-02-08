@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvc4u20fjldgt" path="res://scripts/fey.gd" id="1_5vdk4"]
 [ext_resource type="Texture2D" uid="uid://brsp27cqqicc5" path="res://assets/art/characters/fey-base.png" id="1_mxnc3"]
+[ext_resource type="PackedScene" uid="uid://yaiai2qvd7yv" path="res://scenes/ui/interacting_component.tscn" id="3_t31mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vdk4"]
 size = Vector2(81, 38)
@@ -19,3 +20,5 @@ texture = ExtResource("1_mxnc3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237841117]
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_5vdk4")
+
+[node name="InteractingComponent" parent="." unique_id=478484011 instance=ExtResource("3_t31mj")]
