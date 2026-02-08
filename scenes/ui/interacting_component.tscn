@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cnskscg421ymp" path="res://scripts/ui/interacting_component.gd" id="1_d7g78"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sjv52"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7g78"]
+size = Vector2(7.976655, 3.8910499)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7g78"]
 font_size = 45
@@ -20,8 +20,9 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=1785987831]
-scale = Vector2(2.2743356, 2.2743356)
-shape = SubResource("CircleShape2D_sjv52")
+position = Vector2(0.22123933, -4.4247804)
+scale = Vector2(2.274336, 2.274336)
+shape = SubResource("RectangleShape2D_d7g78")
 
 [node name="InteractLabel" type="Label" parent="." unique_id=1811772819]
 visible = false

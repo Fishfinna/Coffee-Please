@@ -9,6 +9,5 @@ func _ready() -> void:
 func _on_interact():
 	if interactable.is_interactable:
 		purchase_audio.play()
-
 	else:
 		indicator.play_audio()
