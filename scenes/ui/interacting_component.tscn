@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://cnskscg421ymp" path="res://scripts/ui/interacting_component.gd" id="1_d7g78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7g78"]
-size = Vector2(7.976655, 3.8910499)
+size = Vector2(3.5398223, 1.3274335)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d7g78"]
-font_size = 45
-font_color = Color(0.9443291, 0.9093294, 0.8896056, 0.735)
-outline_size = 10
-outline_color = Color(0.1680183, 0.1680183, 0.1680183, 0.58400005)
+font_size = 10
+font_color = Color(0.9326842, 0.9442784, 0.91280365, 0.73333335)
+outline_size = 3
+outline_color = Color(0.13682586, 0.13682568, 0.13682571, 0.58431375)
 
 [node name="InteractingComponent" type="Node2D" unique_id=478484011]
 script = ExtResource("1_d7g78")
@@ -19,9 +19,9 @@ scale = Vector2(4.52, 4.52)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=1785987831]
-position = Vector2(0.22123933, -4.4247804)
-scale = Vector2(2.274336, 2.274336)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=1686721155]
+position = Vector2(0, -0.6637169)
+scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_d7g78")
 
 [node name="InteractLabel" type="Label" parent="." unique_id=1811772819]
@@ -33,9 +33,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -111.0
-offset_top = -378.0
+offset_top = -93.0
 offset_right = 112.0
-offset_bottom = -332.0
+offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "e to interact"

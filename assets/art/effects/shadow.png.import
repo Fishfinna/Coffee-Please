@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yk2p65coyu3c"
-path="res://.godot/imported/fey-base.png-2d92b2df6a372496f0ce69bd723f38ac.ctex"
+uid="uid://dhsrddi1po0qw"
+path="res://.godot/imported/shadow.png-8d2e9f4bdd27ac577c764c960fcb9a8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/fey-base.png"
-dest_files=["res://.godot/imported/fey-base.png-2d92b2df6a372496f0ce69bd723f38ac.ctex"]
+source_file="res://assets/art/effects/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-8d2e9f4bdd27ac577c764c960fcb9a8a.ctex"]
 
 [params]
 

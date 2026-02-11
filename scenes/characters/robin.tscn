@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://vlwsmf4n3xm"]
 
+[ext_resource type="Texture2D" uid="uid://dhsrddi1po0qw" path="res://assets/art/effects/shadow.png" id="1_byjiq"]
 [ext_resource type="Texture2D" uid="uid://ihu8x7flbf4h" path="res://assets/art/characters/robin-base.png" id="1_ga2fa"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_4uxls"]
 
@@ -9,6 +10,10 @@ size = Vector2(17, 6)
 [node name="robin" type="CharacterBody2D" unique_id=524308441]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=803818623]
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D" unique_id=964478717]
+position = Vector2(1, -4)
+texture = ExtResource("1_byjiq")
 
 [node name="Robin-base" type="Sprite2D" parent="Sprite2D" unique_id=955566840]
 position = Vector2(1, -32)

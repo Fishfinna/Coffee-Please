@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://8kufaifh4tdi"]
 
 [ext_resource type="Script" uid="uid://dvc4u20fjldgt" path="res://scripts/fey.gd" id="1_5vdk4"]
-[ext_resource type="Texture2D" uid="uid://brsp27cqqicc5" path="res://assets/art/characters/fey-base.png" id="1_mxnc3"]
+[ext_resource type="Texture2D" uid="uid://yk2p65coyu3c" path="res://assets/art/characters/fey-base.png" id="1_mxnc3"]
+[ext_resource type="Texture2D" uid="uid://dhsrddi1po0qw" path="res://assets/art/effects/shadow.png" id="2_7yt0o"]
 [ext_resource type="PackedScene" uid="uid://yaiai2qvd7yv" path="res://scenes/ui/interacting_component.tscn" id="3_t31mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vdk4"]
-size = Vector2(81, 38)
+size = Vector2(16, 6)
 
 [node name="fey chu" type="CharacterBody2D" unique_id=122533714 groups=["player"]]
 y_sort_enabled = true
@@ -13,12 +14,18 @@ script = ExtResource("1_5vdk4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814033569]
 
+[node name="Shadow" type="Sprite2D" parent="Sprite2D" unique_id=57456137]
+position = Vector2(0, -6)
+texture = ExtResource("2_7yt0o")
+
 [node name="Fey-base" type="Sprite2D" parent="Sprite2D" unique_id=1694982798]
-position = Vector2(0, -160)
+position = Vector2(0, -32)
 texture = ExtResource("1_mxnc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237841117]
-position = Vector2(0, -20)
+visible = false
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_5vdk4")
 
 [node name="InteractingComponent" parent="." unique_id=478484011 instance=ExtResource("3_t31mj")]
+visible = false
