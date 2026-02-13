@@ -1,3 +1,3 @@
 extends Node
 
-var dollars: int = -100_000
+var money: int = 100

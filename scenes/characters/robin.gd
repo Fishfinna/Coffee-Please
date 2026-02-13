@@ -1,14 +1,11 @@
-extends Node2D
+extends CharacterBody2D
 @onready var interactable: Area2D = $Interactable
-@onready var indicator: Indicator = $body/Indicator
-@onready var purchase_audio := $Purchase_Audio
+@onready var indicator: Indicator = $Indicator
 
 func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact():
 	if interactable.is_interactable:
-		purchase_audio.play()
-		Global.money += 1
-	else:
 		indicator.play_audio()
+		print("you have $%d" % [Global.money])

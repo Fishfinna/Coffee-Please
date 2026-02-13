@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8kufaifh4tdi"]
 
-[ext_resource type="Script" uid="uid://dvc4u20fjldgt" path="res://scripts/fey.gd" id="1_5vdk4"]
+[ext_resource type="Script" uid="uid://dvc4u20fjldgt" path="res://scripts/characters/fey.gd" id="1_5vdk4"]
 [ext_resource type="Texture2D" uid="uid://yk2p65coyu3c" path="res://assets/art/characters/fey-base.png" id="1_mxnc3"]
 [ext_resource type="Texture2D" uid="uid://dhsrddi1po0qw" path="res://assets/art/effects/shadow.png" id="2_7yt0o"]
 [ext_resource type="PackedScene" uid="uid://yaiai2qvd7yv" path="res://scenes/ui/interacting_component.tscn" id="3_t31mj"]
@@ -23,9 +23,7 @@ position = Vector2(0, -32)
 texture = ExtResource("1_mxnc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237841117]
-visible = false
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_5vdk4")
 
 [node name="InteractingComponent" parent="." unique_id=478484011 instance=ExtResource("3_t31mj")]
-visible = false

@@ -25,8 +25,9 @@ buses/default_bus_layout=""
 
 [autoload]
 
-window_exit="*uid://d2qd1s3il2aiu"
+fullscreen="*uid://d2qd1s3il2aiu"
 IndicatorManager="*uid://2i8uwi1yvk06"
+Global="*uid://buxknpmydlrqv"
 
 [display]
 
