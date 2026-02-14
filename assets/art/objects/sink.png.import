@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1qkvdu2qurn2"
-path="res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"
+uid="uid://duxsvbms1mjop"
+path="res://.godot/imported/sink.png-5b53cbd9976d38ea7a067515fb13d771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/tiles/shop-floor.png"
-dest_files=["res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"]
+source_file="res://assets/art/objects/sink.png"
+dest_files=["res://.godot/imported/sink.png-5b53cbd9976d38ea7a067515fb13d771.ctex"]
 
 [params]
 
