@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var blur_anim: AnimationPlayer = $blur
 var is_transitioning := false
 
+@onready var pause_menu = $pause
+@onready var save_menu = $save
+
 func _ready():
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -40,6 +43,15 @@ func _on_resume_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+func _on_save_menu_pressed() -> void:
+	pause_menu.hide()
+	save_menu.show()
+
+
+func _on_save_back_pressed() -> void:
+	save_menu.hide()
+	pause_menu.show()
 
 func _on_save_pressed() -> void:
 	print("save")

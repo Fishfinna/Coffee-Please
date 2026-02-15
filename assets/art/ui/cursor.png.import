@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kqg6y31egxmp"
-path="res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"
+uid="uid://02s3exchgt3h"
+path="res://.godot/imported/cursor.png-e59d06711faae4c870180878d8c6b8dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/tiles/shop-floor.png"
-dest_files=["res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"]
+source_file="res://assets/art/ui/cursor.png"
+dest_files=["res://.godot/imported/cursor.png-e59d06711faae4c870180878d8c6b8dc.ctex"]
 
 [params]
 
@@ -34,7 +34,7 @@ process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
+process/hdr_as_srgb=true
+process/hdr_clamp_exposure=true
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

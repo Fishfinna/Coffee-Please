@@ -77,7 +77,7 @@ tracks/0/path = NodePath("blur_bg:material:shader_parameter/lod")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
+"handle_modes": PackedInt32Array(0, 2),
 "points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.046976235, -0.13333334, 0, 0),
 "times": PackedFloat32Array(0, 0.2818574)
 }
@@ -142,15 +142,8 @@ material = SubResource("ShaderMaterial_f6eus")
 offset_right = 640.0
 offset_bottom = 368.0
 
-[node name="exit" type="Control" parent="." unique_id=496855907]
-layout_mode = 3
-anchor_left = 0.325
-anchor_top = 0.26666668
-anchor_right = 0.6375
-anchor_bottom = 0.75
-metadata/_edit_use_anchors_ = true
-
 [node name="pause" type="Control" parent="." unique_id=779354205]
+visible = false
 layout_mode = 3
 anchor_left = 0.25
 anchor_top = 0.25
@@ -211,7 +204,6 @@ text = "exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Control" parent="." unique_id=38292117]
-visible = false
 layout_mode = 3
 anchor_left = 0.325
 anchor_top = 0.26666668
@@ -219,12 +211,14 @@ anchor_right = 0.6375
 anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="save" unique_id=1889334021]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.1034483
+anchor_bottom = 1.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -285,6 +279,15 @@ anchor_bottom = 1.0574713
 grow_horizontal = 0
 grow_vertical = 0
 text = "load"
+metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="Control" parent="." unique_id=496855907]
+visible = false
+layout_mode = 3
+anchor_left = 0.325
+anchor_top = 0.26666668
+anchor_right = 0.6375
+anchor_bottom = 0.75
 metadata/_edit_use_anchors_ = true
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]

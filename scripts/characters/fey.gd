@@ -31,12 +31,6 @@ func get_input():
 
 	velocity = Vector2(x, y).normalized() * speed
 
-func lock_to_screen():
-	var viewport_size = camera.get_viewport_rect().size
-	position.x = clamp(position.x, floor(-viewport_size.x / 2), floor(viewport_size.x/2))
-	position.y = clamp(position.y,  floor(-viewport_size.y /2 + 20), floor(viewport_size.y/2))
-
 func _physics_process(delta: float) -> void:
 	get_input()
 	move_and_slide()
-	lock_to_screen()

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Coffee Please"
-run/main_scene="uid://dbo33q6tr6sh0"
+run/main_scene="uid://caeodaqay7wx6"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://jo6vmbwp8mkw"
 
@@ -25,7 +25,7 @@ buses/default_bus_layout=""
 
 [autoload]
 
-fullscreen="*uid://d2qd1s3il2aiu"
+window="*uid://d2qd1s3il2aiu"
 IndicatorManager="*uid://2i8uwi1yvk06"
 Global="*uid://buxknpmydlrqv"
 
@@ -37,7 +37,9 @@ window/size/transparent=true
 window/size/sharp_corners=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://02s3exchgt3h"
 
 [global_group]
 
@@ -45,6 +47,7 @@ player="main player logic"
 
 [gui]
 
+theme/custom="uid://c3bgqwco8c3eg"
 theme/custom_font="uid://d4nn0jfn7ijin"
 
 [input]

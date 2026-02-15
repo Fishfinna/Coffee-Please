@@ -7,6 +7,7 @@
 
 [node name="Coffee Shop" parent="." unique_id=1103702953 instance=ExtResource("1_ibkli")]
 
-[node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("1_qbsmt")]
-
 [node name="camera" type="Camera2D" parent="." unique_id=1783741589]
+anchor_mode = 0
+
+[node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("1_qbsmt")]

@@ -1,3 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://c3bgqwco8c3eg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkonk"]
+bg_color = Color(0.06100855, 0.06100855, 0.06100855, 0.33100003)
+border_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 9
+
 [resource]
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_nkonk")
