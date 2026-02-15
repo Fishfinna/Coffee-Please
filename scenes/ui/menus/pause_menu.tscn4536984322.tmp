@@ -261,7 +261,7 @@ text = "resume >"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="scroll_saves" type="ScrollContainer" parent="save" unique_id=960641359]
+[node name="ScrollContainer" type="ScrollContainer" parent="save" unique_id=960641359]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.08
@@ -275,7 +275,7 @@ follow_focus = true
 draw_focus_border = true
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="save/scroll_saves" unique_id=1888365933]
+[node name="VBoxContainer" type="VBoxContainer" parent="save/ScrollContainer" unique_id=1888365933]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -312,4 +312,3 @@ libraries/ = SubResource("AnimationLibrary_8uki6")
 [connection signal="pressed" from="save/back" to="." method="_on_save_back_pressed"]
 [connection signal="pressed" from="save/back/back" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="save/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="save/load" to="." method="_on_load_pressed"]
