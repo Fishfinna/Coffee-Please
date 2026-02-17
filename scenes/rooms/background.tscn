@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cshgepy31u2sx"]
 
-[node name="Control" type="Control" unique_id=760617795]
+[node name="Background" type="Control" unique_id=760617795]
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 0
@@ -16,3 +16,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.05490196, 0.05490196, 0.0627451, 1)

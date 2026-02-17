@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dq8yvt5t514qm"]
+
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="1_hvt8w"]
+[ext_resource type="Script" uid="uid://i3x8dwwxf3v6" path="res://scripts/ui/menus/save_slot.gd" id="1_jskob"]
+
+[node name="save_slot" type="Button" unique_id=280808256]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_hvt8w")
+script = ExtResource("1_jskob")
+
+[node name="NameMargin" type="MarginContainer" parent="." unique_id=956113248]
+layout_mode = 0
+anchor_right = 0.053125
+anchor_bottom = 0.296875
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="FileName" type="Label" parent="NameMargin" unique_id=307963220]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "name"
+
+[node name="ModifiedMargin" type="MarginContainer" parent="." unique_id=1259764769]
+layout_mode = 0
+anchor_top = 0.40625
+anchor_right = 0.03125
+anchor_bottom = 0.59375
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_right = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ModifiedTime" type="Label" parent="ModifiedMargin" unique_id=592078151]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+theme_override_font_sizes/font_size = 11
+text = "2024"
+vertical_alignment = 2
+
+[node name="delete" type="Button" parent="." unique_id=1284830180]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -28.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "del"
+
+[connection signal="pressed" from="delete" to="." method="_delete"]

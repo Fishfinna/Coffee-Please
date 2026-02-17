@@ -1,13 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://c3bgqwco8c3eg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkonk"]
-bg_color = Color(0.06100855, 0.06100855, 0.06100855, 0.33100003)
-border_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 9
+[ext_resource type="StyleBox" uid="uid://cm3ucppisimrx" path="res://themes/buttons/delete-button-hover.tres" id="1_2g1ym"]
+[ext_resource type="StyleBox" uid="uid://bu61e2clqptbg" path="res://themes/buttons/delete-button-normal.tres" id="2_gnsgt"]
 
 [resource]
-ScrollContainer/styles/panel = SubResource("StyleBoxFlat_nkonk")
+delete_button/base_type = &"Button"
+delete_button/font_sizes/font_size = 16
+delete_button/styles/hover = ExtResource("1_2g1ym")
+delete_button/styles/normal = ExtResource("2_gnsgt")

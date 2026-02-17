@@ -144,28 +144,32 @@ material = SubResource("ShaderMaterial_f6eus")
 offset_right = 640.0
 offset_bottom = 368.0
 
-[node name="pause" type="Control" parent="." unique_id=779354205]
-custom_minimum_size = Vector2(128, 180)
+[node name="exit" type="Control" parent="." unique_id=496855907]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -90.0
-offset_right = 80.0
-offset_bottom = 90.0
+anchor_left = 0.325
+anchor_top = 0.26666668
+anchor_right = 0.6375
+anchor_bottom = 0.75
+metadata/_edit_use_anchors_ = true
+
+[node name="pause" type="Control" parent="." unique_id=779354205]
+visible = false
+layout_mode = 3
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.70000005
+anchor_bottom = 0.75
+offset_right = -3.0517578e-05
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="pause" unique_id=1342169930]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.1
-anchor_right = 1.1
+anchor_left = 0.16666667
+anchor_top = 0.033333335
+anchor_right = 0.8611111
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -174,11 +178,10 @@ metadata/_edit_use_anchors_ = true
 [node name="save" type="Button" parent="pause" unique_id=1764854574]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.122222215
-anchor_right = 1.0
-anchor_bottom = 0.34444448
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.25000003
+anchor_top = 0.12222222
+anchor_right = 0.7777778
+anchor_bottom = 0.34444445
 mouse_default_cursor_shape = 2
 text = "save"
 metadata/_edit_use_anchors_ = true
@@ -186,9 +189,10 @@ metadata/_edit_use_anchors_ = true
 [node name="options" type="Button" parent="pause" unique_id=576442192]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.38888893
-anchor_right = 1.0
-anchor_bottom = 0.61111116
+anchor_left = 0.25000003
+anchor_top = 0.3888889
+anchor_right = 0.7777778
+anchor_bottom = 0.6111111
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -199,198 +203,115 @@ metadata/_edit_use_anchors_ = true
 [node name="exit" type="Button" parent="pause" unique_id=1433125928]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.6555556
-anchor_right = 1.0
+anchor_left = 0.25000003
+anchor_top = 0.65555555
+anchor_right = 0.7777778
 anchor_bottom = 0.87777776
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_default_cursor_shape = 2
 text = "exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Control" parent="." unique_id=38292117]
-visible = false
-custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -90.0
-offset_right = 140.0
-offset_bottom = 90.0
+anchor_left = 0.325
+anchor_top = 0.26666668
+anchor_right = 0.6375
+anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="save" unique_id=1889334021]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.1034483
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="resume" type="Button" parent="save" unique_id=1817608063]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.71212125
-anchor_right = 1.0
-anchor_bottom = 0.140625
-grow_horizontal = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_idy5m")
-theme_override_colors/font_color = Color(0.8689852, 0.8689848, 0.8689849, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-text = "resume >"
-flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="back" type="Button" parent="save" unique_id=2116316972]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0052083335
-anchor_right = 0.2818182
-anchor_bottom = 0.14062499
+anchor_left = 0.04
+anchor_top = 0.045976963
+anchor_right = 0.265
+anchor_bottom = 0.183908
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_idy5m")
 theme_override_colors/font_color = Color(0.8689852, 0.8689848, 0.8689849, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 text = "< back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="save/back" unique_id=1817608063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.6666667
+anchor_right = 4.088889
+anchor_bottom = 0.99999994
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.8689852, 0.8689848, 0.8689849, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+text = "resume >"
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="scroll_saves" type="ScrollContainer" parent="save" unique_id=960641359]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.04
-anchor_top = 0.13913041
-anchor_right = 0.96
-anchor_bottom = 0.7916667
+anchor_left = 0.08
+anchor_top = 0.183908
+anchor_right = 0.92
+anchor_bottom = 0.87356323
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_idy5m")
-theme_override_constants/scrollbar_h_separation = 1
 follow_focus = true
 draw_focus_border = true
-vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="save/scroll_saves" unique_id=854920049]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_right = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="save/scroll_saves/MarginContainer" unique_id=1888365933]
+[node name="VBoxContainer" type="VBoxContainer" parent="save/scroll_saves" unique_id=1888365933]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("3_idy5m")
 
 [node name="save" type="Button" parent="save" unique_id=210689927]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.060606074
-anchor_top = 0.8333333
-anchor_right = 0.39560607
-anchor_bottom = 0.9583333
-grow_vertical = 0
-text = "new save"
+anchor_left = 0.08
+anchor_top = 0.9195402
+anchor_right = 0.395
+anchor_bottom = 1.0574713
+grow_horizontal = 2
+text = "save"
 metadata/_edit_use_anchors_ = true
 
 [node name="load" type="Button" parent="save" unique_id=1001891734]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6363637
-anchor_top = 0.8333333
-anchor_right = 0.909091
-anchor_bottom = 0.9583333
+anchor_left = 0.56
+anchor_top = 0.9195402
+anchor_right = 0.92
+anchor_bottom = 1.0574713
 grow_horizontal = 0
 grow_vertical = 0
-text = "restart"
-metadata/_edit_use_anchors_ = true
-
-[node name="save-label" type="Label" parent="save" unique_id=267327881]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.14444445
-anchor_right = 1.0
-anchor_bottom = 0.005555566
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 26
-text = "SAVE"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="options" type="Control" parent="." unique_id=496855907]
-visible = false
-custom_minimum_size = Vector2(280, 180)
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -90.0
-offset_right = 140.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="options" unique_id=1052220233]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="resume" type="Button" parent="options" unique_id=1146897924]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6969697
-anchor_top = 0.049999952
-anchor_right = 0.93939394
-anchor_bottom = 0.19999996
-grow_horizontal = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_idy5m")
-theme_override_colors/font_color = Color(0.8689852, 0.8689848, 0.8689849, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-text = "resume >"
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="back" type="Button" parent="options" unique_id=844189795]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.060606062
-anchor_top = 0.049999952
-anchor_right = 0.23106061
-anchor_bottom = 0.19999996
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_idy5m")
-theme_override_colors/font_color = Color(0.8689852, 0.8689848, 0.8689849, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-text = "< back"
-flat = true
+text = "load"
 metadata/_edit_use_anchors_ = true
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
 libraries/ = SubResource("AnimationLibrary_8uki6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=987621046]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
-[connection signal="pressed" from="pause/options" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="pause/options" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="pause/exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="save/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="save/back" to="." method="_on_save_back_pressed"]
+[connection signal="pressed" from="save/back/back" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="save/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="save/load" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="options/resume" to="." method="_resume_game"]
-[connection signal="pressed" from="options/back" to="." method="_on_options_back_pressed"]
+[connection signal="pressed" from="save/load" to="." method="_on_load_pressed"]

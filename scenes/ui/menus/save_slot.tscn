@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dq8yvt5t514qm"]
+
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="1_hvt8w"]
+[ext_resource type="Script" uid="uid://i3x8dwwxf3v6" path="res://scripts/ui/menus/save_slot.gd" id="1_jskob"]
+[ext_resource type="Texture2D" uid="uid://chmsxuxhphsiu" path="res://assets/art/ui/icons/load.png" id="4_cgpe6"]
+[ext_resource type="Texture2D" uid="uid://cggbcivjetccl" path="res://assets/art/ui/icons/save.png" id="5_80koh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qph8n"]
+load_path = "res://.godot/imported/trash-closed.png-eb12959a9ec533c6d5e1816257770d61.ctex"
+
+[node name="save_slot" type="Panel" unique_id=1953751368]
+custom_minimum_size = Vector2(0, 69)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_hvt8w")
+script = ExtResource("1_jskob")
+
+[node name="NameMargin" type="MarginContainer" parent="." unique_id=956113248]
+layout_mode = 0
+anchor_right = 0.053125
+anchor_bottom = 0.296875
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="FileName" type="Label" parent="NameMargin" unique_id=307963220]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "name"
+
+[node name="ModifiedMargin" type="MarginContainer" parent="." unique_id=1259764769]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -6.0
+offset_right = 33.0
+offset_bottom = 6.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="ModifiedTime" type="Label" parent="ModifiedMargin" unique_id=592078151]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+theme_override_font_sizes/font_size = 11
+text = "2024"
+vertical_alignment = 2
+
+[node name="delete" type="Button" parent="." unique_id=1284830180]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.925
+anchor_top = 0.5797101
+anchor_right = 0.975
+anchor_bottom = 0.92753625
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "delete"
+theme = ExtResource("1_hvt8w")
+theme_type_variation = &"delete_button"
+icon = SubResource("CompressedTexture2D_qph8n")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="load" type="Button" parent="." unique_id=284614916]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.475
+anchor_top = 0.5797101
+anchor_right = 0.525
+anchor_bottom = 0.92753625
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "load"
+icon = ExtResource("4_cgpe6")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="save over" type="Button" parent="." unique_id=318610551]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.5797101
+anchor_right = 0.075
+anchor_bottom = 0.92753625
+grow_vertical = 0
+tooltip_text = "save over"
+icon = ExtResource("5_80koh")
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="focus_entered" from="delete" to="." method="_delete_hovered"]
+[connection signal="focus_exited" from="delete" to="." method="_delete_unhovered"]
+[connection signal="mouse_entered" from="delete" to="." method="_delete_hovered"]
+[connection signal="mouse_exited" from="delete" to="." method="_delete_unhovered"]
+[connection signal="pressed" from="delete" to="." method="_delete"]
+[connection signal="pressed" from="load" to="." method="_load_slot"]
+[connection signal="pressed" from="save over" to="." method="_save_over"]

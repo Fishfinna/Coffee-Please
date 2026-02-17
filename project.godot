@@ -28,6 +28,7 @@ buses/default_bus_layout=""
 window="*uid://d2qd1s3il2aiu"
 IndicatorManager="*uid://2i8uwi1yvk06"
 Global="*uid://buxknpmydlrqv"
+buttonCursor="*uid://u824dfx45eh0"
 
 [display]
 

@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://cm3ucppisimrx"]
+
+[resource]
+bg_color = Color(0.4742396, 0.15491796, 0.19465485, 0.72156864)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
