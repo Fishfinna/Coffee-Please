@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dkg6oqft5f5m3"]
+
+[ext_resource type="Texture2D" uid="uid://c3v4givgm7yxv" path="res://assets/art/objects/sink.png" id="1_4812f"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_dxbif"]
+[ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="3_aev3a"]
+[ext_resource type="AudioStream" uid="uid://be5fx1xdfqeg5" path="res://assets/audio/chop.wav" id="3_jrkpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4812f"]
+size = Vector2(28, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cpu3"]
+radius = 46.0
+
+[node name="Sink" type="Node2D" unique_id=1694069929]
+y_sort_enabled = true
+
+[node name="body" type="StaticBody2D" parent="." unique_id=1164423773]
+
+[node name="Sink" type="Sprite2D" parent="body" unique_id=998283638]
+position = Vector2(0, -12)
+texture = ExtResource("1_4812f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body" unique_id=1998553822]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_4812f")
+
+[node name="Indicator" parent="body" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_dxbif")]
+interactable = NodePath("../../Interactable")
+appear_audio = ExtResource("3_jrkpg")
+
+[node name="Interactable" parent="." unique_id=1415010887 instance=ExtResource("3_aev3a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2041111123]
+scale = Vector2(1, 0.6400001)
+shape = SubResource("CircleShape2D_5cpu3")

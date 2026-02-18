@@ -1,9 +1,11 @@
 [gd_resource type="Theme" format=3 uid="uid://c3bgqwco8c3eg"]
 
+[ext_resource type="StyleBox" uid="uid://yqds0otirc0o" path="res://themes/panels/scroll-panel.tres" id="1_1fv3y"]
 [ext_resource type="StyleBox" uid="uid://cm3ucppisimrx" path="res://themes/buttons/delete-button-hover.tres" id="1_2g1ym"]
 [ext_resource type="StyleBox" uid="uid://bu61e2clqptbg" path="res://themes/buttons/delete-button-normal.tres" id="2_gnsgt"]
 
 [resource]
+ScrollContainer/styles/panel = ExtResource("1_1fv3y")
 delete_button/base_type = &"Button"
 delete_button/font_sizes/font_size = 16
 delete_button/styles/hover = ExtResource("1_2g1ym")

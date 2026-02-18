@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3v4givgm7yxv"
-path="res://.godot/imported/sink.png-5b53cbd9976d38ea7a067515fb13d771.ctex"
+uid="uid://dw7kybjer0e3y"
+path="res://.godot/imported/shop-inside-v1.png-cc58e85a77484f9300c40a05e55de5d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/objects/sink.png"
-dest_files=["res://.godot/imported/sink.png-5b53cbd9976d38ea7a067515fb13d771.ctex"]
+source_file="res://assets/art/concept/shop-inside-v1.png"
+dest_files=["res://.godot/imported/shop-inside-v1.png-cc58e85a77484f9300c40a05e55de5d3.ctex"]
 
 [params]
 

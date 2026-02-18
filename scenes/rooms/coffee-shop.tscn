@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1qvl5dqyfb42" path="res://scenes/objects/register.tscn" id="3_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/characters/fey.tscn" id="5_yo8p7"]
+[ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1eqc"]
 texture = ExtResource("1_kjusl")
@@ -198,10 +199,14 @@ y_sort_enabled = true
 position = Vector2(320, 158)
 
 [node name="Register" parent="envrionment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
-position = Vector2(14, 0)
+position = Vector2(11, 33)
 
 [node name="robin" parent="envrionment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
 position = Vector2(112, 157)
+
+[node name="Sink" parent="envrionment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
+y_sort_enabled = true
+position = Vector2(110, 53)
 
 [node name="fey" parent="envrionment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false

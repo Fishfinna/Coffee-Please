@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vlwsmf4n3xm"]
 
-[ext_resource type="Script" uid="uid://b7ejjpap2e7ij" path="res://scenes/characters/robin.gd" id="1_0dwpl"]
+[ext_resource type="Script" uid="uid://b7ejjpap2e7ij" path="res://scripts/characters/robin.gd" id="1_0dwpl"]
 [ext_resource type="Texture2D" uid="uid://dhsrddi1po0qw" path="res://assets/art/effects/shadow.png" id="1_byjiq"]
 [ext_resource type="Texture2D" uid="uid://ihu8x7flbf4h" path="res://assets/art/characters/robin-base.png" id="1_ga2fa"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_4uxls"]
