@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://dj0pa2r43pomn"]
 
+[ext_resource type="Texture2D" uid="uid://dv3p311etwevc" path="res://assets/art/objects/espresso-machine.png" id="1_bwi8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]
+size = Vector2(20, 7)
+
 [node name="EspressoMachine" type="Node2D" unique_id=551865825]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1211997790]
+
+[node name="EspressoMachine" type="Sprite2D" parent="StaticBody2D" unique_id=645113485]
+position = Vector2(-4, -12)
+texture = ExtResource("1_bwi8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1718303221]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_78fss")
