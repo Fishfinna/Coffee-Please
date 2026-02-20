@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dj0pa2r43pomn"]
 
 [ext_resource type="Texture2D" uid="uid://dv3p311etwevc" path="res://assets/art/objects/espresso-machine.png" id="1_bwi8q"]
+[ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="2_78fss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]
 size = Vector2(20, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncje6"]
+radius = 42.0
 
 [node name="EspressoMachine" type="Node2D" unique_id=551865825]
 
@@ -16,3 +20,11 @@ texture = ExtResource("1_bwi8q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1718303221]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_78fss")
+
+[node name="Interactable" parent="StaticBody2D" unique_id=1415010887 instance=ExtResource("2_78fss")]
+position = Vector2(0, -4)
+interact_name = "test"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Interactable" unique_id=1609956574]
+scale = Vector2(1, 0.7200002)
+shape = SubResource("CircleShape2D_ncje6")
