@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dv3p311etwevc" path="res://assets/art/objects/espresso-machine.png" id="1_bwi8q"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="2_78fss"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_s5gdy"]
+[ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="3_j7a0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]
 size = Vector2(20, 7)
@@ -20,6 +22,11 @@ texture = ExtResource("1_bwi8q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1718303221]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_78fss")
+
+[node name="Indicator" parent="StaticBody2D" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_s5gdy")]
+position = Vector2(-1, -1)
+interactable = NodePath("../Interactable")
+appear_audio = ExtResource("3_j7a0y")
 
 [node name="Interactable" parent="StaticBody2D" unique_id=1415010887 instance=ExtResource("2_78fss")]
 position = Vector2(0, -4)

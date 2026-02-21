@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/characters/fey.tscn" id="5_yo8p7"]
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
+[ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1eqc"]
 texture = ExtResource("1_kjusl")
@@ -205,9 +206,11 @@ position = Vector2(11, 33)
 position = Vector2(112, 157)
 
 [node name="Sink" parent="envrionment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
-y_sort_enabled = true
 position = Vector2(110, 53)
 
 [node name="fey" parent="envrionment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false
 position = Vector2(0.99999994, 124)
+
+[node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
+position = Vector2(113, 87)

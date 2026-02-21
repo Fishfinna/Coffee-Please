@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cshgepy31u2sx" path="res://scenes/rooms/background.tscn" id="1_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://dbo33q6tr6sh0" path="res://scenes/rooms/coffee-shop.tscn" id="1_ibkli"]
 [ext_resource type="PackedScene" uid="uid://7jf6e4julwkk" path="res://scenes/ui/menus/pause_menu.tscn" id="1_qbsmt"]
-[ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="4_78awf"]
 
 [node name="Game" type="Node2D" unique_id=1052908169]
 
@@ -16,6 +15,3 @@ anchor_mode = 0
 
 [node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("1_qbsmt")]
 visible = false
-
-[node name="EspressoMachine" parent="." unique_id=551865825 instance=ExtResource("4_78awf")]
-position = Vector2(177, 243)
