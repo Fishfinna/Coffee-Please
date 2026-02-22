@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kqg6y31egxmp"
-path="res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"
+uid="uid://cdw8owxgcb2uv"
+path="res://.godot/imported/shop-inside.png-ac41dd0d7d2a087d8ab6fe3503704a9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/tiles/shop-floor.png"
-dest_files=["res://.godot/imported/shop-floor.png-cee93a1faf06cd8b04f800848e05fe97.ctex"]
+source_file="res://assets/art/tiles/shop-inside.png"
+dest_files=["res://.godot/imported/shop-inside.png-ac41dd0d7d2a087d8ab6fe3503704a9a.ctex"]
 
 [params]
 
