@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/characters/fey.tscn" id="5_yo8p7"]
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
+[ext_resource type="Texture2D" uid="uid://btxri7q1qdbdl" path="res://assets/art/characters/nora-base.png" id="7_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxbdo"]
@@ -95,3 +96,7 @@ position = Vector2(0.99999994, 124)
 
 [node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(113, 87)
+
+[node name="NoraBase" type="Sprite2D" parent="." unique_id=12838429]
+position = Vector2(262, 280)
+texture = ExtResource("7_7fs5h")
