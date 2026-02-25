@@ -97,6 +97,6 @@ position = Vector2(0.99999994, 124)
 [node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(113, 87)
 
-[node name="NoraBase" type="Sprite2D" parent="." unique_id=12838429]
-position = Vector2(262, 280)
+[node name="NoraBase" type="Sprite2D" parent="." unique_id=780751672]
+position = Vector2(169, 171)
 texture = ExtResource("7_7fs5h")

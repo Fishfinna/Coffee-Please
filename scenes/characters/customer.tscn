@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dojgtwkuwtlhk"]
+
+[ext_resource type="Texture2D" uid="uid://btxri7q1qdbdl" path="res://assets/art/characters/nora-base.png" id="1_mxs21"]
+
+[node name="Customer" type="CharacterBody2D" unique_id=833753758]
+
+[node name="NoraBase" type="Sprite2D" parent="." unique_id=1574366712]
+position = Vector2(0, -32)
+texture = ExtResource("1_mxs21")
