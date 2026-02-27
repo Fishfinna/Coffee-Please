@@ -2,8 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://btxri7q1qdbdl" path="res://assets/art/characters/nora-base.png" id="1_mxs21"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxs21"]
+size = Vector2(15, 5)
+
 [node name="Customer" type="CharacterBody2D" unique_id=833753758]
 
 [node name="NoraBase" type="Sprite2D" parent="." unique_id=1574366712]
 position = Vector2(0, -32)
 texture = ExtResource("1_mxs21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690106118]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_mxs21")
