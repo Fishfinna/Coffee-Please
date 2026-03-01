@@ -8,6 +8,7 @@ signal player_entered
 signal player_exited
 
 signal customer_entered
+signal customer_exited
 
 var interact: Callable = func():
 	pass
@@ -25,10 +26,12 @@ func _on_body_entered(body: Node) -> void:
 		player_entered.emit()
 	
 	if body.is_in_group("customer"):
-		print("customer!")
-		customer_entered.emit()
+		customer_entered.emit(body)
 
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_exited.emit()
+	
+	if body.is_in_group("customer"):
+		customer_exited.emit(body)

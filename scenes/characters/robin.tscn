@@ -40,6 +40,7 @@ appear_audio = ExtResource("4_msgss")
 position = Vector2(0, -1)
 scale = Vector2(1.5200005, 1.6800005)
 interact_name = "talk"
+is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1555257547]
 position = Vector2(0, 1)

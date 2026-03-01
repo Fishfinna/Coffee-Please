@@ -51,5 +51,6 @@ max_distance = 1830.0
 attenuation = 6.9644
 
 [connection signal="customer_entered" from="Interactable" to="." method="customer_entered"]
+[connection signal="customer_exited" from="Interactable" to="." method="customer_exited"]
 [connection signal="player_entered" from="Interactable" to="body/Indicator" method="_on_interactable_player_entered"]
 [connection signal="player_exited" from="Interactable" to="body/Indicator" method="_on_player_exited"]

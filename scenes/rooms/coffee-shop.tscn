@@ -157,7 +157,15 @@ position = Vector2(0.99999994, 124)
 
 [node name="Customer" parent="envrionment" unique_id=2125466650 node_paths=PackedStringArray("target") groups=["customer"] instance=ExtResource("8_7fs5h")]
 position = Vector2(-105, 28)
-target = NodePath("../fey")
+target = NodePath("../Register")
 
 [node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(113, 87)
+
+[node name="Customer2" parent="envrionment" unique_id=833753758 node_paths=PackedStringArray("target") groups=["customer"] instance=ExtResource("8_7fs5h")]
+position = Vector2(-210, 56)
+target = NodePath("../Register")
+
+[node name="Customer3" parent="envrionment" unique_id=251377233 node_paths=PackedStringArray("target") groups=["customer"] instance=ExtResource("8_7fs5h")]
+position = Vector2(-210, 56)
+target = NodePath("../Register")
