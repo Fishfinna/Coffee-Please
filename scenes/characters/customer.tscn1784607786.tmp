@@ -7,8 +7,6 @@
 size = Vector2(15, 5)
 
 [node name="Customer" type="CharacterBody2D" unique_id=833753758]
-motion_mode = 1
-wall_min_slide_angle = 0.0
 script = ExtResource("1_vat4n")
 
 [node name="NoraBase" type="Sprite2D" parent="." unique_id=1574366712]
@@ -17,9 +15,8 @@ texture = ExtResource("1_mxs21")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1091107263]
 path_desired_distance = 30.0
-target_desired_distance = 21.97
 avoidance_enabled = true
-radius = 30.0
+radius = 8.02
 neighbor_distance = 200.0
 time_horizon_obstacles = 0.96
 max_speed = 6088.02

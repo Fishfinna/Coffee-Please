@@ -39,6 +39,10 @@ position = Vector2(0, -3)
 scale = Vector2(3.4418206, 2.828083)
 shape = SubResource("CircleShape2D_b0xyd")
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Interactable/CollisionShape2D" unique_id=1080435909]
+position = Vector2(0, 1.4143857)
+scale = Vector2(0.2905439, 0.35359642)
+
 [node name="Purchase_Audio" type="AudioStreamPlayer2D" parent="." unique_id=1074572899]
 stream = ExtResource("6_n63nr")
 volume_db = -25.368
