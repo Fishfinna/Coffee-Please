@@ -2,10 +2,12 @@ class_name Interactable
 extends Area2D
 
 @export var interact_name := ""
-@export var is_interactable := true
+@export var is_interactable := false
 
 signal player_entered
 signal player_exited
+
+signal customer_entered
 
 var interact: Callable = func():
 	pass
@@ -21,6 +23,10 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_entered.emit()
+	
+	if body.is_in_group("customer"):
+		print("customer!")
+		customer_entered.emit()
 
 
 func _on_body_exited(body: Node) -> void:

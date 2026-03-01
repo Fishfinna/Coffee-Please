@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://dojgtwkuwtlhk"]
 
 [ext_resource type="Texture2D" uid="uid://btxri7q1qdbdl" path="res://assets/art/characters/nora-base.png" id="1_mxs21"]
+[ext_resource type="Script" uid="uid://cf8oqytl5nh8j" path="res://scripts/characters/customer.gd" id="1_vat4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxs21"]
 size = Vector2(15, 5)
 
 [node name="Customer" type="CharacterBody2D" unique_id=833753758]
+script = ExtResource("1_vat4n")
 
 [node name="NoraBase" type="Sprite2D" parent="." unique_id=1574366712]
 position = Vector2(0, -32)
 texture = ExtResource("1_mxs21")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1091107263]
+path_desired_distance = 30.0
+avoidance_enabled = true
+debug_path_custom_color = Color(1, 0.7227015, 1, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690106118]
 position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_mxs21")
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

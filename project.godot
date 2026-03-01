@@ -45,6 +45,7 @@ mouse_cursor/custom_image="uid://02s3exchgt3h"
 [global_group]
 
 player="main player logic"
+customer=""
 
 [gui]
 

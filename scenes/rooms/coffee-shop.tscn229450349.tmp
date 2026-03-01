@@ -1,131 +1,101 @@
 [gd_scene format=4 uid="uid://dbo33q6tr6sh0"]
 
 [ext_resource type="Texture2D" uid="uid://cdw8owxgcb2uv" path="res://assets/art/tiles/shop-inside.png" id="1_k1eqc"]
-[ext_resource type="Script" uid="uid://xppsjqjjmtmq" path="res://scripts/rooms/tile_map_layer.gd" id="2_7fs5h"]
+[ext_resource type="Script" uid="uid://05q2fjmfxosx" path="res://scripts/rooms/astar.gd" id="2_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://1qvl5dqyfb42" path="res://scenes/objects/register.tscn" id="3_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://8kufaifh4tdi" path="res://scenes/characters/fey.tscn" id="5_yo8p7"]
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_idwuf"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_rjlvv"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_gd6fe"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_6paru"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_i6l6i"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
+[ext_resource type="Script" uid="uid://cf8oqytl5nh8j" path="res://scripts/characters/customer.gd" id="8_yo8p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxbdo"]
 texture = ExtResource("1_k1eqc")
 0:0/0 = 0
+0:0/0/custom_data_0 = "wall"
 1:0/0 = 0
+1:0/0/custom_data_0 = "wall"
 2:0/0 = 0
+2:0/0/custom_data_0 = "wall"
 3:0/0 = 0
+3:0/0/custom_data_0 = "wall"
 4:0/0 = 0
+4:0/0/custom_data_0 = "wall"
 5:0/0 = 0
+5:0/0/custom_data_0 = "wall"
 0:1/0 = 0
+0:1/0/custom_data_0 = "wall"
 1:1/0 = 0
-1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_idwuf")
 2:1/0 = 0
-2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:1/0 = 0
-3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:1/0 = 0
-4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 5:1/0 = 0
+5:1/0/custom_data_0 = "wall"
 0:2/0 = 0
+0:2/0/custom_data_0 = "wall"
 1:2/0 = 0
-1:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rjlvv")
 2:2/0 = 0
-2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:2/0 = 0
-3:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:2/0 = 0
-4:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:2/0 = 0
+5:2/0/custom_data_0 = "wall"
 0:3/0 = 0
+0:3/0/custom_data_0 = "wall"
 1:3/0 = 0
-1:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 2:3/0 = 0
-2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:3/0 = 0
-3:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:3/0 = 0
-4:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 5:3/0 = 0
+5:3/0/custom_data_0 = "wall"
 0:4/0 = 0
+0:4/0/custom_data_0 = "wall"
 1:4/0 = 0
-1:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 2:4/0 = 0
-2:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:4/0 = 0
-3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:4/0 = 0
-4:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:4/0 = 0
+5:4/0/custom_data_0 = "wall"
 0:5/0 = 0
+0:5/0/custom_data_0 = "wall"
 1:5/0 = 0
-1:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6paru")
 2:5/0 = 0
-2:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:5/0 = 0
-3:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:5/0 = 0
-4:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:5/0 = 0
+5:5/0/custom_data_0 = "wall"
 0:6/0 = 0
+0:6/0/custom_data_0 = "wall"
 1:6/0 = 0
-1:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6paru")
 2:6/0 = 0
-2:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:6/0 = 0
-3:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:6/0 = 0
-4:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:6/0 = 0
+5:6/0/custom_data_0 = "wall"
 0:7/0 = 0
+0:7/0/custom_data_0 = "wall"
 1:7/0 = 0
-1:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 2:7/0 = 0
-2:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:7/0 = 0
-3:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:7/0 = 0
-4:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:7/0 = 0
+5:7/0/custom_data_0 = "wall"
 0:8/0 = 0
+0:8/0/custom_data_0 = "wall"
 1:8/0 = 0
+1:8/0/custom_data_0 = "wall"
 2:8/0 = 0
+2:8/0/custom_data_0 = "wall"
 3:8/0 = 0
+3:8/0/custom_data_0 = "wall"
 4:8/0 = 0
+4:8/0/custom_data_0 = "wall"
 5:8/0 = 0
+5:8/0/custom_data_0 = "wall"
 
 [sub_resource type="TileSet" id="TileSet_7fs5h"]
-navigation_layer_0/layers = 1
+custom_data_layer_0/name = "type"
+custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_fxbdo")
 
 [node name="Coffee Shop" type="Node2D" unique_id=1103702953]
@@ -145,19 +115,19 @@ position = Vector2(320, 158)
 [node name="Register" parent="envrionment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
 position = Vector2(11, 33)
 
-[node name="Sink" parent="envrionment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
-position = Vector2(110, 53)
-
 [node name="robin" parent="envrionment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
 position = Vector2(112, 157)
+
+[node name="Sink" parent="envrionment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
+position = Vector2(110, 53)
 
 [node name="fey" parent="envrionment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false
 position = Vector2(0.99999994, 124)
 
-[node name="Customer" parent="envrionment" unique_id=2125466650 node_paths=PackedStringArray("target") groups=["customer"] instance=ExtResource("8_7fs5h")]
-position = Vector2(-105, 28)
-target = NodePath("../Register")
+[node name="Customer" parent="envrionment" unique_id=833753758 instance=ExtResource("8_7fs5h")]
+position = Vector2(-113, 29)
+script = ExtResource("8_yo8p7")
 
 [node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(113, 87)
