@@ -16,14 +16,11 @@ position = Vector2(0, -32)
 texture = ExtResource("1_mxs21")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1091107263]
-path_desired_distance = 30.0
 target_desired_distance = 21.97
 avoidance_enabled = true
-radius = 30.0
-neighbor_distance = 200.0
-time_horizon_obstacles = 0.96
-max_speed = 6088.02
-debug_enabled = true
+radius = 15.0
+time_horizon_obstacles = 0.42
+max_speed = 2495.21
 debug_path_custom_color = Color(1, 0.7227015, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690106118]
