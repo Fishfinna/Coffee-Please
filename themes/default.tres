@@ -1,12 +1,131 @@
 [gd_resource type="Theme" format=3 uid="uid://c3bgqwco8c3eg"]
 
 [ext_resource type="StyleBox" uid="uid://yqds0otirc0o" path="res://themes/panels/scroll-panel.tres" id="1_1fv3y"]
-[ext_resource type="StyleBox" uid="uid://cm3ucppisimrx" path="res://themes/buttons/delete-button-hover.tres" id="1_2g1ym"]
-[ext_resource type="StyleBox" uid="uid://bu61e2clqptbg" path="res://themes/buttons/delete-button-normal.tres" id="2_gnsgt"]
+[ext_resource type="StyleBox" uid="uid://civ377bfmawal" path="res://themes/buttons/menu_button_hover.tres" id="1_l6fbw"]
+[ext_resource type="StyleBox" uid="uid://dufata2a0kdm8" path="res://themes/buttons/menu_button_focus.tres" id="2_5hd2i"]
+[ext_resource type="StyleBox" uid="uid://dhqxpf0rcayl3" path="res://themes/buttons/menu_button_normal.tres" id="3_d3e7e"]
+[ext_resource type="StyleBox" uid="uid://ck4euveb8k06m" path="res://themes/scrollers/scroll-background.tres" id="5_cgbfu"]
+[ext_resource type="StyleBox" uid="uid://c76u4xrpxqsly" path="res://themes/buttons/delete-button/delete-button-hover.tres" id="5_d3e7e"]
+[ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
+[ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fv3y"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="ImageTexture" id="ImageTexture_d3e7e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1vgm"]
+bg_color = Color(0.4977886, 0.44672376, 0.39588127, 0.60800004)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qmv4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_8j4t7"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_nlad3"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_dsmww"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_t8avh"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"4\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M0 3V1h16v2z\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jucvp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b64wd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
 
 [resource]
+Button/colors/font_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+Button/styles/disabled = ExtResource("1_l6fbw")
+Button/styles/focus = ExtResource("2_5hd2i")
+Button/styles/hover = ExtResource("1_l6fbw")
+Button/styles/normal = ExtResource("3_d3e7e")
+Button/styles/pressed = ExtResource("1_l6fbw")
+Label/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+Label/colors/font_outline_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_1fv3y")
 ScrollContainer/styles/panel = ExtResource("1_1fv3y")
+TooltipLabel/colors/font_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+TooltipPanel/constants/resize_margin = 4
+TooltipPanel/styles/panel = ExtResource("5_k1vgm")
+VScrollBar/icons/decrement = SubResource("ImageTexture_d3e7e")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_d3e7e")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_d3e7e")
+VScrollBar/icons/increment = SubResource("ImageTexture_d3e7e")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_d3e7e")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_d3e7e")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_k1vgm")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_k1vgm")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_k1vgm")
+VScrollBar/styles/scroll = ExtResource("5_cgbfu")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_0qmv4")
+VSlider/constants/center_grabber = 0
+VSlider/constants/grabber_offset = 0
+VSlider/constants/tick_offset = 0
+VSlider/icons/grabber = SubResource("DPITexture_8j4t7")
+VSlider/icons/grabber_disabled = SubResource("DPITexture_nlad3")
+VSlider/icons/grabber_highlight = SubResource("DPITexture_dsmww")
+VSlider/icons/tick = SubResource("DPITexture_t8avh")
+VSlider/styles/grabber_area = SubResource("StyleBoxFlat_jucvp")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_b64wd")
 delete_button/base_type = &"Button"
-delete_button/font_sizes/font_size = 16
-delete_button/styles/hover = ExtResource("1_2g1ym")
-delete_button/styles/normal = ExtResource("2_gnsgt")
+delete_button/styles/hover = ExtResource("5_d3e7e")
+delete_button/styles/normal = ExtResource("6_cgbfu")

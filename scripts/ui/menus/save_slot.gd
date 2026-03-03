@@ -35,7 +35,9 @@ func _load_slot() -> void:
 		Global.money = data.money
 
 func _delete_hovered() -> void:
-	delete_button.icon = trash_open_icon
+	if delete_button:
+		delete_button.icon = trash_open_icon
 
 func _delete_unhovered() -> void:
-	delete_button.icon = trash_closed_icon
+	if delete_button:
+		delete_button.icon = trash_closed_icon

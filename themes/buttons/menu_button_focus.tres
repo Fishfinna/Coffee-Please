@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://dufata2a0kdm8"]
+
+[resource]
+bg_color = Color(0.37713745, 0.44615483, 0.32500836, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 6
