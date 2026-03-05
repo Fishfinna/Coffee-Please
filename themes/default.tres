@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://c3bgqwco8c3eg"]
 
 [ext_resource type="StyleBox" uid="uid://yqds0otirc0o" path="res://themes/panels/scroll-panel.tres" id="1_1fv3y"]
+[ext_resource type="FontFile" uid="uid://d4nn0jfn7ijin" path="res://assets/fonts/macchiato.otf" id="1_ck2yl"]
 [ext_resource type="StyleBox" uid="uid://civ377bfmawal" path="res://themes/buttons/menu_button_hover.tres" id="1_l6fbw"]
 [ext_resource type="StyleBox" uid="uid://dufata2a0kdm8" path="res://themes/buttons/menu_button_focus.tres" id="2_5hd2i"]
 [ext_resource type="StyleBox" uid="uid://dhqxpf0rcayl3" path="res://themes/buttons/menu_button_normal.tres" id="3_d3e7e"]
@@ -8,6 +9,9 @@
 [ext_resource type="StyleBox" uid="uid://c76u4xrpxqsly" path="res://themes/buttons/delete-button/delete-button-hover.tres" id="5_d3e7e"]
 [ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgbfu"]
+bg_color = Color(0.29219002, 0.29219005, 0.29218993, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fv3y"]
 content_margin_left = 0.0
@@ -94,6 +98,24 @@ corner_detail = 6
 
 [resource]
 Button/colors/font_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_ck2yl")
 Button/styles/disabled = ExtResource("1_l6fbw")
 Button/styles/focus = ExtResource("2_5hd2i")
 Button/styles/hover = ExtResource("1_l6fbw")
@@ -101,6 +123,9 @@ Button/styles/normal = ExtResource("3_d3e7e")
 Button/styles/pressed = ExtResource("1_l6fbw")
 Label/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 Label/colors/font_outline_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+MenuButton/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+MenuButton/colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+MenuButton/styles/normal = SubResource("StyleBoxFlat_cgbfu")
 Panel/styles/panel = SubResource("StyleBoxFlat_1fv3y")
 ScrollContainer/styles/panel = ExtResource("1_1fv3y")
 TooltipLabel/colors/font_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
