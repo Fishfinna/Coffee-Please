@@ -10,6 +10,29 @@
 [ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck2yl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywx0d"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgbfu"]
 bg_color = Color(0.29219002, 0.29219005, 0.29218993, 1)
 
@@ -119,10 +142,22 @@ Button/fonts/font = ExtResource("1_ck2yl")
 Button/styles/disabled = ExtResource("1_l6fbw")
 Button/styles/focus = ExtResource("2_5hd2i")
 Button/styles/hover = ExtResource("1_l6fbw")
+Button/styles/hover_mirrored = ExtResource("1_l6fbw")
+Button/styles/hover_pressed = ExtResource("1_l6fbw")
 Button/styles/normal = ExtResource("3_d3e7e")
 Button/styles/pressed = ExtResource("1_l6fbw")
 Label/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 Label/colors/font_outline_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_ck2yl")
+Label/styles/focus = SubResource("StyleBoxFlat_ck2yl")
+Label/styles/normal = SubResource("StyleBoxEmpty_ywx0d")
 MenuButton/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 MenuButton/colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 MenuButton/styles/normal = SubResource("StyleBoxFlat_cgbfu")

@@ -1,9 +1,9 @@
 # TODO:
-	- make the sink
-	- make the espresso machine
-	- make the counters and the shop
 	- break down fey into parts
-	- make customers
+	- make customers 
+		- fix status
+	- make the counters and the shop
 	- animate fey
 	- music
 	- time
+	- game ui

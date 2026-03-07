@@ -22,7 +22,7 @@ func _on_interact():
 		indicator.play_audio()
 
 func customer_entered(customer: Node) -> void:
-	if customer not in customer_line:
+	if customer not in customer_line and customer.status == CustomerStatus.order_status.TO_PLACE:
 		customer_line.append(customer)
 		
 	if not customer_line.is_empty():

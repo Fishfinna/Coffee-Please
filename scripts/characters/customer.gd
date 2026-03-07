@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var movement_speed = 50.0
+var status = CustomerStatus.order_status.TO_PLACE
 
 @export var target: Node2D
 @onready var navigation_agent_2d = $NavigationAgent2D
@@ -14,7 +15,10 @@ const STUCK_TIME = 0.2
 
 func _ready() -> void:
 	call_deferred("seeker_setup")
-	
+
+func set_status(new_status: CustomerStatus.order_status):
+	status = new_status
+
 func seeker_setup():
 	await get_tree().physics_frame
 	navigation_agent_2d.target_desired_distance = 30.0
