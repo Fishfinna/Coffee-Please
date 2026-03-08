@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
+	print("updated status:", status)
 
 func seeker_setup():
 	await get_tree().physics_frame

@@ -14,6 +14,7 @@ func _on_interact():
 		purchase_audio.play()
 		Global.money += 1
 		var customer = customer_line[0]
+		place_customer_order(customer)
 		customer_line.erase(customer)
 		if customer_line.is_empty():
 			interactable.is_interactable = false
@@ -21,13 +22,15 @@ func _on_interact():
 	else:
 		indicator.play_audio()
 
+func place_customer_order(customer: Node) -> void:
+	customer.set_status(CustomerStatus.order_status.PLACED)
+
 func customer_entered(customer: Node) -> void:
 	if customer not in customer_line and customer.status == CustomerStatus.order_status.TO_PLACE:
 		customer_line.append(customer)
-		customer.status = CustomerStatus.order_status.IN_LINE
+		customer.set_status(CustomerStatus.order_status.IN_LINE)
 		
 	if not customer_line.is_empty():
-		print(len(customer_line))
 		interactable.is_interactable = true
 
 
