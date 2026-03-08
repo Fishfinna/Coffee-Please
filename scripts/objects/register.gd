@@ -24,6 +24,7 @@ func _on_interact():
 func customer_entered(customer: Node) -> void:
 	if customer not in customer_line and customer.status == CustomerStatus.order_status.TO_PLACE:
 		customer_line.append(customer)
+		customer.status = CustomerStatus.order_status.IN_LINE
 		
 	if not customer_line.is_empty():
 		print(len(customer_line))
