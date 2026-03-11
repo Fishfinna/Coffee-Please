@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://dbo33q6tr6sh0"]
 
-[ext_resource type="Texture2D" uid="uid://cdw8owxgcb2uv" path="res://assets/art/tiles/shop-inside.png" id="1_k1eqc"]
 [ext_resource type="Script" uid="uid://xppsjqjjmtmq" path="res://scripts/rooms/tile_map_layer.gd" id="2_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://1qvl5dqyfb42" path="res://scenes/objects/register.tscn" id="3_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://vlwsmf4n3xm" path="res://scenes/characters/robin.tscn" id="4_7fs5h"]
@@ -9,16 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_idwuf"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fxbdo"]
+vertices = PackedVector2Array(8, 8, -3.953125, 8, -3.7734375, -4.859375, 8, -4.859375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-3.7770329, -4.856185, 8, -4.856185, 8, 8, -3.956892, 8)])
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_rjlvv"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7fs5h"]
+vertices = PackedVector2Array(8, 8, -3.953125, 8, -3.953125, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-3.956892, -8, 8, -8, 8, 8, -3.956892, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yo8p7"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -4.5, 8, -4.6796875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -4.4964676, 8, -4.6763268, 8, 8, -8, 8)])
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_gd6fe"]
@@ -27,20 +32,29 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_6paru"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c7qof"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6paru"]
+vertices = PackedVector2Array(0.8984375, 8, -8, 8, -8, -4.859375, 0.71875, -5.0390625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -4.856185, 0.71943474, -5.036044, 0.8992939, 8, -8, 8)])
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i6l6i"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+vertices = PackedVector2Array(0.8984375, 8, -8, 8, -8, -8, 1.078125, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 1.0791531, -8, 0.8992939, 8, -8, 8)])
 agent_radius = 0.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxbdo"]
+load_path = "res://.godot/imported/shop-inside.png-ac41dd0d7d2a087d8ab6fe3503704a9a.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxbdo"]
-texture = ExtResource("1_k1eqc")
+texture = SubResource("CompressedTexture2D_fxbdo")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -49,67 +63,47 @@ texture = ExtResource("1_k1eqc")
 5:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
-1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_idwuf")
 2:1/0 = 0
-2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:1/0 = 0
-3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:1/0 = 0
-4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 5:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
-1:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rjlvv")
 2:2/0 = 0
-2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:2/0 = 0
-3:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:2/0 = 0
-4:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
-1:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 2:3/0 = 0
-2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:3/0 = 0
-3:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:3/0 = 0
-4:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 5:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
-1:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 2:4/0 = 0
-2:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:4/0 = 0
-3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 4:4/0 = 0
-4:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
-1:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6paru")
-2:5/0 = 0
-2:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
-3:5/0 = 0
-3:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
+1:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fxbdo")
 4:5/0 = 0
-4:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
+4:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6paru")
 5:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
-1:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6paru")
+1:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7fs5h")
 2:6/0 = 0
 2:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:6/0 = 0
-3:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
+3:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_c7qof")
 4:6/0 = 0
 4:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i6l6i")
 5:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
-1:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
+1:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7fs5h")
 2:7/0 = 0
 2:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gd6fe")
 3:7/0 = 0
@@ -123,6 +117,10 @@ texture = ExtResource("1_k1eqc")
 3:8/0 = 0
 4:8/0 = 0
 5:8/0 = 0
+2:5/0 = 0
+2:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yo8p7")
+3:5/0 = 0
+3:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yo8p7")
 
 [sub_resource type="TileSet" id="TileSet_7fs5h"]
 navigation_layer_0/layers = 1
@@ -157,7 +155,7 @@ position = Vector2(0.99999994, 124)
 
 [node name="Customer" parent="envrionment" unique_id=2125466650 node_paths=PackedStringArray("target") groups=["customer"] instance=ExtResource("8_7fs5h")]
 position = Vector2(-16, 22)
-target = NodePath("../Register")
+target = NodePath("../fey")
 
 [node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(144, 113)
