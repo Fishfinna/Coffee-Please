@@ -221,6 +221,7 @@ text = "exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Control" parent="." unique_id=38292117]
+visible = false
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchors_preset = 8
