@@ -73,7 +73,7 @@ func get_next_save_filename() -> String:
 #endregion
 
 #region Save / Load
-func save_game(player: Node2D, filename: String = "") -> void:
+func save_game(player: Node2D, customers: Array[Node], filename: String = "") -> void:
 	create_directory(save_dir)
 
 	if filename == "":
@@ -86,6 +86,9 @@ func save_game(player: Node2D, filename: String = "") -> void:
 	var data := SceneData.new()
 	if player:
 		data.player_position = player.global_position
+	
+	for customer in customers:
+		data.customers.append(customer.get_customer_data())
 
 	var err := ResourceSaver.save(data, full_path)
 	if err != OK:
@@ -110,7 +113,6 @@ func load_game(filename: String = "") -> SceneData:
 	if not FileAccess.file_exists(full_path):
 		print("Save file not found:", full_path)
 		return null
-
 	return ResourceLoader.load(full_path) as SceneData
 #endregion
 

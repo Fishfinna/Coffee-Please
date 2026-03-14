@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxs21"]
 size = Vector2(15, 5)
 
-[node name="Customer" type="CharacterBody2D" unique_id=833753758]
+[node name="Customer" type="CharacterBody2D" unique_id=833753758 groups=["customer"]]
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_vat4n")

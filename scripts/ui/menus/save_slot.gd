@@ -6,8 +6,8 @@ var save_manager: SaveManager = SaveManager.new()
 @onready var file_label: Label = $NameMargin/FileName
 @onready var time_label: Label = $ModifiedMargin/ModifiedTime
 
-@onready var players = get_tree().get_nodes_in_group("player")
-@onready var player = players[0] if players.size() > 0 else null
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var customer_group = "customer"
 
 @onready var delete_button = $delete
 @onready var trash_open_icon := preload("res://assets/art/ui/icons/trash-opened.png")
@@ -26,13 +26,25 @@ func _delete() -> void:
 	emit_signal("deleted", save_file)
 
 func _save_over() -> void:
-	save_manager.save_game(player, save_file)
+	save_manager.save_game(player, get_tree().get_nodes_in_group(customer_group), save_file)
 
 func _load_slot() -> void:
 	var data = save_manager.load_game(save_file)
-	if data != null:
-		player.global_position = data.player_position
-		Global.money = data.money
+	if data == null:
+		return
+	for customer in get_tree().get_nodes_in_group(customer_group):
+		print("name:", customer.name)
+		customer.queue_free()
+	
+	player.global_position = data.player_position
+	Global.money = data.money
+
+	for customer in data.customers:
+		var shop_node = get_node("/root/Game/Coffee Shop")
+		print(shop_node)
+		var inst = load(customer.scene).instantiate()
+		shop_node.add_child(inst)
+		inst.load_customer_data(customer)
 
 func _delete_hovered() -> void:
 	if delete_button:

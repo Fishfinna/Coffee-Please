@@ -11,8 +11,8 @@ var is_transitioning := false
 
 @onready var save_list = $save/scroll_saves/MarginContainer/VBoxContainer
 
-@onready var players = get_tree().get_nodes_in_group("player")
-@onready var player = players[0] if players.size() > 0 else null
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var customers = get_tree().get_nodes_in_group("customer")
 
 var save_manager = SaveManager.new()
 
@@ -62,7 +62,8 @@ func _on_save_back_pressed() -> void:
 	pause_menu.show()
 
 func _on_save_pressed() -> void:
-	save_manager.save_game(player)
+	print(customers, typeof(customers[0]))
+	save_manager.save_game(player, customers)
 	print("saved")
 	display_saves()
 	

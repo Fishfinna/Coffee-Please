@@ -8,7 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://ck4euveb8k06m" path="res://themes/scrollers/scroll-background.tres" id="5_cgbfu"]
 [ext_resource type="StyleBox" uid="uid://c76u4xrpxqsly" path="res://themes/buttons/delete-button/delete-button-hover.tres" id="5_d3e7e"]
 [ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
-[ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_ywx0d"]
+[ext_resource type="StyleBox" uid="uid://bm6bb110reypc" path="res://themes/panels/standard_panel_color.tres" id="5_ywx0d"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck2yl"]
@@ -36,9 +36,6 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgbfu"]
 bg_color = Color(0.29219002, 0.29219005, 0.29218993, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0qmv4"]
-texture = ExtResource("5_ywx0d")
 
 [sub_resource type="ImageTexture" id="ImageTexture_d3e7e"]
 
@@ -153,7 +150,7 @@ Label/styles/normal = SubResource("StyleBoxEmpty_ywx0d")
 MenuButton/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 MenuButton/colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 MenuButton/styles/normal = SubResource("StyleBoxFlat_cgbfu")
-Panel/styles/panel = SubResource("StyleBoxTexture_0qmv4")
+Panel/styles/panel = ExtResource("5_ywx0d")
 ScrollContainer/styles/panel = ExtResource("1_1fv3y")
 TooltipLabel/colors/font_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
 TooltipPanel/constants/resize_margin = 4

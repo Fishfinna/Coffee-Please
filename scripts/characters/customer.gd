@@ -56,3 +56,29 @@ func _physics_process(delta: float) -> void:
 	
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = velocity.lerp(safe_velocity, 0.25)
+
+func _restore_target(path: NodePath) -> void:
+	if has_node(path):
+		target = get_node(path)
+		
+func get_customer_data() -> Dictionary:
+	var data := {
+		"scene": scene_file_path,
+		"transform": global_transform,
+		"z_index": z_index,
+		"movement_speed": movement_speed,
+		"status": status,
+		"target_path": target.get_path() if target else NodePath()
+	}
+
+	return data
+
+func load_customer_data(data: Dictionary) -> void:
+	global_transform = data.transform
+	z_index = data.z_index
+
+	movement_speed = data.movement_speed
+	status = data.status
+
+	if data.target_path != NodePath():
+		call_deferred("_restore_target", data.target_path)

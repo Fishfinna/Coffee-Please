@@ -4,11 +4,15 @@
 [ext_resource type="Shader" uid="uid://dlip7xu7lb1mo" path="res://scripts/shaders/pause_menu.gdshader" id="2_0lmf7"]
 [ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
+[ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
 shader = ExtResource("2_0lmf7")
 shader_parameter/lod = 0.0
 shader_parameter/tint_color = Color(0.9799101, 0.9718495, 0.96782416, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2f5f3"]
+texture = ExtResource("5_hf471")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idy5m"]
 content_margin_left = 0.0
@@ -181,6 +185,8 @@ anchor_right = 1.1
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_idy5m")
+theme_override_styles/panel = SubResource("StyleBoxTexture_2f5f3")
 metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Button" parent="pause" unique_id=1764854574]
@@ -402,6 +408,10 @@ anchor_right = 0.23106061
 anchor_bottom = 0.19999996
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "< back"
 flat = true
 metadata/_edit_use_anchors_ = true
