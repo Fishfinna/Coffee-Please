@@ -1,0 +1,434 @@
+[gd_scene format=3 uid="uid://7jf6e4julwkk"]
+
+[ext_resource type="Script" uid="uid://qvv7o44v7if3" path="res://scripts/ui/menus/pause_menu.gd" id="1_6tw0m"]
+[ext_resource type="Shader" uid="uid://dlip7xu7lb1mo" path="res://scripts/shaders/pause_menu.gdshader" id="2_0lmf7"]
+[ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
+[ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
+shader = ExtResource("2_0lmf7")
+shader_parameter/lod = 0.0
+shader_parameter/tint_color = Color(0.9799101, 0.9718495, 0.96782416, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2f5f3"]
+texture = ExtResource("5_hf471")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idy5m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_n4ldv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur_bg:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pause:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pause:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pause:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pause:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dd7lr"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blur_bg:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.046976235, -0.13333334, 0, 0),
+"times": PackedFloat32Array(0, 0.2818574)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pause:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.050000004, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pause:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.050000004, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pause:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.050000004, 0, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pause:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.050000004, 0.16666667, 1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8uki6"]
+_data = {
+&"RESET": SubResource("Animation_n4ldv"),
+&"blur": SubResource("Animation_dd7lr")
+}
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=250378609]
+process_mode = 3
+follow_viewport_enabled = true
+script = ExtResource("1_6tw0m")
+save_slot_scene = ExtResource("2_idy5m")
+
+[node name="blur_bg" type="ColorRect" parent="." unique_id=1803990581]
+material = SubResource("ShaderMaterial_f6eus")
+offset_right = 640.0
+offset_bottom = 368.0
+
+[node name="pause" type="Control" parent="." unique_id=779354205]
+custom_minimum_size = Vector2(128, 180)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -90.0
+offset_right = 80.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="pause" unique_id=1342169930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = 1.1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_idy5m")
+theme_override_styles/panel = SubResource("StyleBoxTexture_2f5f3")
+metadata/_edit_use_anchors_ = true
+
+[node name="save" type="Button" parent="pause" unique_id=1764854574]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.122222215
+anchor_right = 1.0
+anchor_bottom = 0.34444448
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "save"
+metadata/_edit_use_anchors_ = true
+
+[node name="options" type="Button" parent="pause" unique_id=576442192]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.38888893
+anchor_right = 1.0
+anchor_bottom = 0.61111116
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "options
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="Button" parent="pause" unique_id=1433125928]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6555556
+anchor_right = 1.0
+anchor_bottom = 0.87777776
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "exit"
+metadata/_edit_use_anchors_ = true
+
+[node name="save" type="Control" parent="." unique_id=38292117]
+visible = false
+custom_minimum_size = Vector2(280, 180)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="save" unique_id=1889334021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="save" unique_id=1817608063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71212125
+anchor_top = -0.011111122
+anchor_right = 1.0
+anchor_bottom = 0.1295139
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "resume >"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="save" unique_id=2116316972]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.005902778
+anchor_right = 0.24285714
+anchor_bottom = 0.12951387
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "< back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="border-panel" type="Panel" parent="save" unique_id=1180491926]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035714272
+anchor_top = 0.11111111
+anchor_right = 0.9607143
+anchor_bottom = 1.0222223
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_idy5m")
+metadata/_edit_use_anchors_ = true
+
+[node name="scroll_saves" type="ScrollContainer" parent="save" unique_id=960641359]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035714295
+anchor_top = 0.12222223
+anchor_right = 0.96
+anchor_bottom = 1.0152519
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_idy5m")
+theme_override_constants/scrollbar_h_separation = 1
+follow_focus = true
+draw_focus_border = true
+vertical_scroll_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="save/scroll_saves" unique_id=854920049]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="save/scroll_saves/MarginContainer" unique_id=1888365933]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_idy5m")
+
+[node name="save" type="Button" parent="save" unique_id=210689927]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06060607
+anchor_top = 1.0555556
+anchor_right = 0.39560607
+anchor_bottom = 1.1805556
+grow_vertical = 0
+text = "new save"
+metadata/_edit_use_anchors_ = true
+
+[node name="load" type="Button" parent="save" unique_id=1001891734]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6363637
+anchor_top = 1.0555556
+anchor_right = 0.909091
+anchor_bottom = 1.1805556
+grow_horizontal = 0
+grow_vertical = 0
+text = "restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="save-label" type="Label" parent="save" unique_id=267327881]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.14444445
+anchor_right = 1.0
+anchor_bottom = 0.005555566
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "SAVE"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="options" type="Control" parent="." unique_id=496855907]
+visible = false
+custom_minimum_size = Vector2(280, 180)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="options" unique_id=1052220233]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="options" unique_id=1146897924]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6969697
+anchor_top = 0.049999952
+anchor_right = 0.93939394
+anchor_bottom = 0.19999996
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+text = "resume >"
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="options" unique_id=844189795]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.060606062
+anchor_top = 0.049999952
+anchor_right = 0.23106061
+anchor_bottom = 0.19999996
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "< back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
+libraries/ = SubResource("AnimationLibrary_8uki6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=987621046]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
+[connection signal="pressed" from="pause/options" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="pause/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="save/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="save/back" to="." method="_on_save_back_pressed"]
+[connection signal="pressed" from="save/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="save/load" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="options/resume" to="." method="_resume_game"]
+[connection signal="pressed" from="options/back" to="." method="_on_options_back_pressed"]

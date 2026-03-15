@@ -136,34 +136,34 @@ tile_map_data = PackedByteArray("AADs//X/AAAAAAAAAADs//b/AAAAAAEAAADs//f/AAAAAAE
 tile_set = SubResource("TileSet_7fs5h")
 script = ExtResource("2_7fs5h")
 
-[node name="envrionment" type="Node2D" parent="." unique_id=1960842609]
+[node name="environment" type="Node2D" parent="." unique_id=1960842609]
 y_sort_enabled = true
 position = Vector2(320, 158)
 
-[node name="Register" parent="envrionment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
+[node name="Register" parent="environment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
 position = Vector2(-68, 60)
 
-[node name="Sink" parent="envrionment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
+[node name="Sink" parent="environment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
 position = Vector2(138, 78)
 
-[node name="robin" parent="envrionment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
+[node name="robin" parent="environment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
 position = Vector2(112, 157)
 
-[node name="fey" parent="envrionment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
+[node name="fey" parent="environment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false
 position = Vector2(0.99999994, 124)
 
-[node name="Customer" parent="envrionment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+[node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
 position = Vector2(-16, 22)
 target = NodePath("../Register")
 
-[node name="EspressoMachine" parent="envrionment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
+[node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(144, 113)
 
-[node name="Customer2" parent="envrionment" unique_id=833753758 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-336, -136)
+[node name="Customer2" parent="environment" unique_id=833753758 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+position = Vector2(-107, 22)
 target = NodePath("../Register")
 
-[node name="Customer3" parent="envrionment" unique_id=1931359905 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-352, -114)
+[node name="Customer3" parent="environment" unique_id=1931359905 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+position = Vector2(-151, 70)
 target = NodePath("../Register")

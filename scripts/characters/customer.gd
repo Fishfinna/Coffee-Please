@@ -79,6 +79,7 @@ func load_customer_data(data: Dictionary) -> void:
 
 	movement_speed = data.movement_speed
 	status = data.status
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
 	if data.target_path != NodePath():
 		call_deferred("_restore_target", data.target_path)

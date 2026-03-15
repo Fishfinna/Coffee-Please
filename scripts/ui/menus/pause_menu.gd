@@ -14,11 +14,18 @@ var is_transitioning := false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customers = get_tree().get_nodes_in_group("customer")
 
+@export var swipe_sound: AudioStream = preload("res://assets/audio/ui/swipe.mp3")
+var fx_player: AudioStreamPlayer
+
 var save_manager = SaveManager.new()
 
 func _ready():
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	fx_player = AudioStreamPlayer.new()
+	fx_player.bus = "FX"
+	add_child(fx_player)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and not is_transitioning:
@@ -53,18 +60,20 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_save_menu_pressed() -> void:
-	pause_menu.hide()
-	save_menu.show()
+	swap_menu(pause_menu, save_menu)
 	display_saves()
 
 func _on_save_back_pressed() -> void:
-	save_menu.hide()
-	pause_menu.show()
+	swap_menu(save_menu, pause_menu)
+
+func _on_options_menu_pressed() -> void:
+	swap_menu(pause_menu, options_menu)
+
+func _on_options_back_pressed() -> void:
+	swap_menu(options_menu, pause_menu)
 
 func _on_save_pressed() -> void:
-	print(customers, typeof(customers[0]))
 	save_manager.save_game(player, customers)
-	print("saved")
 	display_saves()
 	
 func display_saves() -> void:
@@ -74,7 +83,6 @@ func display_saves() -> void:
 		child.queue_free()
 
 	var saves := save_manager.list_saves()
-
 	for save in saves:
 		var slot: SaveSlot = save_slot_scene.instantiate()
 		save_list.add_child(slot)
@@ -82,18 +90,18 @@ func display_saves() -> void:
 		slot.deleted.connect(_on_save_deleted)
 
 func _on_save_deleted(file_name: String) -> void:
-	display_saves()  # refresh the list
+	display_saves()
 
 func _on_restart_pressed() -> void:
-	var current_scene := get_tree().current_scene
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	Global.money = 100
 
-func _on_options_menu_pressed() -> void:
-	pause_menu.hide()
-	options_menu.show()
-	
-func _on_options_back_pressed() -> void:
-	options_menu.hide()
-	pause_menu.show()
+func swap_menu(from_menu: Control, to_menu: Control) -> void:
+	if not from_menu or not to_menu:
+		return
+	#fx_player.stream = swipe_sound
+	#fx_player.play()
+
+	from_menu.hide()
+	to_menu.show()

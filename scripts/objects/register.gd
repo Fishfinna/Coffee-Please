@@ -33,7 +33,6 @@ func customer_entered(customer: Node) -> void:
 	if not customer_line.is_empty():
 		interactable.is_interactable = true
 
-
 func customer_exited(customer: Node) -> void:
 	if customer in customer_line:
 		customer_line.erase(customer)

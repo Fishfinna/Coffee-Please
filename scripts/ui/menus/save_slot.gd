@@ -40,7 +40,7 @@ func _load_slot() -> void:
 	Global.money = data.money
 
 	for customer in data.customers:
-		var shop_node = get_node("/root/Game/Coffee Shop")
+		var shop_node = get_node("/root/Game/Coffee Shop/environment")
 		print(shop_node)
 		var inst = load(customer.scene).instantiate()
 		shop_node.add_child(inst)

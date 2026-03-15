@@ -10,6 +10,7 @@ size = Vector2(16, 6)
 
 [node name="fey chu" type="CharacterBody2D" unique_id=122533714 groups=["player"]]
 y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_5vdk4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814033569]
