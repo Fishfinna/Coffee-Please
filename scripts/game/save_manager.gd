@@ -73,7 +73,12 @@ func get_next_save_filename() -> String:
 #endregion
 
 #region Save / Load
-func save_game(player: Node2D, customers: Array[Node], filename: String = "") -> void:
+func save_game(args: Dictionary) -> void:
+	var player: Node2D = args.player
+	var customers: Array = args.customers
+	var register_line = args.get("register_line", "")
+	var filename: String = args.get("filename", "")
+	
 	create_directory(save_dir)
 
 	if filename == "":

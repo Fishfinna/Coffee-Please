@@ -9,6 +9,8 @@ var save_manager: SaveManager = SaveManager.new()
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customer_group = "customer"
 
+@onready var game := get_tree().current_scene
+
 @onready var delete_button = $delete
 @onready var trash_open_icon := preload("res://assets/art/ui/icons/trash-opened.png")
 @onready var trash_closed_icon := preload("res://assets/art/ui/icons/trash-closed.png")
@@ -26,14 +28,13 @@ func _delete() -> void:
 	emit_signal("deleted", save_file)
 
 func _save_over() -> void:
-	save_manager.save_game(player, get_tree().get_nodes_in_group(customer_group), save_file)
+	save_manager.save_game(game.get_state(save_file))
 
 func _load_slot() -> void:
 	var data = save_manager.load_game(save_file)
 	if data == null:
 		return
 	for customer in get_tree().get_nodes_in_group(customer_group):
-		print("name:", customer.name)
 		customer.queue_free()
 	
 	player.global_position = data.player_position
