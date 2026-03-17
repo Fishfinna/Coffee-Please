@@ -161,9 +161,9 @@ target = NodePath("../Register")
 position = Vector2(144, 113)
 
 [node name="Customer2" parent="environment" unique_id=833753758 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-48, 66)
+position = Vector2(49, 62)
 target = NodePath("../Register")
 
 [node name="Customer3" parent="environment" unique_id=466194746 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-32, 44)
+position = Vector2(-163, 30)
 target = NodePath("../Register")

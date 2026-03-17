@@ -1,5 +1,7 @@
 extends CharacterBody2D
+class_name Customer
 
+var id: String
 var movement_speed = 50.0
 var status = CustomerStatus.order_status.TO_PLACE
 
@@ -15,6 +17,14 @@ const STUCK_TIME = 0.2
 
 func _ready() -> void:
 	call_deferred("seeker_setup")
+	print("before:", id)
+	if id == "" or id == null:
+		id = str(randi(), "_", Time.get_ticks_usec())
+	print("after:", id)
+	CustomerRegistry.register(self)
+
+func _exit_tree():
+	CustomerRegistry.unregister(self)
 
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
@@ -63,6 +73,7 @@ func _restore_target(path: NodePath) -> void:
 		
 func get_customer_data() -> Dictionary:
 	var data := {
+		"id": id,
 		"scene": scene_file_path,
 		"transform": global_transform,
 		"z_index": z_index,
@@ -70,16 +81,21 @@ func get_customer_data() -> Dictionary:
 		"status": status,
 		"target_path": target.get_path() if target else NodePath()
 	}
-
 	return data
 
 func load_customer_data(data: Dictionary) -> void:
+	CustomerRegistry.unregister(self)
+	id = data.id
 	global_transform = data.transform
 	z_index = data.z_index
-
 	movement_speed = data.movement_speed
 	status = data.status
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 
 	if data.target_path != NodePath():
 		call_deferred("_restore_target", data.target_path)
+
+	CustomerRegistry.register(self)
+	print(CustomerRegistry.by_id)
+		
+		

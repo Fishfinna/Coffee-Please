@@ -8,6 +8,7 @@ var is_transitioning := false
 @onready var pause_menu = $pause
 @onready var save_menu = $save
 @onready var options_menu = $options
+@onready var game := get_tree().current_scene
 
 @onready var save_list = $save/scroll_saves/MarginContainer/VBoxContainer
 
@@ -73,10 +74,7 @@ func _on_options_back_pressed() -> void:
 	swap_menu(options_menu, pause_menu)
 
 func _on_save_pressed() -> void:
-	save_manager.save_game({
-		"player": player, 
-		"customers": get_tree().get_nodes_in_group(customer_group_name)
-	})
+	save_manager.save_game(game.get_state())
 	display_saves()
 	
 func display_saves() -> void:

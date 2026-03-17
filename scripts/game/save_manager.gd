@@ -94,6 +94,9 @@ func save_game(args: Dictionary) -> void:
 	
 	for customer in customers:
 		data.customers.append(customer.get_customer_data())
+	
+	if register_line:
+		data.register_line = register_line
 
 	var err := ResourceSaver.save(data, full_path)
 	if err != OK:
