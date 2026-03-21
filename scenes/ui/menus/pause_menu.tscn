@@ -363,7 +363,6 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="options" type="Control" parent="." unique_id=496855907]
-visible = false
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchors_preset = 8
@@ -414,6 +413,28 @@ theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.41176
 theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "< back"
 flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="options" unique_id=1998389344]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28928572
+anchor_top = 0.32222223
+anchor_right = 0.95
+anchor_bottom = 0.41111112
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "sound"
+accessibility_description = "master audio"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="options/HSlider" unique_id=177614862]
+layout_mode = 0
+anchor_left = -0.27567568
+anchor_top = -0.0625
+anchor_right = -0.05945946
+anchor_bottom = 0.9375
+text = "Sound:"
 metadata/_edit_use_anchors_ = true
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
