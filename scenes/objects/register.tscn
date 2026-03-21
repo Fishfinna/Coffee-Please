@@ -8,9 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://d4jmw3dprh1jh" path="res://assets/audio/objects/register-purchase.mp3" id="6_n63nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37wl2"]
-size = Vector2(26, 9)
+size = Vector2(26, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0xyd"]
+radius = 13.079257
 
 [node name="Register" type="Node2D" unique_id=684012640]
 y_sort_enabled = true
@@ -23,7 +24,7 @@ position = Vector2(1, -12)
 texture = ExtResource("1_gvynn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body" unique_id=100129909]
-position = Vector2(0, -4.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_37wl2")
 
 [node name="Indicator" parent="body" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_th0y5")]

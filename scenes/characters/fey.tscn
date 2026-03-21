@@ -16,6 +16,7 @@ script = ExtResource("1_5vdk4")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814033569]
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D" unique_id=57456137]
+visible = false
 position = Vector2(0, -6)
 texture = ExtResource("2_7yt0o")
 
