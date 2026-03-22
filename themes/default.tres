@@ -11,6 +11,14 @@
 [ext_resource type="StyleBox" uid="uid://bm6bb110reypc" path="res://themes/panels/standard_panel_color.tres" id="5_ywx0d"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywx0d"]
+bg_color = Color(0.22670749, 0.22670752, 0.2267074, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.61238635, 0.5768561, 0.5174688, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck2yl"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -135,6 +143,7 @@ Button/styles/hover_mirrored = ExtResource("1_l6fbw")
 Button/styles/hover_pressed = ExtResource("1_l6fbw")
 Button/styles/normal = ExtResource("3_d3e7e")
 Button/styles/pressed = ExtResource("1_l6fbw")
+HSlider/styles/slider = SubResource("StyleBoxFlat_ywx0d")
 Label/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 Label/colors/font_outline_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
