@@ -5,19 +5,58 @@
 [ext_resource type="StyleBox" uid="uid://civ377bfmawal" path="res://themes/buttons/menu_button_hover.tres" id="1_l6fbw"]
 [ext_resource type="StyleBox" uid="uid://dufata2a0kdm8" path="res://themes/buttons/menu_button_focus.tres" id="2_5hd2i"]
 [ext_resource type="StyleBox" uid="uid://dhqxpf0rcayl3" path="res://themes/buttons/menu_button_normal.tres" id="3_d3e7e"]
+[ext_resource type="Texture2D" uid="uid://h3gci7bxir3g" path="res://assets/art/ui/icons/coffee-bean-normal.png" id="5_8j4t7"]
 [ext_resource type="StyleBox" uid="uid://ck4euveb8k06m" path="res://themes/scrollers/scroll-background.tres" id="5_cgbfu"]
 [ext_resource type="StyleBox" uid="uid://c76u4xrpxqsly" path="res://themes/buttons/delete-button/delete-button-hover.tres" id="5_d3e7e"]
 [ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
 [ext_resource type="StyleBox" uid="uid://bm6bb110reypc" path="res://themes/panels/standard_panel_color.tres" id="5_ywx0d"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
+[ext_resource type="Texture2D" uid="uid://gwp8qoxhtiau" path="res://assets/art/ui/icons/coffee-bean-light.png" id="6_nlad3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywx0d"]
-bg_color = Color(0.22670749, 0.22670752, 0.2267074, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmww"]
+bg_color = Color(0.6039216, 0.4627451, 0.34117648, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.61238635, 0.5768561, 0.5174688, 1)
+border_color = Color(0.6039216, 0.4627451, 0.34117648, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.2627451, 0.22745098, 0.19607843, 0.1254902)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8avh"]
+bg_color = Color(0.5686275, 0.43137255, 0.32156864, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5686275, 0.43137255, 0.32156864, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.2627451, 0.22745098, 0.19607843, 0.1254902)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeolj"]
+bg_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.26244184, 0.22658296, 0.19641912, 0.127)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck2yl"]
 content_margin_left = 4.0
@@ -143,7 +182,11 @@ Button/styles/hover_mirrored = ExtResource("1_l6fbw")
 Button/styles/hover_pressed = ExtResource("1_l6fbw")
 Button/styles/normal = ExtResource("3_d3e7e")
 Button/styles/pressed = ExtResource("1_l6fbw")
-HSlider/styles/slider = SubResource("StyleBoxFlat_ywx0d")
+HSlider/icons/grabber = ExtResource("5_8j4t7")
+HSlider/icons/grabber_highlight = ExtResource("6_nlad3")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_dsmww")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_t8avh")
+HSlider/styles/slider = SubResource("StyleBoxFlat_aeolj")
 Label/colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
 Label/colors/font_outline_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

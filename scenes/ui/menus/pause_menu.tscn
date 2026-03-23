@@ -227,7 +227,6 @@ text = "exit"
 metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Control" parent="." unique_id=38292117]
-visible = false
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchors_preset = 8
@@ -365,17 +364,13 @@ metadata/_edit_use_anchors_ = true
 [node name="options" type="Control" parent="." unique_id=496855907]
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -90.0
-offset_right = 140.0
-offset_bottom = 90.0
+anchor_left = 0.28125
+anchor_top = 0.17777778
+anchor_right = 0.71875
+anchor_bottom = 0.8666667
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="options" unique_id=1052220233]
 layout_mode = 1
@@ -387,24 +382,30 @@ grow_vertical = 2
 
 [node name="resume" type="Button" parent="options" unique_id=1146897924]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6969697
-anchor_top = 0.049999952
-anchor_right = 0.93939394
-anchor_bottom = 0.19999996
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 7.0000076
+offset_right = -8.0
+offset_bottom = 23.000008
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_idy5m")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "resume >"
-metadata/_edit_use_anchors_ = true
+flat = true
 
 [node name="back" type="Button" parent="options" unique_id=844189795]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.060606062
-anchor_top = 0.049999952
-anchor_right = 0.23106061
-anchor_bottom = 0.19999996
+offset_left = 10.0
+offset_top = 7.0000076
+offset_right = 47.0
+offset_bottom = 23.000008
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_idy5m")
 theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
@@ -413,19 +414,19 @@ theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.41176
 theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "< back"
 flat = true
-metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="options" unique_id=1998389344]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.28928572
-anchor_top = 0.32222223
-anchor_right = 0.95
-anchor_bottom = 0.41111112
+anchor_left = 0.24285714
+anchor_top = 0.18548389
+anchor_right = 0.9035714
+anchor_bottom = 0.27437276
 grow_horizontal = 2
 grow_vertical = 2
 accessibility_name = "sound"
 accessibility_description = "master audio"
+value = 20.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="options/HSlider" unique_id=177614862]
@@ -436,6 +437,19 @@ anchor_right = -0.05945946
 anchor_bottom = 0.9375
 text = "Sound:"
 metadata/_edit_use_anchors_ = true
+
+[node name="save-label" type="Label" parent="options" unique_id=221680005]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_right = 23.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "OPTIONS"
+horizontal_alignment = 1
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
 libraries/ = SubResource("AnimationLibrary_8uki6")
