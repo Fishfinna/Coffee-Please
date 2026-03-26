@@ -326,7 +326,7 @@ position = Vector2(112, 157)
 
 [node name="fey" parent="environment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false
-position = Vector2(-123, 125)
+position = Vector2(-39, 128)
 
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
 position = Vector2(-144, 27)

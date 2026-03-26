@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
 [ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
+[ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scenes/ui/menus/options.gd" id="6_2f5f3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
 shader = ExtResource("2_0lmf7")
@@ -370,6 +371,7 @@ anchor_right = 0.71875
 anchor_bottom = 0.8666667
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_2f5f3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="options" unique_id=1052220233]
@@ -418,23 +420,26 @@ flat = true
 [node name="HSlider" type="HSlider" parent="options" unique_id=1998389344]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.24285714
-anchor_top = 0.18548389
-anchor_right = 0.9035714
-anchor_bottom = 0.27437276
+anchor_left = 0.25714287
+anchor_top = 0.12096776
+anchor_right = 0.92142856
+anchor_bottom = 0.25421146
 grow_horizontal = 2
 grow_vertical = 2
 accessibility_name = "sound"
 accessibility_description = "master audio"
-value = 20.0
+max_value = 1.0
+step = 0.01
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="options/HSlider" unique_id=177614862]
-layout_mode = 0
-anchor_left = -0.27567568
-anchor_top = -0.0625
-anchor_right = -0.05945946
-anchor_bottom = 0.9375
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.26881716
+anchor_top = 0.2118359
+anchor_right = -0.052600943
+anchor_bottom = 0.69603235
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
 text = "Sound:"
 metadata/_edit_use_anchors_ = true
 
@@ -467,3 +472,4 @@ offset_bottom = 40.0
 [connection signal="pressed" from="save/load" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="options/resume" to="." method="_resume_game"]
 [connection signal="pressed" from="options/back" to="." method="_on_options_back_pressed"]
+[connection signal="value_changed" from="options/HSlider" to="options" method="_on_h_slider_value_changed"]
