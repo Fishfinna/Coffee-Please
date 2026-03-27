@@ -158,8 +158,10 @@ save_slot_scene = ExtResource("2_idy5m")
 
 [node name="blur_bg" type="ColorRect" parent="." unique_id=1803990581]
 material = SubResource("ShaderMaterial_f6eus")
-offset_right = 640.0
-offset_bottom = 368.0
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 666.0
+offset_bottom = 389.0
 
 [node name="pause" type="Control" parent="." unique_id=779354205]
 custom_minimum_size = Vector2(128, 180)
@@ -401,6 +403,21 @@ theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647
 theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "resume >"
 flat = true
+
+[node name="CheckButton" type="CheckButton" parent="options" unique_id=598506883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -8.0
+offset_right = 50.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fullscreen"
 
 [node name="back" type="Button" parent="options" unique_id=844189795]
 layout_mode = 1
