@@ -417,7 +417,12 @@ offset_right = 50.5
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Fullscreen"
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_focus_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_pressed_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+text = "Fullscreen:"
+flat = true
 
 [node name="back" type="Button" parent="options" unique_id=844189795]
 layout_mode = 1
