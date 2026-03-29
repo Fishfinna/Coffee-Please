@@ -408,9 +408,9 @@ flat = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.073214285
-anchor_top = 0.25403225
+anchor_top = 0.33064517
 anchor_right = 0.48035714
-anchor_bottom = 0.31854838
+anchor_bottom = 0.3951613
 offset_left = 1.5
 offset_right = -1.5
 grow_horizontal = 2
@@ -492,5 +492,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="save/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="save/load" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="options/resume" to="." method="_resume_game"]
+[connection signal="toggled" from="options/CheckButton" to="options" method="_on_check_button_toggled"]
 [connection signal="pressed" from="options/back" to="." method="_on_options_back_pressed"]
 [connection signal="value_changed" from="options/HSlider" to="options" method="_on_h_slider_value_changed"]
