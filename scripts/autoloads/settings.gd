@@ -1,5 +1,10 @@
 # settings_autoload.gd
+# settings_autoload.gd
 extends Node
+
+signal fullscreen_changed(value: bool)
+signal master_volume_changed(value: float)
+signal resolution_changed(value: Vector2i)
 
 const SETTINGS_PATH := "user://settings.tres"
 
@@ -15,9 +20,22 @@ func update_setting(key: String, value) -> bool:
 	if not key in ["master_volume", "fullscreen", "resolution"]:
 		push_warning("Settings: unknown key '%s'" % key)
 		return false
+
+	if get(key) == value:
+		return false
+
 	set(key, value)
 	save_settings()
 	apply_settings()
+
+	match key:
+		"fullscreen":
+			fullscreen_changed.emit(fullscreen)
+		"master_volume":
+			master_volume_changed.emit(master_volume)
+		"resolution":
+			resolution_changed.emit(resolution)
+
 	return true
 
 func get_setting(key: String):

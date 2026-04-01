@@ -19,6 +19,10 @@ run/main_scene="uid://caeodaqay7wx6"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://jo6vmbwp8mkw"
 
+[audio]
+
+buses/default_bus_layout="res://themes/default_bus_layout.tres"
+
 [autoload]
 
 window="*uid://d2qd1s3il2aiu"
