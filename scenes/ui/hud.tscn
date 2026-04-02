@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://55vcj8umj2yy"]
+
+[node name="Hud" type="Control" unique_id=2133758882]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="time" type="Label" parent="." unique_id=1876326302]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="weather" type="Panel" parent="." unique_id=1967288324]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
