@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://55vcj8umj2yy"]
 
+[ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud/display_clock.gd" id="1_0mwgc"]
+
 [node name="Hud" type="Control" unique_id=2133758882]
 layout_mode = 3
 anchors_preset = 0
@@ -13,6 +15,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 16.0
+script = ExtResource("1_0mwgc")
 
 [node name="weather" type="Panel" parent="." unique_id=1967288324]
 layout_mode = 0
