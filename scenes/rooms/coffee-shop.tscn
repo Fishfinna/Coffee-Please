@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
+[ext_resource type="PackedScene" uid="uid://55vcj8umj2yy" path="res://scenes/ui/hud.tscn" id="9_yo8p7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fxbdo"]
 vertices = PackedVector2Array(8, 8, -3.953125, 8, -3.7734375, -4.859375, 8, -4.859375)
@@ -334,3 +335,9 @@ target = NodePath("../Register")
 
 [node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(144, 118)
+
+[node name="Hud" parent="environment" unique_id=2133758882 instance=ExtResource("9_yo8p7")]
+offset_left = -296.0
+offset_top = -127.0
+offset_right = -296.0
+offset_bottom = -127.0
