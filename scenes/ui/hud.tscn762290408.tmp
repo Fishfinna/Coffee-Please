@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://55vcj8umj2yy"]
+
+[ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud/display_clock.gd" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://ccoghrhy24on8" path="res://scripts/ui/hud.gd" id="1_8qguk"]
+[ext_resource type="Script" uid="uid://bdadh7aubiq2x" path="res://scripts/game/time_system.gd" id="2_bo48s"]
+[ext_resource type="Script" uid="uid://o71qoly50fix" path="res://scripts/game/date_time.gd" id="3_8qguk"]
+
+[sub_resource type="Resource" id="Resource_136eg"]
+script = ExtResource("3_8qguk")
+metadata/_custom_type_script = "uid://o71qoly50fix"
+
+[node name="Hud" type="Control" unique_id=2133758882]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8qguk")
+
+[node name="background" type="Panel" parent="." unique_id=49953724]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 51.0
+
+[node name="weather" type="Panel" parent="." unique_id=1967288324]
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 24.0
+
+[node name="time" type="Label" parent="." unique_id=1876326302]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+script = ExtResource("1_0mwgc")
+
+[node name="money" type="Label" parent="." unique_id=1949952514]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 13.0
+offset_right = 72.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+text = "100$"
+script = ExtResource("1_0mwgc")
+
+[node name="TimeSystem" type="Node" parent="." unique_id=2002563981]
+script = ExtResource("2_bo48s")
+date_time = SubResource("Resource_136eg")
+metadata/_custom_type_script = "uid://bdadh7aubiq2x"
