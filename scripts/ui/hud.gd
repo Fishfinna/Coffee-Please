@@ -8,7 +8,6 @@ var _day_start_money: int = 0
 var _last_today: int = -1
 
 func _ready() -> void:
-	# Initialize day start when HUD appears
 	_day_start_money = Global.money
 	_update_labels()
 
