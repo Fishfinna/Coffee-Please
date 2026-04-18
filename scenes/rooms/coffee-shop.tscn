@@ -337,7 +337,7 @@ target = NodePath("../Register")
 position = Vector2(144, 118)
 
 [node name="Hud" parent="environment" unique_id=2133758882 instance=ExtResource("9_yo8p7")]
-offset_left = -296.0
-offset_top = -127.0
-offset_right = -296.0
-offset_bottom = -127.0
+offset_left = -320.0
+offset_top = -158.0
+offset_right = -320.0
+offset_bottom = -158.0
