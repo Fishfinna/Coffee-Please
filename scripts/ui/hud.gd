@@ -2,6 +2,7 @@ extends Control
 
 @onready var money_label: Label = $money
 @onready var money_today_label: Label = $today
+@onready var time_label: Label = $time
 
 var _last_money: int = -1
 var _day_start_money: int = 0
@@ -14,6 +15,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Global.money != _last_money:
 		_update_labels()
+	time_label.text = "Time: %f" % _delta
 
 func _update_labels() -> void:
 	_last_money = Global.money
