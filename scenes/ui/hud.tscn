@@ -68,24 +68,31 @@ texture = ExtResource("4_136eg")
 
 [node name="weather" type="Panel" parent="." unique_id=1967288324]
 layout_mode = 1
-offset_left = 575.0
+offset_left = 552.0
 offset_top = 15.0
 offset_right = 629.0
-offset_bottom = 39.0
+offset_bottom = 54.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_136eg")
 
 [node name="Label" type="Label" parent="weather" unique_id=486488345]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 51.0
-offset_bottom = 15.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -15.5
+offset_right = 24.5
+offset_bottom = -4.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 10
 text = "weather: sun"
 
 [node name="Time" parent="." unique_id=975011263 instance=ExtResource("3_8qguk")]
 layout_mode = 0
-offset_left = 50.18007
-offset_top = 39.374214
-offset_right = 50.18007
-offset_bottom = 39.374214
+offset_left = 566.0
+offset_top = 35.0
+offset_right = 566.0
+offset_bottom = 35.0

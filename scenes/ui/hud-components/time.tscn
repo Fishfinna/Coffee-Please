@@ -14,13 +14,28 @@ anchors_preset = 0
 [node name="day" type="Control" parent="." unique_id=1726200065]
 anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 17.0
+
+[node name="Label" type="Label" parent="day" unique_id=1297719437]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 10
+text = "Fri, May 31st"
 
 [node name="clock" type="Control" parent="." unique_id=564416825]
+layout_mode = 1
 anchors_preset = 0
-offset_top = 31.0
-offset_right = 64.0
-offset_bottom = 71.0
+offset_right = 100.0
+offset_bottom = 18.0
+
+[node name="Label" type="Label" parent="clock" unique_id=968671312]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 10
+text = "9:00 AM"
 
 [node name="TimeSystem" type="Node" parent="." unique_id=1220125363]
 script = ExtResource("1_m5qdu")
