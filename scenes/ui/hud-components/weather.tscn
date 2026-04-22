@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://be5d0q7bvejet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6vm2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.62352943, 0.5882353, 0.5294118, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Control" type="Control" unique_id=545630948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=1995608581]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="weather" type="Panel" parent="." unique_id=408956600]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 15.0
+offset_right = 629.0
+offset_bottom = 54.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s6vm2")
+
+[node name="Label" type="Label" parent="weather" unique_id=1901184854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -15.5
+offset_right = 24.5
+offset_bottom = -4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "weather: sun"

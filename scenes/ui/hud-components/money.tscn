@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://f4de4w4vtfja"]
+
+[ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud-components/display_clock.gd" id="1_4x3ek"]
+[ext_resource type="Texture2D" uid="uid://dktlkc5dj8blp" path="res://assets/art/ui/asprite/ui-icons/loonie.png" id="2_vkjme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785ys"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6885583, 0.65440094, 0.5975169, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Money" type="Control" unique_id=1994781711]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="money" type="Panel" parent="." unique_id=626613487]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 91.0
+offset_bottom = 45.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_785ys")
+
+[node name="total" type="Label" parent="money" unique_id=577184465]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 3.0
+offset_right = 71.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 10
+text = "money: 100$"
+script = ExtResource("1_4x3ek")
+
+[node name="today" type="Label" parent="money/total" unique_id=991713883]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 46.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 10
+text = "today: 100$"
+script = ExtResource("1_4x3ek")
+
+[node name="Loonie" type="Sprite2D" parent="money" unique_id=362122948]
+position = Vector2(12, 12)
+texture = ExtResource("2_vkjme")
