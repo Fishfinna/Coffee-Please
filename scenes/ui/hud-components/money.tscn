@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f4de4w4vtfja"]
 
 [ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud-components/display_clock.gd" id="1_4x3ek"]
+[ext_resource type="Script" uid="uid://chal3f6grysph" path="res://scenes/ui/hud-components/money.gd" id="1_vkjme"]
 [ext_resource type="Texture2D" uid="uid://dktlkc5dj8blp" path="res://assets/art/ui/asprite/ui-icons/loonie.png" id="2_vkjme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785ys"]
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vkjme")
 
 [node name="money" type="Panel" parent="." unique_id=626613487]
 layout_mode = 0
@@ -41,12 +43,12 @@ theme_override_font_sizes/font_size = 10
 text = "money: 100$"
 script = ExtResource("1_4x3ek")
 
-[node name="today" type="Label" parent="money/total" unique_id=991713883]
+[node name="today" type="Label" parent="money" unique_id=991713883]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 14.0
-offset_right = 46.0
-offset_bottom = 25.0
+offset_left = 27.0
+offset_top = 17.0
+offset_right = 72.0
+offset_bottom = 28.0
 theme_override_font_sizes/font_size = 10
 text = "today: 100$"
 script = ExtResource("1_4x3ek")
