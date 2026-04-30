@@ -11,7 +11,7 @@ signal customer_entered
 signal customer_exited
 
 var interact: Callable = func():
-	pass
+	print("I am a sink!")
 
 
 func _ready() -> void:
@@ -27,7 +27,6 @@ func _on_body_entered(body: Node) -> void:
 	
 	if body.is_in_group("customer"):
 		customer_entered.emit(body)
-
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
