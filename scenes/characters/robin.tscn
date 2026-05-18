@@ -23,19 +23,16 @@ region = Rect2(32, 0, 32, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_xs5yy"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_irpul")
 }, {
-"duration": 2.8,
-"texture": SubResource("AtlasTexture_irpul")
-}, {
-"duration": 0.3,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_70huj")
 }, {
-"duration": 2.8,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_irpul")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_uhue2")
 }],
 "loop": true,
@@ -62,7 +59,7 @@ texture = ExtResource("1_byjiq")
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_xs5yy")
 autoplay = "default"
-frame_progress = 0.5184612
+frame_progress = 0.12700905
 
 [node name="Robin-base" type="Sprite2D" parent="Sprite2D" unique_id=955566840]
 visible = false
