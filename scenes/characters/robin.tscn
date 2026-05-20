@@ -59,7 +59,7 @@ texture = ExtResource("1_byjiq")
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_xs5yy")
 autoplay = "default"
-frame_progress = 0.12700905
+frame_progress = 0.671349
 
 [node name="Robin-base" type="Sprite2D" parent="Sprite2D" unique_id=955566840]
 visible = false
