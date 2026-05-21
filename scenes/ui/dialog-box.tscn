@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bnbp4mub8kolb" path="res://assets/art/ui/dialog-box.png" id="1_4uarj"]
 
 [node name="NinePatchRect" type="NinePatchRect" unique_id=710055710]
-offset_right = 66.0
-offset_bottom = 40.0
+offset_right = 26.4
+offset_bottom = 16.0
 texture = ExtResource("1_4uarj")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 4
@@ -13,3 +13,12 @@ patch_margin_right = 4
 patch_margin_bottom = 8
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="." unique_id=530884387]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 12
+text = "..."
