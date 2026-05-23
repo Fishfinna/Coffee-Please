@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgv5owo54wgly"]
 
 [ext_resource type="Texture2D" uid="uid://bnbp4mub8kolb" path="res://assets/art/ui/dialog-box.png" id="1_4uarj"]
+[ext_resource type="Script" uid="uid://t3ap2iym5cgq" path="res://scripts/ui/dialog.gd" id="2_vn3qe"]
 
 [node name="NinePatchRect" type="NinePatchRect" unique_id=710055710]
 offset_right = 26.4
@@ -13,6 +14,7 @@ patch_margin_right = 4
 patch_margin_bottom = 8
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
+script = ExtResource("2_vn3qe")
 
 [node name="Label" type="Label" parent="." unique_id=530884387]
 layout_mode = 1
