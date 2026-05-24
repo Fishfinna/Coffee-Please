@@ -155,10 +155,8 @@ save_slot_scene = ExtResource("2_idy5m")
 
 [node name="blur_bg" type="ColorRect" parent="." unique_id=1803990581]
 material = SubResource("ShaderMaterial_f6eus")
-offset_left = 26.0
-offset_top = 21.0
-offset_right = 666.0
-offset_bottom = 389.0
+offset_right = 640.0
+offset_bottom = 368.0
 
 [node name="pause" type="Control" parent="." unique_id=779354205]
 custom_minimum_size = Vector2(128, 180)
@@ -484,10 +482,6 @@ horizontal_alignment = 1
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
 libraries/ = SubResource("AnimationLibrary_8uki6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=987621046]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
 [connection signal="pressed" from="pause/options" to="." method="_on_options_menu_pressed"]
