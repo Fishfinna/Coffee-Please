@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://h3gci7bxir3g" path="res://assets/art/ui/icons/coffee-bean-normal.png" id="5_8j4t7"]
 [ext_resource type="StyleBox" uid="uid://ck4euveb8k06m" path="res://themes/scrollers/scroll-background.tres" id="5_cgbfu"]
 [ext_resource type="StyleBox" uid="uid://c76u4xrpxqsly" path="res://themes/buttons/delete-button/delete-button-hover.tres" id="5_d3e7e"]
+[ext_resource type="Texture2D" uid="uid://ximw8mn73c4t" path="res://assets/art/ui/icons/check-button-on.png" id="5_dsmww"]
 [ext_resource type="StyleBox" uid="uid://b5qjceirm2dn1" path="res://themes/panels/tooltip.tres" id="5_k1vgm"]
 [ext_resource type="StyleBox" uid="uid://bm6bb110reypc" path="res://themes/panels/standard_panel_color.tres" id="5_ywx0d"]
 [ext_resource type="StyleBox" uid="uid://b7knpf4icdx28" path="res://themes/buttons/delete-button/delete-button-normal.tres" id="6_cgbfu"]
 [ext_resource type="Texture2D" uid="uid://gwp8qoxhtiau" path="res://assets/art/ui/icons/coffee-bean-light.png" id="6_nlad3"]
+[ext_resource type="Texture2D" uid="uid://cohakkopegv14" path="res://assets/art/ui/icons/check-button-off.png" id="6_t8avh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmww"]
 bg_color = Color(0.6039216, 0.4627451, 0.34117648, 1)
@@ -182,6 +184,8 @@ Button/styles/hover_mirrored = ExtResource("1_l6fbw")
 Button/styles/hover_pressed = ExtResource("1_l6fbw")
 Button/styles/normal = ExtResource("3_d3e7e")
 Button/styles/pressed = ExtResource("1_l6fbw")
+CheckButton/icons/checked = ExtResource("5_dsmww")
+CheckButton/icons/unchecked = ExtResource("6_t8avh")
 HSlider/icons/grabber = ExtResource("5_8j4t7")
 HSlider/icons/grabber_highlight = ExtResource("6_nlad3")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_dsmww")
