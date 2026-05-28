@@ -6,6 +6,8 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact():
+	if DialogicState.active:
+		return
 	if interactable.is_interactable:
 		indicator.play_audio()
-		print("you have $%d" % [Global.money])
+		Dialogic.start("money")
