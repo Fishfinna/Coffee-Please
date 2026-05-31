@@ -10,4 +10,4 @@ func _on_interact():
 		return
 	if interactable.is_interactable:
 		indicator.play_audio()
-		Dialogic.start("money")
+		DialogicState.begin("money")

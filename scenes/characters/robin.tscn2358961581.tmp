@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://vlwsmf4n3xm"]
+
+[ext_resource type="Script" uid="uid://b7ejjpap2e7ij" path="res://scripts/characters/robin.gd" id="1_0dwpl"]
+[ext_resource type="Texture2D" uid="uid://dhsrddi1po0qw" path="res://assets/art/effects/shadow.png" id="1_byjiq"]
+[ext_resource type="Texture2D" uid="uid://ihu8x7flbf4h" path="res://assets/art/characters/robin-base.png" id="1_ga2fa"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_4uxls"]
+[ext_resource type="Texture2D" uid="uid://dtgvgjkjh6gae" path="res://assets/art/characters/animations/robin-idle.png" id="3_xj118"]
+[ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="4_jfe28"]
+[ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="4_msgss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irpul"]
+atlas = ExtResource("3_xj118")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70huj"]
+atlas = ExtResource("3_xj118")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhue2"]
+atlas = ExtResource("3_xj118")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs5yy"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_irpul")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_70huj")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_irpul")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_uhue2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga2fa"]
+size = Vector2(17, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msgss"]
+radius = 17.029387
+
+[node name="robin" type="CharacterBody2D" unique_id=524308441]
+script = ExtResource("1_0dwpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803818623]
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D" unique_id=964478717]
+position = Vector2(1, -4)
+texture = ExtResource("1_byjiq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=613934781]
+position = Vector2(1, -32)
+sprite_frames = SubResource("SpriteFrames_xs5yy")
+autoplay = "default"
+frame_progress = 0.671349
+
+[node name="Robin-base" type="Sprite2D" parent="Sprite2D" unique_id=955566840]
+visible = false
+position = Vector2(1, -32)
+texture = ExtResource("1_ga2fa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245024819]
+y_sort_enabled = true
+position = Vector2(1.5, -3)
+shape = SubResource("RectangleShape2D_ga2fa")
+
+[node name="Indicator" parent="." unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_4uxls")]
+position = Vector2(0, -39)
+interactable = NodePath("../Interactable")
+appear_audio = ExtResource("4_msgss")
+
+[node name="Interactable" parent="." unique_id=1415010887 instance=ExtResource("4_jfe28")]
+position = Vector2(0, -1)
+scale = Vector2(1.5200005, 1.6800005)
+interact_name = "talk"
+is_interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1555257547]
+position = Vector2(0, 1)
+scale = Vector2(1.3599991, 0.5599989)
+shape = SubResource("CircleShape2D_msgss")

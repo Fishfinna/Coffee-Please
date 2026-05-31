@@ -46,7 +46,7 @@ directories/dtl_directory={
 layout/style_directory={}
 variables={}
 layout/style_list=[]
-layout/default_style="Default"
+layout/default_style=""
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -86,6 +86,14 @@ event_default_overrides={
 "hide_text": false
 }
 }
+text/autoadvance_fixed_delay=0.0
+text/dialog_text_prefix=""
+translation/enabled=false
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
 
 [display]
 
