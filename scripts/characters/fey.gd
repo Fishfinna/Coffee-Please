@@ -29,7 +29,7 @@ func get_input():
 	if Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 		y = last_y
 
-	if DialogicState.active:
+	if Dialog.active:
 		return
 	velocity = Vector2(x, y).normalized() * speed
 

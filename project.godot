@@ -33,15 +33,17 @@ Settings="*uid://6xgknwnlqo2j"
 CustomerRegistry="*uid://o6jbln3rd475"
 Settings_Startup="*uid://cwt08eneuc6q0"
 Dialogic="*uid://ds2q0uclmolvu"
-DialogicState="*uid://qwm7aqowe27"
+Dialog="*uid://qwm7aqowe27"
 
 [dialogic]
 
 directories/dch_directory={
-"robin": "res://dialog/characters/robin.dch"
+"robin": "res://dialog/characters/robin.dch",
+"sink": "res://dialog/characters/sink.dch"
 }
 directories/dtl_directory={
-"money": "res://dialog/timelines/money.dtl"
+"money": "res://dialog/timelines/money.dtl",
+"sink": "res://dialog/timelines/sink.dtl"
 }
 layout/style_directory={}
 variables={}

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkg6oqft5f5m3"]
 
 [ext_resource type="Texture2D" uid="uid://c3v4givgm7yxv" path="res://assets/art/objects/sink.png" id="1_4812f"]
+[ext_resource type="Script" uid="uid://b07fshonukid3" path="res://scripts/objects/sink.gd" id="1_jrkpg"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_dxbif"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="3_aev3a"]
 [ext_resource type="AudioStream" uid="uid://be5fx1xdfqeg5" path="res://assets/audio/chop.wav" id="3_jrkpg"]
@@ -13,6 +14,7 @@ radius = 46.0
 
 [node name="Sink" type="Node2D" unique_id=1694069929]
 y_sort_enabled = true
+script = ExtResource("1_jrkpg")
 
 [node name="body" type="StaticBody2D" parent="." unique_id=1164423773]
 
@@ -31,6 +33,7 @@ interactable = NodePath("../../Interactable")
 appear_audio = ExtResource("3_jrkpg")
 
 [node name="Interactable" parent="." unique_id=1415010887 instance=ExtResource("3_aev3a")]
+is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2041111123]
 scale = Vector2(1, 0.6400001)

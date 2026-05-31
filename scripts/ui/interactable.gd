@@ -11,7 +11,7 @@ signal customer_entered
 signal customer_exited
 
 var interact: Callable = func():
-	print("I am a sink!")
+	print("default interact. override on object!")
 
 func _ready() -> void:
 	monitoring = true
