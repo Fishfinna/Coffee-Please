@@ -1,0 +1,5 @@
+~ start
+Robin: Hello...[wait]\nHow are you?
+Fey: Hi!
+Robin: you have {{Global.money}}$
+=> END
