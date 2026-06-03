@@ -1,5 +1,10 @@
 ~ start
 Robin: Hello...[wait]\nHow are you?
 Fey: Hi!
-Robin: you have {{Global.money}}$
+Robin: You have {{Global.money}}$
+if Global.money > 100:
+	Robin: You made some money, that is great!
+else:
+	Robin: [speed=0.8]this is ok bu[wait=0.2] [next]
+	Fey: Ok got to go bye!
 => END
