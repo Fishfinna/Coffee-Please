@@ -11,4 +11,4 @@ func _ready() -> void:
 func _on_interact():
 	if interactable.is_interactable and not Dialog.active:
 		indicator.play_audio()
-		Dialog.show(test)
+		Dialog.show(test, "start", self)
