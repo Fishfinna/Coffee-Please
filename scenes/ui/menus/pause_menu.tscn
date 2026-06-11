@@ -149,6 +149,7 @@ _data = {
 
 [node name="Pause Menu" type="CanvasLayer" unique_id=250378609]
 process_mode = 3
+layer = 100
 follow_viewport_enabled = true
 script = ExtResource("1_6tw0m")
 save_slot_scene = ExtResource("2_idy5m")
