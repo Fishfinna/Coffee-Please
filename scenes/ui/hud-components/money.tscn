@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f4de4w4vtfja"]
 
 [ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud-components/display_clock.gd" id="1_4x3ek"]
-[ext_resource type="Script" uid="uid://chal3f6grysph" path="res://scenes/ui/hud-components/money.gd" id="1_vkjme"]
+[ext_resource type="Script" uid="uid://chal3f6grysph" path="res://scripts/hud/money.gd" id="1_vkjme"]
 [ext_resource type="Texture2D" uid="uid://54mi02axora3" path="res://assets/art/ui/icons/hud/loonie-earned-sheet.png" id="3_vkjme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785ys"]

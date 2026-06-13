@@ -1,43 +1,34 @@
 [gd_scene format=3 uid="uid://dypj7q654k1hk"]
 
-[ext_resource type="Script" uid="uid://bdadh7aubiq2x" path="res://scripts/game/time_system.gd" id="1_m5qdu"]
-[ext_resource type="Script" uid="uid://o71qoly50fix" path="res://scripts/game/date_time.gd" id="2_l3k23"]
-
-[sub_resource type="Resource" id="Resource_y0pk1"]
-script = ExtResource("2_l3k23")
-metadata/_custom_type_script = "uid://o71qoly50fix"
+[ext_resource type="Script" uid="uid://deqw6lfl0yq3j" path="res://scripts/hud/time.gd" id="1_nalxi"]
 
 [node name="Time" type="Control" unique_id=975011263]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_nalxi")
 
 [node name="day" type="Control" parent="." unique_id=1726200065]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 17.0
 
-[node name="Label" type="Label" parent="day" unique_id=1297719437]
+[node name="label" type="Label" parent="day" unique_id=1297719437]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 16.0
 theme_override_font_sizes/font_size = 10
 text = "Fri, May 31st"
 
-[node name="clock" type="Control" parent="." unique_id=564416825]
+[node name="time" type="Control" parent="." unique_id=564416825]
 layout_mode = 1
 anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 18.0
 
-[node name="Label" type="Label" parent="clock" unique_id=968671312]
+[node name="label" type="Label" parent="time" unique_id=968671312]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 30.0
 offset_bottom = 19.0
 theme_override_font_sizes/font_size = 10
 text = "9:00 AM"
-
-[node name="TimeSystem" type="Node" parent="." unique_id=1220125363]
-script = ExtResource("1_m5qdu")
-date_time = SubResource("Resource_y0pk1")
-metadata/_custom_type_script = "uid://bdadh7aubiq2x"

@@ -1,7 +1,9 @@
 # TODO:
 
 Top Priorities:
-	- time
+	- time:
+		- hours from 6 to 6
+		- open all days
 	- doors
 		- really simple customer flow of:
 			- enter through door

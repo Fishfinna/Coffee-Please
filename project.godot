@@ -34,6 +34,7 @@ CustomerRegistry="*uid://o6jbln3rd475"
 Settings_Startup="*uid://cwt08eneuc6q0"
 DialogueManager="*uid://c3rodes2l3gxb"
 Dialog="*uid://yg42726f2rq7"
+DaytimeClock="*uid://64tvrmblk6fn"
 
 [dialogic]
 

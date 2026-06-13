@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://55vcj8umj2yy"]
 
-[ext_resource type="Script" uid="uid://ccoghrhy24on8" path="res://scripts/ui/hud.gd" id="1_8qguk"]
+[ext_resource type="Script" uid="uid://ccoghrhy24on8" path="res://scripts/hud/hud.gd" id="1_8qguk"]
 [ext_resource type="PackedScene" uid="uid://be5d0q7bvejet" path="res://scenes/ui/hud-components/weather.tscn" id="2_8qguk"]
 [ext_resource type="PackedScene" uid="uid://dypj7q654k1hk" path="res://scenes/ui/hud-components/time.tscn" id="3_8qguk"]
 [ext_resource type="PackedScene" uid="uid://f4de4w4vtfja" path="res://scenes/ui/hud-components/money.tscn" id="4_136eg"]
