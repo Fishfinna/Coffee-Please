@@ -1,11 +1,10 @@
 extends Control
 
-
 @onready var money_label: Label = $money/total
 @onready var money_today_label: Label = $money/today
+@onready var loonie: AnimatedSprite2D = $money/AnimatedSprite2D
 
-
-var _last_money: int = -1
+var _last_money: int = Global.money
 var _day_start_money: int = 0
 var _last_today: int = -1
 
@@ -18,6 +17,10 @@ func _process(_delta: float) -> void:
 		_update_labels()
 
 func _update_labels() -> void:
+	if _last_money < Global.money:
+		print("last:", _last_money," glob:", Global.money)
+
+		loonie.play('earned')
 	_last_money = Global.money
 	money_label.text = "Money: %d$" % _last_money
 

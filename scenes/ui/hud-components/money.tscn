@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud-components/display_clock.gd" id="1_4x3ek"]
 [ext_resource type="Script" uid="uid://chal3f6grysph" path="res://scenes/ui/hud-components/money.gd" id="1_vkjme"]
-[ext_resource type="Texture2D" uid="uid://dktlkc5dj8blp" path="res://assets/art/ui/asprite/ui-icons/loonie.png" id="2_vkjme"]
+[ext_resource type="Texture2D" uid="uid://54mi02axora3" path="res://assets/art/ui/icons/hud/loonie-earned-sheet.png" id="3_vkjme"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785ys"]
 content_margin_left = 0.0
@@ -15,6 +15,80 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_785ys"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx6qf"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlcqb"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn6wg"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b30qy"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1prwk"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xclkv"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxsi1"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd4gr"]
+atlas = ExtResource("3_vkjme")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lnet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_785ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx6qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlcqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn6wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b30qy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1prwk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xclkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxsi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd4gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_785ys")
+}],
+"loop": false,
+"name": &"earned",
+"speed": 14.0
+}]
 
 [node name="Money" type="Control" unique_id=1994781711]
 layout_mode = 3
@@ -53,6 +127,7 @@ theme_override_font_sizes/font_size = 10
 text = "today: 100$"
 script = ExtResource("1_4x3ek")
 
-[node name="Loonie" type="Sprite2D" parent="money" unique_id=362122948]
-position = Vector2(12, 12)
-texture = ExtResource("2_vkjme")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="money" unique_id=1770324266]
+position = Vector2(13, 16)
+sprite_frames = SubResource("SpriteFrames_5lnet")
+animation = &"earned"
