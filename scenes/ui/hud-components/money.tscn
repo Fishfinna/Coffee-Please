@@ -1,20 +1,8 @@
 [gd_scene format=3 uid="uid://f4de4w4vtfja"]
 
-[ext_resource type="Script" uid="uid://dkrx7wuc6kkhi" path="res://scenes/ui/hud-components/display_clock.gd" id="1_4x3ek"]
 [ext_resource type="Script" uid="uid://chal3f6grysph" path="res://scripts/hud/money.gd" id="1_vkjme"]
+[ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="2_vkjme"]
 [ext_resource type="Texture2D" uid="uid://54mi02axora3" path="res://assets/art/ui/icons/hud/loonie-earned-sheet.png" id="3_vkjme"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_785ys"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.6885583, 0.65440094, 0.5975169, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_785ys"]
 atlas = ExtResource("3_vkjme")
@@ -91,43 +79,70 @@ animations = [{
 }]
 
 [node name="Money" type="Control" unique_id=1994781711]
+custom_minimum_size = Vector2(80, 32)
 layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 32.0
+script = ExtResource("1_vkjme")
+
+[node name="money2" type="NinePatchRect" parent="." unique_id=1133318040]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 20.0
+offset_right = -31.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vkjme")
+texture = ExtResource("2_vkjme")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
-[node name="money" type="Panel" parent="." unique_id=626613487]
+[node name="money" type="NinePatchRect" parent="." unique_id=521760083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = -21.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vkjme")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="total" type="Label" parent="." unique_id=577184465]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 7.0
+offset_right = 52.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.36078432, 0.25490198, 0.23921569, 1)
+theme_override_font_sizes/font_size = 16
+text = "100$"
+
+[node name="today" type="Label" parent="." unique_id=991713883]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 14.0
-offset_right = 91.0
-offset_bottom = 45.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_785ys")
-
-[node name="total" type="Label" parent="money" unique_id=577184465]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 3.0
-offset_right = 71.0
-offset_bottom = 14.0
+offset_top = 23.0
+offset_right = 56.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.6, 0.49803922, 0.49411765, 1)
 theme_override_font_sizes/font_size = 10
-text = "money: 100$"
-script = ExtResource("1_4x3ek")
+text = "today: 1$"
 
-[node name="today" type="Label" parent="money" unique_id=991713883]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 17.0
-offset_right = 72.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 10
-text = "today: 100$"
-script = ExtResource("1_4x3ek")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="money" unique_id=1770324266]
-position = Vector2(13, 16)
+[node name="loonie" type="AnimatedSprite2D" parent="." unique_id=1770324266]
+position = Vector2(12, 15)
 sprite_frames = SubResource("SpriteFrames_5lnet")
 animation = &"earned"
+frame = 9
+frame_progress = 1.0

@@ -1,34 +1,106 @@
 [gd_scene format=3 uid="uid://dypj7q654k1hk"]
 
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="1_l3k23"]
+[ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="1_m5qdu"]
 [ext_resource type="Script" uid="uid://deqw6lfl0yq3j" path="res://scripts/hud/time.gd" id="1_nalxi"]
+[ext_resource type="PackedScene" uid="uid://be5d0q7bvejet" path="res://scenes/ui/hud-components/weather.tscn" id="4_y0pk1"]
 
-[node name="Time" type="Control" unique_id=975011263]
-layout_mode = 3
-anchors_preset = 0
+[node name="Time" type="NinePatchRect" unique_id=852759293]
+custom_minimum_size = Vector2(76, 28)
+anchors_preset = -1
+anchor_right = 0.11875
+anchor_bottom = 0.07777778
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource("1_l3k23")
+texture = ExtResource("1_m5qdu")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 script = ExtResource("1_nalxi")
+metadata/_edit_use_anchors_ = true
 
-[node name="day" type="Control" parent="." unique_id=1726200065]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 17.0
+[node name="texts" type="Control" parent="." unique_id=749777512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="label" type="Label" parent="day" unique_id=1297719437]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 10
+[node name="date" type="Control" parent="texts" unique_id=1726200065]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -6.0
+offset_top = 8.0
+offset_right = -6.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_vertical = 2
+
+[node name="label" type="Label" parent="texts/date" unique_id=1297719437]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -5.0
+offset_right = 22.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6, 0.49803922, 0.49411765, 1)
+theme_override_font_sizes/font_size = 9
 text = "Fri, May 31st"
 
-[node name="time" type="Control" parent="." unique_id=564416825]
+[node name="time" type="Control" parent="texts" unique_id=564416825]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+
+[node name="label" type="Label" parent="texts/time" unique_id=968671312]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -9.5
+offset_right = 21.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.36078432, 0.25490198, 0.23921569, 1)
+theme_override_font_sizes/font_size = 16
+text = "9:00 AM"
+
+[node name="Control" parent="." unique_id=545630948 instance=ExtResource("4_y0pk1")]
 layout_mode = 1
 anchors_preset = 0
-offset_right = 100.0
-offset_bottom = 18.0
-
-[node name="label" type="Label" parent="time" unique_id=968671312]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 30.0
-offset_bottom = 19.0
-theme_override_font_sizes/font_size = 10
-text = "9:00 AM"
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 83.0
+offset_top = 13.0
+offset_right = 83.0
+offset_bottom = 13.0
+grow_horizontal = 1
+grow_vertical = 1

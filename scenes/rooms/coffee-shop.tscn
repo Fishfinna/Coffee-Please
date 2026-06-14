@@ -336,8 +336,10 @@ target = NodePath("../Register")
 [node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(144, 118)
 
-[node name="Hud" parent="environment" unique_id=2133758882 instance=ExtResource("9_yo8p7")]
-offset_left = -320.0
-offset_top = -158.0
-offset_right = -320.0
-offset_bottom = -158.0
+[node name="Hud" parent="." unique_id=2133758882 instance=ExtResource("9_yo8p7")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
