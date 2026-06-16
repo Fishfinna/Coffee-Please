@@ -1,7 +1,7 @@
 extends Control
 
-@onready var money_label: Label = $total
-@onready var money_today_label: Label = $today
+@onready var money_label: Label = $money/label
+@onready var money_today_label: Label = $today/label
 @onready var loonie: AnimatedSprite2D = $loonie
 
 var _last_money: int = Global.money

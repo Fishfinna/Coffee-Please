@@ -17,10 +17,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Money" parent="." unique_id=1994781711 instance=ExtResource("4_136eg")]
 layout_mode = 1
-offset_left = 2.0
-offset_top = 7.0
-offset_right = 82.0
-offset_bottom = 39.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 83.0
+offset_bottom = 37.0
 
 [node name="Time" parent="." unique_id=235071277 instance=ExtResource("3_8qguk")]
 layout_mode = 1
