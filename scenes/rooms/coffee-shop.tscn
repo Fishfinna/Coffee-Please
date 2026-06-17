@@ -323,14 +323,14 @@ position = Vector2(-70, 69)
 position = Vector2(142, 86)
 
 [node name="robin" parent="environment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
-position = Vector2(112, 157)
+position = Vector2(21, 135)
 
 [node name="fey" parent="environment" unique_id=1942933985 instance=ExtResource("5_yo8p7")]
 z_as_relative = false
 position = Vector2(-39, 128)
 
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-144, 27)
+position = Vector2(-37, 45)
 target = NodePath("../Register")
 
 [node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
@@ -340,6 +340,7 @@ position = Vector2(144, 118)
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 1
 grow_vertical = 1
-metadata/_edit_use_anchors_ = true
