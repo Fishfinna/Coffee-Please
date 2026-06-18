@@ -30,4 +30,5 @@ func _update_labels() -> void:
 	var today: int = _last_money - _day_start_money
 	if today != _last_today:
 		_last_today = today
+		Global.money_today = today
 		money_today_label.text = "today: %d$" % today
