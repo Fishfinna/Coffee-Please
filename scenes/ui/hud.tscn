@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccoghrhy24on8" path="res://scripts/hud/hud.gd" id="1_8qguk"]
 [ext_resource type="PackedScene" uid="uid://dypj7q654k1hk" path="res://scenes/ui/hud-components/time.tscn" id="3_8qguk"]
+[ext_resource type="PackedScene" uid="uid://b3pjxml3jn47b" path="res://scenes/ui/hud-components/inventory.tscn" id="4_8qguk"]
 [ext_resource type="PackedScene" uid="uid://f4de4w4vtfja" path="res://scenes/ui/hud-components/money.tscn" id="4_136eg"]
 
 [node name="Hud" type="Control" unique_id=2133758882]
@@ -34,3 +35,11 @@ offset_right = -37.0
 offset_bottom = 38.0
 grow_horizontal = 0
 grow_vertical = 1
+
+[node name="inventory" parent="." unique_id=1959453802 instance=ExtResource("4_8qguk")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0

@@ -25,16 +25,15 @@ buses/default_bus_layout="res://themes/default_bus_layout.tres"
 
 [autoload]
 
-window="*uid://d2qd1s3il2aiu"
-IndicatorManager="*uid://2i8uwi1yvk06"
 Global="*uid://buxknpmydlrqv"
-buttons="*uid://u824dfx45eh0"
 Settings="*uid://6xgknwnlqo2j"
-CustomerRegistry="*uid://o6jbln3rd475"
-Settings_Startup="*uid://cwt08eneuc6q0"
+window="*uid://d2qd1s3il2aiu"
 DialogueManager="*uid://c3rodes2l3gxb"
 Dialog="*uid://yg42726f2rq7"
+IndicatorManager="*uid://2i8uwi1yvk06"
+CustomerRegistry="*uid://o6jbln3rd475"
 DaytimeClock="*uid://64tvrmblk6fn"
+buttons="*uid://u824dfx45eh0"
 
 [dialogic]
 
@@ -109,7 +108,6 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="uid://02s3exchgt3h"
 
 [editor_plugins]
