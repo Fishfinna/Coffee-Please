@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cshgepy31u2sx" path="res://scenes/rooms/background.tscn" id="1_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://dbo33q6tr6sh0" path="res://scenes/rooms/coffee-shop.tscn" id="1_ibkli"]
 [ext_resource type="PackedScene" uid="uid://7jf6e4julwkk" path="res://scenes/ui/menus/pause_menu.tscn" id="1_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://55vcj8umj2yy" path="res://scenes/ui/hud.tscn" id="5_s0nni"]
 
 [node name="Game" type="Node2D" unique_id=1052908169]
 script = ExtResource("1_78awf")
@@ -17,3 +18,12 @@ anchor_mode = 0
 
 [node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("1_qbsmt")]
 visible = false
+
+[node name="Hud" parent="." unique_id=2133758882 instance=ExtResource("5_s0nni")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 1
+grow_vertical = 1

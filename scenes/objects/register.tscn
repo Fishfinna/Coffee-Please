@@ -11,7 +11,7 @@
 size = Vector2(26, 6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0xyd"]
-radius = 13.079257
+radius = 10.750125
 
 [node name="Register" type="Node2D" unique_id=684012640]
 y_sort_enabled = true

@@ -36,5 +36,7 @@ appear_audio = ExtResource("3_jrkpg")
 is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2041111123]
+z_index = 1
+z_as_relative = false
 scale = Vector2(1, 0.6400001)
 shape = SubResource("CircleShape2D_5cpu3")

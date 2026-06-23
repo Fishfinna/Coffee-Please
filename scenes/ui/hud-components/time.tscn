@@ -84,23 +84,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -22.0
-offset_top = -9.5
+offset_top = -8.0
 offset_right = 21.0
-offset_bottom = 9.5
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.36078432, 0.25490198, 0.23921569, 1)
 theme_override_font_sizes/font_size = 16
 text = "9:00 AM"
 
-[node name="Control" parent="." unique_id=545630948 instance=ExtResource("4_y0pk1")]
+[node name="Weather" parent="." unique_id=545630948 instance=ExtResource("4_y0pk1")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 83.0
-offset_top = 13.0
-offset_right = 83.0
-offset_bottom = 13.0
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = -1
+anchor_left = 1.0921053
+anchor_top = 0.46428567
+anchor_right = 1.0921053
+anchor_bottom = 0.46428567
+offset_right = 0.0
+offset_bottom = 0.0

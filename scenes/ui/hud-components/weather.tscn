@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://be5d0q7bvejet"]
 
-[ext_resource type="Texture2D" uid="uid://c5c6plamtnvia" path="res://assets/art/ui/weather.png" id="1_daev2"]
+[ext_resource type="Script" uid="uid://hnicdwj70dj8" path="res://scripts/ui/weather.gd" id="1_k0to0"]
+[ext_resource type="Texture2D" uid="uid://kywdiip7khtf" path="res://assets/art/ui/weather-frame.png" id="2_k0to0"]
 
-[node name="Control" type="Control" unique_id=545630948]
+[node name="Weather" type="Control" unique_id=545630948]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +12,10 @@ offset_right = -640.0
 offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k0to0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1913523515]
-texture = ExtResource("1_daev2")
+[node name="Image" type="Sprite2D" parent="." unique_id=264075373]
+
+[node name="frame" type="Sprite2D" parent="." unique_id=1809951175]
+texture = ExtResource("2_k0to0")
