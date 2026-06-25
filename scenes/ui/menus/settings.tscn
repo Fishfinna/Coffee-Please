@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://6lo0xoyjgsqb"]
+
+[node name="Settings" type="Control" unique_id=103375151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fullscreen" type="CheckButton" parent="." unique_id=517589757]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -8.0
+offset_right = 52.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_focus_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_pressed_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+theme_override_colors/font_hover_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+text = "Fullscreen:"
+flat = true
+
+[node name="HSlider" type="HSlider" parent="." unique_id=2030578472]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -39.0
+offset_right = 94.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "sound"
+accessibility_description = "master audio"
+max_value = 1.0
+step = 0.01
+
+[node name="Label" type="Label" parent="HSlider" unique_id=1852676737]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.26881716
+anchor_top = 0.2118359
+anchor_right = -0.052600943
+anchor_bottom = 0.69603235
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+text = "Sound:"
+metadata/_edit_use_anchors_ = true

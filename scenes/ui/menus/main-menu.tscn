@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dx3g4uolw7xpb"]
+
+[ext_resource type="Script" uid="uid://bjhxdbf4yt81o" path="res://scripts/rooms/main_menu.gd" id="1_8ja6j"]
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="2_ms1f1"]
+[ext_resource type="Texture2D" uid="uid://jo6vmbwp8mkw" path="res://icon.svg" id="3_k5ptj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tkf5"]
+bg_color = Color(0.9647059, 0.94509804, 0.9254902, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=692940998]
+script = ExtResource("1_8ja6j")
+
+[node name="Panel" type="Panel" parent="." unique_id=1986509713]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3tkf5")
+
+[node name="Control" type="Control" parent="Panel" unique_id=1826360988]
+layout_mode = 1
+anchor_left = 0.371875
+anchor_top = 0.5
+anchor_right = 0.628125
+anchor_bottom = 0.82222223
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="contine" type="Button" parent="Panel/Control" unique_id=454872548]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_right = 26.0
+offset_bottom = 16.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_ms1f1")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_font_sizes/font_size = 24
+text = "continue"
+flat = true
+
+[node name="settings" type="Button" parent="Panel/Control" unique_id=276648416]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -8.0
+offset_right = 26.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_ms1f1")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_font_sizes/font_size = 24
+text = "settings
+"
+flat = true
+
+[node name="exit" type="Button" parent="Panel/Control" unique_id=1808416684]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -16.0
+offset_right = 26.5
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_ms1f1")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_font_sizes/font_size = 24
+text = "exit
+"
+flat = true
+
+[node name="title" type="Label" parent="Panel" unique_id=828206927]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -70.0
+offset_right = 86.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_font_sizes/font_size = 32
+text = "Coffee Please"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=484831163]
+position = Vector2(317, 69.2697)
+rotation = -0.0113014085
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_k5ptj")
+
+[connection signal="button_down" from="Panel/Control/contine" to="." method="_on_contine_button_down"]
+[connection signal="button_down" from="Panel/Control/settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="Panel/Control/exit" to="." method="_on_exit_button_down"]

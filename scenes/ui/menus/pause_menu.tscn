@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
 [ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
-[ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scenes/ui/menus/options.gd" id="6_2f5f3"]
+[ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scripts/ui/menus/settings.gd" id="6_2f5f3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
 shader = ExtResource("2_0lmf7")
@@ -200,7 +200,7 @@ mouse_default_cursor_shape = 2
 text = "save"
 metadata/_edit_use_anchors_ = true
 
-[node name="options" type="Button" parent="pause" unique_id=576442192]
+[node name="settings" type="Button" parent="pause" unique_id=576442192]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.38888893
@@ -209,7 +209,7 @@ anchor_bottom = 0.61111116
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-text = "options
+text = "settings
 "
 metadata/_edit_use_anchors_ = true
 
@@ -361,7 +361,7 @@ text = "SAVE"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="options" type="Control" parent="." unique_id=496855907]
+[node name="settings" type="Control" parent="." unique_id=496855907]
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchor_left = 0.28125
@@ -373,7 +373,7 @@ grow_vertical = 2
 script = ExtResource("6_2f5f3")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="NinePatchRect" parent="options" unique_id=801685957]
+[node name="Panel" type="NinePatchRect" parent="settings" unique_id=801685957]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -382,7 +382,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_hf471")
 
-[node name="resume" type="Button" parent="options" unique_id=1146897924]
+[node name="resume" type="Button" parent="settings" unique_id=1146897924]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.74285716
@@ -403,7 +403,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.54901963, 0
 text = "resume >"
 flat = true
 
-[node name="CheckButton" type="CheckButton" parent="options" unique_id=598506883]
+[node name="fullscreen" type="CheckButton" parent="settings" unique_id=598506883]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.073214285
@@ -422,7 +422,7 @@ text = "Fullscreen:"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="back" type="Button" parent="options" unique_id=844189795]
+[node name="back" type="Button" parent="settings" unique_id=844189795]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.07857143
@@ -441,7 +441,7 @@ text = "< back"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="options" unique_id=1998389344]
+[node name="HSlider" type="HSlider" parent="settings" unique_id=1998389344]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25714287
@@ -456,7 +456,7 @@ max_value = 1.0
 step = 0.01
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="options/HSlider" unique_id=177614862]
+[node name="Label" type="Label" parent="settings/HSlider" unique_id=177614862]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.26881716
@@ -467,7 +467,7 @@ theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
 text = "Sound:"
 metadata/_edit_use_anchors_ = true
 
-[node name="save-label" type="Label" parent="options" unique_id=221680005]
+[node name="save-label" type="Label" parent="settings" unique_id=221680005]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -485,13 +485,13 @@ horizontal_alignment = 1
 libraries/ = SubResource("AnimationLibrary_8uki6")
 
 [connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
-[connection signal="pressed" from="pause/options" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="pause/settings" to="." method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="pause/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="save/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="save/back" to="." method="_on_save_back_pressed"]
 [connection signal="pressed" from="save/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="save/load" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="options/resume" to="." method="_resume_game"]
-[connection signal="toggled" from="options/CheckButton" to="options" method="_on_check_button_toggled"]
-[connection signal="pressed" from="options/back" to="." method="_on_options_back_pressed"]
-[connection signal="value_changed" from="options/HSlider" to="options" method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="settings/resume" to="." method="_resume_game"]
+[connection signal="toggled" from="settings/fullscreen" to="settings" method="_on_check_button_toggled"]
+[connection signal="pressed" from="settings/back" to="." method="_on_settings_back_pressed"]
+[connection signal="value_changed" from="settings/HSlider" to="settings" method="_on_h_slider_value_changed"]

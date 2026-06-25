@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Coffee Please"
-run/main_scene="uid://caeodaqay7wx6"
+run/main_scene="uid://dx3g4uolw7xpb"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://jo6vmbwp8mkw"
 

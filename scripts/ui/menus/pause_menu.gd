@@ -7,7 +7,7 @@ var is_transitioning := false
 
 @onready var pause_menu = $pause
 @onready var save_menu = $save
-@onready var options_menu = $options
+@onready var settings_menu = $settings
 @onready var game := get_tree().current_scene
 
 @onready var save_list = $save/scroll_saves/MarginContainer/VBoxContainer
@@ -39,7 +39,7 @@ func _pause_game():
 	is_transitioning = true
 	pause_menu.show()
 	save_menu.hide()
-	options_menu.hide()
+	settings_menu.hide()
 	show()
 	blur_anim.play("blur")
 	await blur_anim.animation_finished
@@ -67,11 +67,11 @@ func _on_save_menu_pressed() -> void:
 func _on_save_back_pressed() -> void:
 	swap_menu(save_menu, pause_menu)
 
-func _on_options_menu_pressed() -> void:
-	swap_menu(pause_menu, options_menu)
+func _on_settings_menu_pressed() -> void:
+	swap_menu(pause_menu, settings_menu)
 
-func _on_options_back_pressed() -> void:
-	swap_menu(options_menu, pause_menu)
+func _on_settings_back_pressed() -> void:
+	swap_menu(settings_menu, pause_menu)
 
 func _on_save_pressed() -> void:
 	save_manager.save_game(game.get_state())
