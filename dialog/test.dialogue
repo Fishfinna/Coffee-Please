@@ -1,5 +1,5 @@
 ~ start
-Robin: Hello...[wait]\nHow are you?
+Robin: Hello, it's {{DaytimeClock.get_day_of_week_string()}}...[wait]\nHow are you?
 Fey: Hi!
 Robin: You have {{Global.money}}$
 if Global.money_today > 0:

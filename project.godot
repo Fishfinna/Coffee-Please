@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Coffee Please"
-run/main_scene="uid://dx3g4uolw7xpb"
+run/main_scene="uid://caeodaqay7wx6"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://jo6vmbwp8mkw"
 
@@ -112,7 +112,7 @@ mouse_cursor/custom_image="uid://02s3exchgt3h"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg")
 
 [global_group]
 

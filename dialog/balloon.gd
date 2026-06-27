@@ -68,7 +68,11 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 ## Indicator to show that player can progress dialogue.
-@onready var progress: Polygon2D = %Progress
+@onready var progress: Sprite2D = %Progress
+
+var progress_timer: Timer = Timer.new()
+var progress_timeout_secs = 0.2
+var _was_awaiting_mutation: bool = false
 
 const VoiceData = preload("res://dialog/voices.gd")
 
@@ -76,6 +80,7 @@ var current_character := ""
 var _last_spoke_time := 0.0
 var _current_voice_data: Dictionary = {}
 var _current_voice_stream: AudioStream = null
+
 
 func _ready() -> void:
 	balloon.hide()
@@ -87,10 +92,26 @@ func _ready() -> void:
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
 
+	progress_timer.one_shot = true
+	progress_timer.timeout.connect(func(): progress.show())
+	add_child(progress_timer)
+
 	if auto_start:
 		if not is_instance_valid(dialogue_resource):
 			assert(false, DMConstants.get_error_message(DMConstants.ERR_MISSING_RESOURCE_FOR_AUTOSTART))
 		start()
+
+
+func _process(_delta: float) -> void:
+	if not is_instance_valid(dialogue_label): return
+	var is_awaiting := dialogue_label._is_awaiting_mutation
+	if is_awaiting and not _was_awaiting_mutation:
+		progress_timer.start(progress_timeout_secs)
+	elif not is_awaiting and _was_awaiting_mutation and not is_waiting_for_input:
+		progress_timer.stop()
+		progress.hide()
+	_was_awaiting_mutation = is_awaiting
+
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if will_block_other_input:
@@ -119,8 +140,10 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
+	progress_timer.stop()
 	progress.hide()
 	is_waiting_for_input = false
+	_was_awaiting_mutation = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
@@ -157,19 +180,24 @@ func apply_dialogue_line() -> void:
 	if dialogue_line.has_tag("voice"):
 		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
 		audio_stream_player.play()
+		progress.show()
 		await audio_stream_player.finished
+		progress.hide()
 		next(dialogue_line.next_id)
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
 		responses_menu.show()
 	elif dialogue_line.time != "":
 		var time: float = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
+		progress.show()
 		await get_tree().create_timer(time).timeout
+		progress.hide()
 		next(dialogue_line.next_id)
 	else:
 		is_waiting_for_input = true
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
+		progress_timer.start(progress_timeout_secs)
 
 
 func next(next_id: String) -> void:
@@ -206,8 +234,12 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+		progress.hide()
+		progress_timer.stop()
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
+		progress.hide()
+		progress_timer.stop()
 		next(dialogue_line.next_id)
 
 
@@ -220,7 +252,8 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 func _on_spoke(letter: String, letter_index: int, speed: float) -> void:
 	if letter == " ": return
 	var now := Time.get_ticks_msec()
-	if now - _last_spoke_time < 50: return
+	var min_gap: float = _current_voice_data.get("speed", 50.0)
+	if now - _last_spoke_time < min_gap: return
 	_last_spoke_time = now
 	if _current_voice_stream == null: return
 	audio_stream_player.stream = _current_voice_stream

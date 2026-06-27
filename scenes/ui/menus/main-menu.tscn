@@ -115,6 +115,6 @@ rotation = -0.0113014085
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_k5ptj")
 
-[connection signal="button_down" from="Panel/Control/contine" to="." method="_on_contine_button_down"]
+[connection signal="pressed" from="Panel/Control/contine" to="." method="_on_contine_button_down"]
 [connection signal="button_down" from="Panel/Control/settings" to="." method="_on_settings_button_down"]
-[connection signal="button_down" from="Panel/Control/exit" to="." method="_on_exit_button_down"]
+[connection signal="pressed" from="Panel/Control/exit" to="." method="_on_exit_button_down"]

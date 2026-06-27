@@ -1,7 +1,7 @@
 extends Control
 
 @onready var slider: HSlider = $HSlider
-@onready var fullscreen_toggle: CheckButton = $CheckButton
+@onready var fullscreen_toggle: CheckButton = $fullscreen
 
 func _ready() -> void:
 	slider.value = Settings.get_setting("master_volume")

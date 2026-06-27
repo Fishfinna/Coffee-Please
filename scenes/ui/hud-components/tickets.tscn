@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dhl6pgda68rww"]
+
+[ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="1_5066t"]
+[ext_resource type="Texture2D" uid="uid://b0v7gf8oxc6i3" path="res://assets/art/ui/icons/up-arrow.png" id="1_dekrm"]
+
+[node name="Tickets" type="Control" unique_id=469832914]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 24.0
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=1246737562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5066t")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="." unique_id=376264460]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 77.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_colors/font_shadow_color = Color(0.1680183, 0.1680183, 0.1680183, 0.133)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Tickets
+"
+
+[node name="toggle" type="Button" parent="." unique_id=534382043]
+self_modulate = Color(1, 1, 1, 0.91600007)
+layout_mode = 1
+offset_left = 65.0
+offset_top = -3.0
+offset_right = 97.0
+offset_bottom = 29.0
+icon = ExtResource("1_dekrm")
+flat = true

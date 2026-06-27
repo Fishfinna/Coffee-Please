@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c1hmpdgmm1cqw" path="res://dialog/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://h3gci7bxir3g" path="res://assets/art/ui/icons/coffee-bean-normal.png" id="3_fxkot"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -91,7 +90,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qkmqt"]
 resource_name = "progress"
-length = 1.4
 loop_mode = 1
 step = 0.1
 tracks/0/type = "bezier"
@@ -103,7 +101,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.2, -0.0157438, -4, -0.2, 0.0112069, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.2, 0.00299701, 0.25, 0),
-"times": PackedFloat32Array(0.2, 0.3, 0.7, 0.9, 1.4)
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1337t"]
@@ -177,11 +175,11 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="Progress" type="Sprite2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=568637995]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
 unique_name_in_owner = true
 z_as_relative = false
-position = Vector2(-5, 0)
-texture = ExtResource("3_fxkot")
+color = Color(0.80480283, 0.80480283, 0.80480283, 0.63900006)
+polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=452325722]
 libraries/ = SubResource("AnimationLibrary_1337t")

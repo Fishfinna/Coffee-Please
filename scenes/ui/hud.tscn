@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dypj7q654k1hk" path="res://scenes/ui/hud-components/time.tscn" id="3_8qguk"]
 [ext_resource type="PackedScene" uid="uid://b3pjxml3jn47b" path="res://scenes/ui/hud-components/inventory.tscn" id="4_8qguk"]
 [ext_resource type="PackedScene" uid="uid://f4de4w4vtfja" path="res://scenes/ui/hud-components/money.tscn" id="4_136eg"]
+[ext_resource type="PackedScene" uid="uid://dhl6pgda68rww" path="res://scenes/ui/hud-components/tickets.tscn" id="5_136eg"]
 
 [node name="Hud" type="Control" unique_id=2133758882]
 custom_minimum_size = Vector2(640, 360)
@@ -42,4 +43,15 @@ anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
+grow_vertical = 0
+
+[node name="Tickets" parent="." unique_id=469832914 instance=ExtResource("5_136eg")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -24.0
+offset_right = 102.0
+offset_bottom = 8.0
 grow_vertical = 0
