@@ -15,6 +15,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5066t")
@@ -23,11 +24,29 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1075305652]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3068182
+anchor_right = 0.9
+anchor_bottom = 0.8863636
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer" unique_id=1246072231]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer" unique_id=1226630302]
+layout_mode = 2
+
 [node name="Label" type="Label" parent="." unique_id=376264460]
 layout_mode = 1
 offset_left = 6.0
 offset_top = 2.0
-offset_right = 77.0
+offset_right = 64.0
 offset_bottom = 45.0
 theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
 theme_override_colors/font_shadow_color = Color(0.1680183, 0.1680183, 0.1680183, 0.133)

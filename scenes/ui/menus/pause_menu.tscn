@@ -362,6 +362,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="settings" type="Control" parent="." unique_id=496855907]
+visible = false
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchor_left = 0.28125
