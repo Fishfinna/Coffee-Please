@@ -6,6 +6,8 @@ class_name Register
 @onready var purchase_audio := $Purchase_Audio
 @onready var pick_up_area = $"../Sink"
 
+const MenuItems = preload("uid://cdnt7p2irvk7i")
+
 var customer_line: Array[String] = []
 var is_loading := false
 
@@ -37,6 +39,14 @@ func _on_interact():
 
 func place_customer_order(customer: Node) -> void:
 	customer.set_status(CustomerStatus.order_status.PLACED)
+	print("ticket to save: ", {
+		"_id": customer.id, 
+		"timestamp": {
+			"hour": DaytimeClock.current_hour,
+			"minute": DaytimeClock.current_minute
+			},
+		"items": [MenuItems.DRINKS.pick_random()]
+		})
 
 func customer_entered(customer: Node) -> void:
 	if customer.id in customer_line:

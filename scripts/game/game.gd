@@ -4,6 +4,11 @@ var customer_group = "customer"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var register = get_node("Coffee Shop/environment/Register")
 
+
+func _ready():
+	randomize() # randomizes the whole game!
+
+
 func get_state(filename: String = "") -> Dictionary:
 	print(register.customer_line)
 	return {

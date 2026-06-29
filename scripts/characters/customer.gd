@@ -7,7 +7,7 @@ var status = CustomerStatus.order_status.TO_PLACE
 
 @export var target: Node2D
 @onready var navigation_agent_2d = $NavigationAgent2D
-@onready var sprite = $NoraBase
+@onready var sprite = $Sprite
 
 var stuck_timer = 0.0
 var last_position = Vector2.ZERO
@@ -17,10 +17,8 @@ const STUCK_TIME = 0.2
 
 func _ready() -> void:
 	call_deferred("seeker_setup")
-	print("before:", id)
 	if id == "" or id == null:
 		id = str(randi(), "_", Time.get_ticks_usec())
-	print("after:", id)
 	CustomerRegistry.register(self)
 
 func _exit_tree():
@@ -28,7 +26,6 @@ func _exit_tree():
 
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
-	print("updated status:", status)
 
 func seeker_setup():
 	await get_tree().physics_frame
@@ -71,6 +68,9 @@ func _restore_target(path: NodePath) -> void:
 	if has_node(path):
 		target = get_node(path)
 		
+		
+
+#region Saving
 func get_customer_data() -> Dictionary:
 	var data := {
 		"id": id,
@@ -96,6 +96,5 @@ func load_customer_data(data: Dictionary) -> void:
 		call_deferred("_restore_target", data.target_path)
 
 	CustomerRegistry.register(self)
-	print(CustomerRegistry.by_id)
 		
-		
+#endregion

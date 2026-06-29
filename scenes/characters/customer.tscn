@@ -11,7 +11,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_vat4n")
 
-[node name="NoraBase" type="Sprite2D" parent="." unique_id=1574366712]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1574366712]
 position = Vector2(0, -32)
 texture = ExtResource("1_mxs21")
 

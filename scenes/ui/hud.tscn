@@ -46,12 +46,11 @@ anchor_right = 0.5
 grow_vertical = 0
 
 [node name="Tickets" parent="." unique_id=469832914 instance=ExtResource("5_136eg")]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -24.0
-offset_right = 102.0
-offset_bottom = 8.0
+offset_top = -32.0
+offset_bottom = 0.0
 grow_vertical = 0
