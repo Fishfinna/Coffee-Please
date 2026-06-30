@@ -24,7 +24,7 @@ var current_day_of_week: int = START_DAY_OF_WEEK
 var is_running     : bool = true
 
 var _elapsed : float = 0.0
-var speed: float = 1
+var speed: float = .05
 
 # Days per month (non-leap-year; adjust if needed)
 const DAYS_IN_MONTH := [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
