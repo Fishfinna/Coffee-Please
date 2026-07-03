@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="1_5066t"]
 [ext_resource type="Texture2D" uid="uid://b0v7gf8oxc6i3" path="res://assets/art/ui/icons/up-arrow.png" id="1_dekrm"]
+[ext_resource type="Script" uid="uid://dteupm8nyctac" path="res://scripts/hud/tickets.gd" id="1_lpak6"]
+[ext_resource type="PackedScene" uid="uid://dq04rxr48mvww" path="res://scenes/ui/hud-components/ticket.tscn" id="3_fq5dy"]
 
 [node name="Tickets" type="Control" unique_id=469832914]
 custom_minimum_size = Vector2(100, 24)
@@ -9,12 +11,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 24.0
+script = ExtResource("1_lpak6")
 
 [node name="Panel" type="NinePatchRect" parent="." unique_id=1246737562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 56.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -40,6 +44,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer" unique_id=1226630302]
+layout_mode = 2
+
+[node name="Ticket" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer" unique_id=166805606 instance=ExtResource("3_fq5dy")]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="." unique_id=376264460]

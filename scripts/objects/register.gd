@@ -6,6 +6,8 @@ class_name Register
 @onready var purchase_audio := $Purchase_Audio
 @onready var pick_up_area = $"../Sink"
 
+@onready var ticket_board = get_node("../../../Hud/Tickets")
+
 const MenuItems = preload("uid://cdnt7p2irvk7i")
 
 var customer_line: Array[String] = []
@@ -39,14 +41,15 @@ func _on_interact():
 
 func place_customer_order(customer: Node) -> void:
 	customer.set_status(CustomerStatus.order_status.PLACED)
-	print("ticket to save: ", {
-		"_id": customer.id, 
+	var ticket := {
+		"_id": customer.id,
 		"timestamp": {
 			"hour": DaytimeClock.current_hour,
 			"minute": DaytimeClock.current_minute
-			},
+		},
 		"items": [MenuItems.DRINKS.pick_random()]
-		})
+	}
+	ticket_board.add_ticket(ticket)
 
 func customer_entered(customer: Node) -> void:
 	if customer.id in customer_line:

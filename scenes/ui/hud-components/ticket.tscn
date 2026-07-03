@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dq04rxr48mvww"]
+
+[ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="1_elp5b"]
+[ext_resource type="Script" uid="uid://cuk7jn2a3gu1w" path="res://h_flow_container.gd" id="2_52kko"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52kko"]
+texture = ExtResource("1_elp5b")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="Ticket" type="Control" unique_id=166805606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="PanelContainer" parent="." unique_id=1033244118]
+custom_minimum_size = Vector2(160, 58)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_52kko")
+
+[node name="name" type="Label" parent="background" unique_id=1781335490]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 15
+text = "Amy"
+
+[node name="wait time" type="Label" parent="background" unique_id=1770148537]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "4m"
+
+[node name="MarginContainer" type="MarginContainer" parent="background" unique_id=1326567544]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="HFlowContainer" type="VFlowContainer" parent="background/MarginContainer" unique_id=1333444660]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+script = ExtResource("2_52kko")
+
+[node name="Panel" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=1582983787]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Panel2" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=473951087]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel3" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=2053566391]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel4" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=1316895100]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel5" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=222107971]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel6" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=1467474024]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel7" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=1808142437]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel8" type="Panel" parent="background/MarginContainer/HFlowContainer" unique_id=2086256093]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
