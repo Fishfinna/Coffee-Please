@@ -24,7 +24,6 @@ func setup(data: Dictionary) -> void:
 	time_label.text = data.modified
 
 func _delete() -> void:
-	print("delete: ", save_file)
 	save_manager.delete_save(save_file)
 	emit_signal("deleted", save_file)
 

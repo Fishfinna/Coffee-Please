@@ -17,7 +17,7 @@ offset_bottom = 130.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_52kko")
 script = ExtResource("2_52kko")
 
-[node name="name" type="Label" parent="." unique_id=644152246]
+[node name="order_name" type="Label" parent="." unique_id=644152246]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 15
@@ -44,52 +44,4 @@ size_flags_vertical = 0
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="Panel2" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=492161768]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel3" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=1610151562]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel4" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=1324883661]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel5" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=2129741609]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel6" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=1349851417]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel7" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=2097187540]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel9" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=1449511392]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel8" type="Panel" parent="MarginContainer/HFlowContainer" unique_id=2002871964]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4

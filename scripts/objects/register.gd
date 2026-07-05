@@ -43,6 +43,7 @@ func place_customer_order(customer: Node) -> void:
 	customer.set_status(CustomerStatus.order_status.PLACED)
 	var ticket := {
 		"_id": customer.id,
+		"name": "Nora",
 		"timestamp": {
 			"hour": DaytimeClock.current_hour,
 			"minute": DaytimeClock.current_minute

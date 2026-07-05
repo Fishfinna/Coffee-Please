@@ -22,6 +22,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 script = ExtResource("2_cvpj1")
+ticket_scene = ExtResource("3_uyfcb")
 
 [node name="Label" type="Label" parent="." unique_id=913263048]
 layout_mode = 1
@@ -65,16 +66,9 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1464002724]
+[node name="TicketList" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1464002724]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
-
-[node name="Ticket" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1809364503 instance=ExtResource("3_uyfcb")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Ticket2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=2000421899 instance=ExtResource("3_uyfcb")]
-layout_mode = 2
-size_flags_horizontal = 4
 
 [connection signal="pressed" from="toggle" to="." method="_on_toggle_tickets"]
