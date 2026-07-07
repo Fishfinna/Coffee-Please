@@ -1,4 +1,7 @@
 extends NinePatchRect
+class_name TicketBoard
+
+signal toggled_menu(is_open: bool)
 
 @onready var toggle: TextureButton = $toggle
 var is_open: bool = false
@@ -23,8 +26,9 @@ func _on_toggle_tickets() -> void:
 	else:
 		position.y = size.y - open_padding
 
-	print(starting_position)
 	is_open = !is_open
+	emit_signal("toggled_menu", is_open)
+
 	toggle.flip_v = !toggle.flip_v
 
 func add_ticket(ticket_data: Dictionary) -> void:

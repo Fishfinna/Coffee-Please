@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5gxrha1h1c6k" path="res://assets/art/ui/time-panel.png" id="1_elp5b"]
 [ext_resource type="Script" uid="uid://jpu1fr5bid8k" path="res://scripts/hud/ticket.gd" id="2_52kko"]
+[ext_resource type="Texture2D" uid="uid://h3gci7bxir3g" path="res://assets/art/ui/icons/coffee-bean-normal.png" id="3_vuyvw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52kko"]
 texture = ExtResource("1_elp5b")
@@ -10,7 +11,7 @@ texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
-[node name="background" type="PanelContainer" unique_id=1809364503]
+[node name="Ticket" type="PanelContainer" unique_id=1809364503]
 custom_minimum_size = Vector2(114, 20)
 offset_right = 114.0
 offset_bottom = 130.0
@@ -19,17 +20,22 @@ script = ExtResource("2_52kko")
 
 [node name="order_name" type="Label" parent="." unique_id=644152246]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 15
 text = "Amy"
 
-[node name="wait time" type="Label" parent="." unique_id=541470870]
+[node name="time_margin" type="MarginContainer" parent="." unique_id=439609869]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+
+[node name="wait_time" type="Label" parent="time_margin" unique_id=541470870]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+theme_override_colors/font_color = Color(0.5887774, 0.5619126, 0.51708716, 1)
 theme_override_font_sizes/font_size = 12
-text = "4m"
+text = "0min"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1294525384]
 layout_mode = 2
@@ -45,3 +51,17 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/HFlowContainer/Panel" unique_id=125084979]
+position = Vector2(15, 12)
+texture = ExtResource("3_vuyvw")
+
+[node name="Label" type="Label" parent="MarginContainer/HFlowContainer/Panel" unique_id=214488299]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 21.0
+offset_right = 30.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_font_sizes/font_size = 10
+text = "Coffee"

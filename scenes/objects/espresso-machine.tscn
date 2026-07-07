@@ -8,8 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]
 size = Vector2(20, 7)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ncje6"]
-radius = 25.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5gdy"]
+size = Vector2(20, 47.49999)
 
 [node name="EspressoMachine" type="Node2D" unique_id=551865825]
 
@@ -32,5 +32,6 @@ appear_audio = ExtResource("3_j7a0y")
 position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Interactable" unique_id=1609956574]
+position = Vector2(0, 9.9)
 scale = Vector2(1, 0.7200002)
-shape = SubResource("CircleShape2D_ncje6")
+shape = SubResource("RectangleShape2D_s5gdy")

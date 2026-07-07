@@ -45,7 +45,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 grow_vertical = 0
 
-[node name="Tickets" parent="." unique_id=469832914 instance=ExtResource("5_136eg")]
+[node name="TicketBoard" parent="." unique_id=469832914 instance=ExtResource("5_136eg")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

@@ -106,6 +106,7 @@ func get_date_string() -> String:
 		2, 22:     suffix = "nd"
 		3, 23:     suffix = "rd"
 	return "%s, %s %d%s" % [DAY_NAMES[current_day_of_week], MONTH_NAMES[current_month], current_day, suffix]
+
 func get_day_progress() -> float:
 	var elapsed_minutes := (current_hour - DAY_START_HOUR) * 60 + current_minute
 	return float(elapsed_minutes) / float(TOTAL_MINUTES)

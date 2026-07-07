@@ -9,14 +9,11 @@ func _ready() -> void:
 	DaytimeClock.day_ended.connect(_on_day_ended)
 	_refresh_display()
 
-
 func _on_time_changed(_hour: int, _minute: int) -> void:
 	_refresh_display()
 
-
 func _on_day_changed(_day: int, _month: int, _year: int) -> void:
 	_refresh_display()
-
 
 func _on_day_ended() -> void:
 	print("Day ended! Progress: ", DaytimeClock.get_day_progress())

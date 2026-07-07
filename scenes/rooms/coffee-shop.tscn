@@ -414,8 +414,8 @@ z_as_relative = false
 position = Vector2(-19, 44)
 
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(81, 164)
+position = Vector2(-41, 125)
 target = NodePath("../Register")
 
 [node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
-position = Vector2(12, -10)
+position = Vector2(13, -12)

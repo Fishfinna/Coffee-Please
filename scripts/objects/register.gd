@@ -6,7 +6,7 @@ class_name Register
 @onready var purchase_audio := $Purchase_Audio
 @onready var pick_up_area = $"../Sink"
 
-@onready var ticket_board = get_node("../../../Hud/Tickets")
+@onready var ticket_board = get_node("../../../Hud/TicketBoard")
 
 const MenuItems = preload("uid://cdnt7p2irvk7i")
 
