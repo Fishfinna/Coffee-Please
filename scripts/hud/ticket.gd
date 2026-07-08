@@ -16,14 +16,22 @@ func _ready() -> void:
 
 func _on_time_changed(current_hour: int, current_minute: int) -> void:
 	var wait_time_str = ""
-	
-	var waited_hours = current_hour - created_hour	
-	if waited_hours:
-		wait_time_str = "%dh %dmin" % [waited_hours, current_minute]
+
+	var created_total_minutes = created_hour * 60 + created_minute
+	var current_total_minutes = current_hour * 60 + current_minute
+	var elapsed_minutes = current_total_minutes - created_total_minutes
+
+	if elapsed_minutes < 0:
+		elapsed_minutes += 12 * 60
+
+	var waited_hours = elapsed_minutes / 60
+	var waited_minutes = elapsed_minutes % 60
+
+	if waited_hours > 0:
+		wait_time_str = "%dh %dmin" % [waited_hours, waited_minutes]
 	else:
-		var waited_minutes = current_minute - created_minute
 		wait_time_str = "%dmin" % waited_minutes
-		
+
 	wait_time.text = wait_time_str
 
 func setup(ticket_data: Dictionary) -> void:

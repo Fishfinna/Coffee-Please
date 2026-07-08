@@ -404,7 +404,7 @@ script = ExtResource("2_7fs5h")
 position = Vector2(-43, 69)
 
 [node name="Sink" parent="environment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
-position = Vector2(14, 68)
+position = Vector2(-43, -12)
 
 [node name="robin" parent="environment" unique_id=454574201 instance=ExtResource("4_7fs5h")]
 position = Vector2(62, 36)

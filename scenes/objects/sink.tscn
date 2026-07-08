@@ -9,8 +9,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4812f"]
 size = Vector2(28, 6)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5cpu3"]
-radius = 35.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrkpg"]
+size = Vector2(29, 61.562492)
 
 [node name="Sink" type="Node2D" unique_id=1694069929]
 y_sort_enabled = true
@@ -38,5 +38,6 @@ is_interactable = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2041111123]
 z_index = 1
 z_as_relative = false
+position = Vector2(-0.5, 13.3)
 scale = Vector2(1, 0.6400001)
-shape = SubResource("CircleShape2D_5cpu3")
+shape = SubResource("RectangleShape2D_jrkpg")

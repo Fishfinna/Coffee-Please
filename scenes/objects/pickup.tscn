@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dyfkdg3rv3oox"]
+
+[ext_resource type="Texture2D" uid="uid://c7r3p5yhma1t4" path="res://assets/art/objects/pickup.png" id="1_ehort"]
+[ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_7p3uj"]
+[ext_resource type="AudioStream" uid="uid://be5fx1xdfqeg5" path="res://assets/audio/chop.wav" id="3_jp2o4"]
+[ext_resource type="Script" uid="uid://5u403mtdww36" path="res://scripts/ui/interactable.gd" id="4_jp2o4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ski6h"]
+size = Vector2(10, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp2o4"]
+size = Vector2(14, 25)
+
+[node name="Pickup" type="Node2D" unique_id=670009555]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1621881315]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=393801951]
+texture = ExtResource("1_ehort")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1177206836]
+shape = SubResource("RectangleShape2D_ski6h")
+
+[node name="Indicator" parent="StaticBody2D" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_7p3uj")]
+interactable = NodePath("../../Interactable")
+appear_audio = ExtResource("3_jp2o4")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1262368756]
+script = ExtResource("4_jp2o4")
+interact_name = "Place Order"
+metadata/_custom_type_script = "uid://5u403mtdww36"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=689868194]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_jp2o4")
