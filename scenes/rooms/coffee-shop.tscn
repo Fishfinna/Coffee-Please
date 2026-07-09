@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
+[ext_resource type="PackedScene" uid="uid://dyfkdg3rv3oox" path="res://scenes/objects/pickup.tscn" id="10_c7qof"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fs5h"]
 load_path = "res://.godot/imported/floor.png-a1d18bbeb292a54eba7bb4438895a97d.ctex"
@@ -401,7 +402,7 @@ tile_set = SubResource("TileSet_7fs5h")
 script = ExtResource("2_7fs5h")
 
 [node name="Register" parent="environment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
-position = Vector2(-43, 69)
+position = Vector2(75, 68)
 
 [node name="Sink" parent="environment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
 position = Vector2(-43, -12)
@@ -414,8 +415,11 @@ z_as_relative = false
 position = Vector2(-19, 44)
 
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(-41, 125)
+position = Vector2(142, 114)
 target = NodePath("../Register")
 
 [node name="EspressoMachine" parent="environment" unique_id=551865825 instance=ExtResource("7_fxbdo")]
 position = Vector2(13, -12)
+
+[node name="Pickup" parent="environment" unique_id=670009555 instance=ExtResource("10_c7qof")]
+position = Vector2(-119, 38)

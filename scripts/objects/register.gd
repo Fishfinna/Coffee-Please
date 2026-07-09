@@ -4,7 +4,7 @@ class_name Register
 @onready var interactable: Area2D = $Interactable
 @onready var indicator: Indicator = $body/Indicator
 @onready var purchase_audio := $Purchase_Audio
-@onready var pick_up_area = $"../Sink"
+@onready var pick_up_area = $"../Pickup"
 
 @onready var ticket_board = get_node("../../../Hud/TicketBoard")
 

@@ -22,6 +22,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 script = ExtResource("2_cvpj1")
+animation_ease = 2
 ticket_scene = ExtResource("3_uyfcb")
 
 [node name="Label" type="Label" parent="." unique_id=913263048]
