@@ -402,7 +402,7 @@ tile_set = SubResource("TileSet_7fs5h")
 script = ExtResource("2_7fs5h")
 
 [node name="Register" parent="environment" unique_id=1784829664 instance=ExtResource("3_fxbdo")]
-position = Vector2(75, 68)
+position = Vector2(8, 70)
 
 [node name="Sink" parent="environment" unique_id=1694069929 instance=ExtResource("6_k1eqc")]
 position = Vector2(-43, -12)
