@@ -118,6 +118,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 player="main player logic"
 customer=""
+staff=""
 
 [gui]
 

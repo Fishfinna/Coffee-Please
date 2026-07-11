@@ -17,9 +17,10 @@ texture = ExtResource("1_mxs21")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1091107263]
 target_desired_distance = 21.97
+path_postprocessing = 2
+simplify_path = true
 avoidance_enabled = true
-radius = 15.0
-time_horizon_obstacles = 0.42
+time_horizon_obstacles = 0.58
 max_speed = 2495.21
 debug_path_custom_color = Color(1, 0.7227015, 1, 1)
 
