@@ -16,7 +16,9 @@ position = Vector2(0, -32)
 texture = ExtResource("1_mxs21")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1091107263]
-target_desired_distance = 21.97
+path_desired_distance = 25.0
+target_desired_distance = 15.97
+path_max_distance = 500.0
 path_postprocessing = 2
 simplify_path = true
 avoidance_enabled = true
