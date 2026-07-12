@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6teomiq2epe8"]
+
+[ext_resource type="Script" uid="uid://46osahuwvlkp" path="res://scripts/hud/ticket_item.gd" id="1_3pcfi"]
+[ext_resource type="Texture2D" uid="uid://niucrsrmigj4" path="res://assets/art/items/coffee.png" id="2_s3c0r"]
+
+[node name="TicketItem" type="Panel" unique_id=241910283]
+custom_minimum_size = Vector2(32, 32)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_3pcfi")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1159315544]
+position = Vector2(16, 12)
+texture = ExtResource("2_s3c0r")
+
+[node name="Label" type="Label" parent="." unique_id=1724582457]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.5
+offset_top = -8.0
+offset_right = 10.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.29803923, 0.28627452, 0.28235295, 1)
+theme_override_font_sizes/font_size = 8
+text = "Coffee"

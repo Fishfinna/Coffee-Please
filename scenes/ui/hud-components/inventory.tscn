@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3pjxml3jn47b"]
 
 [ext_resource type="Texture2D" uid="uid://ciug84k6yfwxx" path="res://themes/panels/hud-panel.tres" id="1_3ajng"]
+[ext_resource type="Script" uid="uid://coesqoqhhouwj" path="res://scripts/ui/inventory.gd" id="1_7cu5u"]
 [ext_resource type="Texture2D" uid="uid://ciynad0atv5a3" path="res://assets/art/ui/panel-focus.png" id="2_lb7pi"]
 
 [node name="inventory" type="Control" unique_id=1959453802]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7cu5u")
 
 [node name="left" type="NinePatchRect" parent="." unique_id=535974518]
 layout_mode = 1

@@ -9,14 +9,14 @@
 size = Vector2(20, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5gdy"]
-size = Vector2(20, 47.49999)
+size = Vector2(20, 33.472214)
 
 [node name="EspressoMachine" type="Node2D" unique_id=551865825]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1211997790]
 
 [node name="EspressoMachine" type="Sprite2D" parent="StaticBody2D" unique_id=645113485]
-position = Vector2(-4, -12)
+position = Vector2(-3, -28)
 texture = ExtResource("1_bwi8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1718303221]
@@ -24,7 +24,7 @@ position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_78fss")
 
 [node name="Indicator" parent="StaticBody2D" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_s5gdy")]
-position = Vector2(-1, -1)
+position = Vector2(0, -17)
 interactable = NodePath("../Interactable")
 appear_audio = ExtResource("3_j7a0y")
 
@@ -32,6 +32,6 @@ appear_audio = ExtResource("3_j7a0y")
 position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Interactable" unique_id=1609956574]
-position = Vector2(0, 9.9)
+position = Vector2(0, 4.9499993)
 scale = Vector2(1, 0.7200002)
 shape = SubResource("RectangleShape2D_s5gdy")

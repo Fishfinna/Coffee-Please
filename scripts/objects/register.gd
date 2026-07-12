@@ -5,9 +5,7 @@ class_name Register
 @onready var indicator: Indicator = $body/Indicator
 @onready var purchase_audio := $Purchase_Audio
 @onready var pick_up_area = $"../Pickup"
-
 @onready var ticket_board = get_node("../../../Hud/TicketBoard")
-
 const MenuItems = preload("uid://cdnt7p2irvk7i")
 
 var customer_line: Array[String] = []
@@ -20,27 +18,22 @@ func _on_interact():
 	if not interactable.is_interactable:
 		indicator.play_audio()
 		return
-
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 		return
-
 	purchase_audio.play()
-	Global.money += 1
-
 	var id = customer_line.pop_front()
 	var customer = get_customer(id)
 	if customer == null:
 		return
-
 	place_customer_order(customer)
 	customer.target = pick_up_area
-
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 
 func place_customer_order(customer: Node) -> void:
 	customer.set_status(CustomerStatus.order_status.PLACED)
+	var ordered_item: Item = MenuItems.DRINKS.pick_random()
 	var ticket := {
 		"_id": customer.id,
 		"name": "Nora",
@@ -48,8 +41,9 @@ func place_customer_order(customer: Node) -> void:
 			"hour": DaytimeClock.current_hour,
 			"minute": DaytimeClock.current_minute
 		},
-		"items": [MenuItems.DRINKS.pick_random()]
+		"items": [ordered_item.id]
 	}
+	Global.money += ordered_item.price
 	ticket_board.add_ticket(ticket)
 
 func customer_entered(customer: Node) -> void:
@@ -57,7 +51,6 @@ func customer_entered(customer: Node) -> void:
 		return
 	if customer.status != CustomerStatus.order_status.TO_PLACE:
 		return
-
 	customer_line.append(customer.id)
 	customer.set_status(CustomerStatus.order_status.IN_LINE)
 	interactable.is_interactable = true

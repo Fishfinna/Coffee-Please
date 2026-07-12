@@ -20,7 +20,7 @@ script = ExtResource("1_b0xyd")
 [node name="body" type="StaticBody2D" parent="." unique_id=74552736]
 
 [node name="Register" type="Sprite2D" parent="body" unique_id=1188261056]
-position = Vector2(1, -12)
+position = Vector2(1, -28)
 texture = ExtResource("1_gvynn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body" unique_id=100129909]
@@ -28,6 +28,7 @@ position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_37wl2")
 
 [node name="Indicator" parent="body" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_th0y5")]
+position = Vector2(0, -16)
 interactable = NodePath("../../Interactable")
 appear_audio = ExtResource("4_b0xyd")
 

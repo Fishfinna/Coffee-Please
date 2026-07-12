@@ -10,7 +10,7 @@
 size = Vector2(28, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrkpg"]
-size = Vector2(29, 61.562492)
+size = Vector2(29, 25.625)
 
 [node name="Sink" type="Node2D" unique_id=1694069929]
 y_sort_enabled = true
@@ -19,7 +19,7 @@ script = ExtResource("1_jrkpg")
 [node name="body" type="StaticBody2D" parent="." unique_id=1164423773]
 
 [node name="Sink" type="Sprite2D" parent="body" unique_id=998283638]
-position = Vector2(0, -12)
+position = Vector2(0, -29)
 texture = ExtResource("1_4812f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body" unique_id=1998553822]
@@ -29,6 +29,7 @@ position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_4812f")
 
 [node name="Indicator" parent="body" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_dxbif")]
+position = Vector2(0, -17)
 interactable = NodePath("../../Interactable")
 appear_audio = ExtResource("3_jrkpg")
 
@@ -38,6 +39,6 @@ is_interactable = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2041111123]
 z_index = 1
 z_as_relative = false
-position = Vector2(-0.5, 13.3)
+position = Vector2(-0.5, 1.8000011)
 scale = Vector2(1, 0.6400001)
 shape = SubResource("RectangleShape2D_jrkpg")

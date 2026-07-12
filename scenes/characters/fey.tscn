@@ -51,11 +51,11 @@ script = ExtResource("1_5vdk4")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1814033569]
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D" unique_id=57456137]
-position = Vector2(0, -6)
+position = Vector2(0, -4.5)
+scale = Vector2(1, 0.90625)
 texture = ExtResource("2_7yt0o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=673906192]
-y_sort_enabled = true
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dsqej")
 autoplay = "default"

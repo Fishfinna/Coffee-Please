@@ -9,7 +9,7 @@
 size = Vector2(10, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jp2o4"]
-size = Vector2(59, 9)
+size = Vector2(102, 9)
 
 [node name="Pickup" type="Node2D" unique_id=670009555]
 
@@ -34,5 +34,5 @@ interact_name = "Place Order"
 metadata/_custom_type_script = "uid://5u403mtdww36"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=689868194]
-position = Vector2(-22.5, 3.5)
+position = Vector2(6, 4)
 shape = SubResource("RectangleShape2D_jp2o4")
