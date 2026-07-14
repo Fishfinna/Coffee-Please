@@ -1,10 +1,14 @@
 ~ start
-Robin: Hello, it's {{DaytimeClock.get_day_of_week_string()}}...[wait]\nHow are you?
-Fey: Hi!
-Robin: You have {{Global.money}}$
-if Global.money_today > 0:
-	Robin: You made some money today, that is great!
+if Inventory.get_focused_item() != null:
+	Robin: Wow you are holding a {{Inventory.get_focused_item().display_name}}!
+	Robin: How... did you know how to make that?
 else:
-	Robin: [speed=0.8]this is ok bu[wait=0.2] [next]
-	Fey: Ok got to go bye!
+	Robin: Hello, it's {{DaytimeClock.get_day_of_week_string()}}...[wait]\nHow are you?
+	Fey: Hi!
+	Robin: You have {{Global.money}}$
+	if Global.money_today > 0:
+		Robin: You made some money today, that is great!
+	else:
+		Robin: [speed=0.8]this is ok bu[wait=0.2] [next]
+		Fey: Ok got to go bye!
 => END

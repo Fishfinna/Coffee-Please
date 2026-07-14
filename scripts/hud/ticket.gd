@@ -38,17 +38,14 @@ func setup(ticket_data: Dictionary) -> void:
 	created_minute = timestamp.get("minute", 0)
 	order_name.text = customer_name
 
-	var item_ids: Array = ticket_data.get("items", [])
+	var items: Array = ticket_data.get("items", [])
 	order_items.clear()
 
 	for child in items_container.get_children():
 		child.queue_free()
 
-	for item_id in item_ids:
-		var item: Item = Items.get_item(item_id)
-		if item == null:
-			push_warning("Ticket.setup: unknown item id '%s'" % item_id)
-			continue
+	for item in items:
+		print(item)
 		order_items.append(item)
 		var row: TicketItem = ItemRowScene.instantiate()
 		items_container.add_child(row)

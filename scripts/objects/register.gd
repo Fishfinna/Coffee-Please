@@ -33,7 +33,10 @@ func _on_interact():
 
 func place_customer_order(customer: Node) -> void:
 	customer.set_status(CustomerStatus.order_status.PLACED)
-	var ordered_item: Item = MenuItems.DRINKS.pick_random()
+	var total_price := 0
+	for item in customer.order:
+		total_price += item.price
+
 	var ticket := {
 		"_id": customer.id,
 		"name": "Nora",
@@ -41,9 +44,10 @@ func place_customer_order(customer: Node) -> void:
 			"hour": DaytimeClock.current_hour,
 			"minute": DaytimeClock.current_minute
 		},
-		"items": [ordered_item.id]
+		"items": customer.order
 	}
-	Global.money += ordered_item.price
+
+	Global.money += total_price
 	ticket_board.add_ticket(ticket)
 
 func customer_entered(customer: Node) -> void:

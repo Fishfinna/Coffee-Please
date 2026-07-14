@@ -6,6 +6,8 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact():
-	if interactable.is_interactable:
-		indicator.play_audio()
-		print("sink")
+	if not interactable.is_interactable:
+		return
+	indicator.play_audio()
+	var water: Item = Items.get_item(&"water")
+	var added = Inventory.pickup(water)

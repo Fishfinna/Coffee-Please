@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://dyfkdg3rv3oox"]
 
 [ext_resource type="Texture2D" uid="uid://c7r3p5yhma1t4" path="res://assets/art/objects/pickup.png" id="1_ehort"]
+[ext_resource type="Script" uid="uid://bxv6y2h0fybpo" path="res://scripts/objects/pickup.gd" id="1_od3lj"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_7p3uj"]
 [ext_resource type="AudioStream" uid="uid://be5fx1xdfqeg5" path="res://assets/audio/chop.wav" id="3_jp2o4"]
-[ext_resource type="Script" uid="uid://5u403mtdww36" path="res://scripts/ui/interactable.gd" id="4_jp2o4"]
+[ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="6_od3lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ski6h"]
 size = Vector2(10, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp2o4"]
-size = Vector2(102, 9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbyeq"]
+size = Vector2(65, 33.472214)
 
 [node name="Pickup" type="Node2D" unique_id=670009555]
+script = ExtResource("1_od3lj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1621881315]
 position = Vector2(0, -6)
@@ -24,15 +26,18 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_ski6h")
 
 [node name="Indicator" parent="StaticBody2D" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_7p3uj")]
-interactable = NodePath("../../Interactable")
+interactable = NodePath("../Interactable")
 appear_audio = ExtResource("3_jp2o4")
 
-[node name="Interactable" type="Area2D" parent="." unique_id=1262368756]
-position = Vector2(0, -6)
-script = ExtResource("4_jp2o4")
-interact_name = "Place Order"
-metadata/_custom_type_script = "uid://5u403mtdww36"
+[node name="Interactable" parent="StaticBody2D" unique_id=1415010887 instance=ExtResource("6_od3lj")]
+position = Vector2(0, 2)
+interact_name = "Dropoff"
+is_interactable = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=689868194]
-position = Vector2(6, 4)
-shape = SubResource("RectangleShape2D_jp2o4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Interactable" unique_id=1792523654]
+position = Vector2(-0.5, 4.9499993)
+scale = Vector2(1, 0.7200002)
+shape = SubResource("RectangleShape2D_hbyeq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1524609469]
+position = Vector2(0, -14)

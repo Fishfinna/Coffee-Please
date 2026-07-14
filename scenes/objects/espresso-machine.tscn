@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dj0pa2r43pomn"]
 
 [ext_resource type="Texture2D" uid="uid://dv3p311etwevc" path="res://assets/art/objects/espresso-machine.png" id="1_bwi8q"]
+[ext_resource type="Script" uid="uid://cfpara4iestdp" path="res://scripts/objects/espresso_machine.gd" id="1_j7a0y"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="2_78fss"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_s5gdy"]
 [ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="3_j7a0y"]
@@ -12,6 +13,7 @@ size = Vector2(20, 7)
 size = Vector2(20, 33.472214)
 
 [node name="EspressoMachine" type="Node2D" unique_id=551865825]
+script = ExtResource("1_j7a0y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1211997790]
 
@@ -30,6 +32,7 @@ appear_audio = ExtResource("3_j7a0y")
 
 [node name="Interactable" parent="StaticBody2D" unique_id=1415010887 instance=ExtResource("2_78fss")]
 position = Vector2(0, -4)
+is_interactable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Interactable" unique_id=1609956574]
 position = Vector2(0, 4.9499993)

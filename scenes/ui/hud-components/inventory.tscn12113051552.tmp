@@ -70,19 +70,12 @@ patch_margin_bottom = 2
 position = Vector2(16, 16)
 
 [node name="Label" type="Label" parent="left" unique_id=851764675]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -16.0
-offset_top = -13.0
-offset_right = 17.0
-offset_bottom = -1.0
-grow_horizontal = 2
+layout_mode = 0
+offset_top = -12.0
+offset_right = 32.0
 theme_override_colors/font_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
-justification_flags = 162
 
 [node name="right" type="NinePatchRect" parent="." unique_id=1747431431]
 layout_mode = 1
@@ -128,15 +121,9 @@ patch_margin_bottom = 2
 position = Vector2(16, 16)
 
 [node name="Label" type="Label" parent="right" unique_id=396982125]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -16.0
-offset_top = -14.0
-offset_right = 17.0
-offset_bottom = -1.0
-grow_horizontal = 2
+layout_mode = 0
+offset_top = -12.0
+offset_right = 32.0
 theme_override_colors/font_color = Color(0.8352941, 0.8117647, 0.77254903, 1)
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
