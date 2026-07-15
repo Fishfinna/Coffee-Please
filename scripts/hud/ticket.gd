@@ -4,6 +4,8 @@ class_name Ticket
 const ItemRowScene := preload("res://scenes/ui/hud-components/ticket-item.tscn")
 
 var creation_time: Timer
+var id: String
+
 @onready var ticket_board: TicketBoard = get_node("../../../../../TicketBoard")
 @onready var order_name: Label = $order_name
 @onready var wait_time: Label = $time_margin/wait_time
@@ -32,6 +34,7 @@ func _on_time_changed(current_hour: int, current_minute: int) -> void:
 	wait_time.text = wait_time_str
 
 func setup(ticket_data: Dictionary) -> void:
+	id = ticket_data.get("_id", "Unknown")
 	var customer_name: String = ticket_data.get("name", "Unknown")
 	var timestamp: Dictionary = ticket_data.get("timestamp", {})
 	created_hour = timestamp.get("hour", 0)
@@ -45,7 +48,6 @@ func setup(ticket_data: Dictionary) -> void:
 		child.queue_free()
 
 	for item in items:
-		print(item)
 		order_items.append(item)
 		var row: TicketItem = ItemRowScene.instantiate()
 		items_container.add_child(row)

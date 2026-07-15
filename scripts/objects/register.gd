@@ -27,7 +27,7 @@ func _on_interact():
 	if customer == null:
 		return
 	place_customer_order(customer)
-	customer.target = pick_up_area
+	customer.aquire_target(pick_up_area)
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 

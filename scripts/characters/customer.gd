@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Customer
 
 var id: String
-var movement_speed = 50.0
+var movement_speed = 500.0 #50.0
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
 

@@ -41,3 +41,5 @@ shape = SubResource("RectangleShape2D_hbyeq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1524609469]
 position = Vector2(0, -14)
+
+[connection signal="customer_entered" from="StaticBody2D/Interactable" to="." method="customer_entered"]

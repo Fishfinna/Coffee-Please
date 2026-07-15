@@ -59,4 +59,8 @@ func add_ticket(ticket_data: Dictionary) -> void:
 	ticket_list.add_child(ticket)
 	ticket.setup(ticket_data)
 
-	
+func remove_ticket(id: String) -> void:
+	var tickets = ticket_list.get_children()
+	for ticket in tickets:
+		if ticket.id == id:
+			ticket.queue_free()

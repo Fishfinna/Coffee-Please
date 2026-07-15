@@ -10,7 +10,6 @@ func _ready():
 
 
 func get_state(filename: String = "") -> Dictionary:
-	print(register.customer_line)
 	return {
 		"player": player,
 		"customers": get_tree().get_nodes_in_group(customer_group),
