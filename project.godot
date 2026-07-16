@@ -35,6 +35,7 @@ CustomerRegistry="*uid://o6jbln3rd475"
 DaytimeClock="*uid://64tvrmblk6fn"
 buttons="*uid://u824dfx45eh0"
 Inventory="*uid://67t04wwltqux"
+Rumble="*uid://gx7b7wp6due4"
 
 [dialogic]
 

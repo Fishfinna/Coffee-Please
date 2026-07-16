@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bstbi5s8lqisf"]
+
+[ext_resource type="Texture2D" uid="uid://cshnccg1y3fv8" path="res://assets/art/tiles/door.png" id="1_yar34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yar34"]
+size = Vector2(24, 3)
+
+[node name="Door" type="Node2D" unique_id=69540908]
+
+[node name="Door" type="Sprite2D" parent="." unique_id=307948450]
+texture = ExtResource("1_yar34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933252977]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_yar34")

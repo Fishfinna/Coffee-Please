@@ -5,7 +5,7 @@ extends Node2D
 @onready var interactable = $StaticBody2D/Interactable
 
 @onready var ticket_board = get_node("../../../Hud/TicketBoard")
-@onready var next_target = $"../Register"
+@onready var next_target = $"../Door"
 
 #todo: store many items here
 #var items: Array[Item] = []
@@ -20,7 +20,13 @@ func place_item(new_item: Item):
 	item = new_item
 	sprite.texture = load(item.image)
 	await get_tree().create_timer(.4).timeout
-	customer_picks_up_item(get_customer(waiting_customers[0]))
+	if waiting_customers:
+		print(waiting_customers)
+		customer_picks_up_item(get_customer(waiting_customers[0]))
+
+func pickup_item():
+	Inventory.pickup(item)
+	remove_item()
 
 func remove_item():
 	item = null
@@ -28,9 +34,16 @@ func remove_item():
 
 func _on_interact():
 	indicator.play_audio()
-	if Inventory.get_focused_item():
-		place_item(Inventory.get_focused_item())
-		Inventory.remove_focused_item()
+	var held_item = Inventory.get_focused_item()
+	if item and held_item == null:
+		pickup_item()
+	else:
+		if held_item:
+			Inventory.remove_focused_item()
+			pickup_item()
+			place_item(held_item)
+		elif item:
+			pickup_item() 
 
 func get_customer(id: String) -> Customer:
 	return CustomerRegistry.get_customer(id)

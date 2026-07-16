@@ -32,6 +32,7 @@ func _on_interact():
 		interactable.is_interactable = false
 
 func place_customer_order(customer: Node) -> void:
+	Rumble.high()
 	customer.set_status(CustomerStatus.order_status.PLACED)
 	var total_price := 0
 	for item in customer.order:

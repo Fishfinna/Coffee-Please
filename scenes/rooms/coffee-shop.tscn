@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkg6oqft5f5m3" path="res://scenes/objects/sink.tscn" id="6_k1eqc"]
 [ext_resource type="PackedScene" uid="uid://dj0pa2r43pomn" path="res://scenes/objects/espresso-machine.tscn" id="7_fxbdo"]
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
+[ext_resource type="PackedScene" uid="uid://bstbi5s8lqisf" path="res://scenes/objects/door.tscn" id="10_6paru"]
 [ext_resource type="PackedScene" uid="uid://dyfkdg3rv3oox" path="res://scenes/objects/pickup.tscn" id="10_c7qof"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fs5h"]
@@ -244,7 +245,7 @@ z_as_relative = false
 position = Vector2(-19, 44)
 
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(142, 114)
+position = Vector2(248, 43)
 collision_mask = 33
 target = NodePath("../Register")
 
@@ -257,3 +258,6 @@ position = Vector2(-117, 38)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="environment" unique_id=628101150]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_yo8p7")
+
+[node name="Door" parent="environment" unique_id=69540908 instance=ExtResource("10_6paru")]
+position = Vector2(-242, -31)
