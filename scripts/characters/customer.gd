@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Customer
 
 var id: String
-var movement_speed = 200#50.0
+var movement_speed = 200 #50.0
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
 
@@ -27,6 +27,7 @@ func _exit_tree():
 
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
+	print(new_status)
 
 func seeker_setup():
 	await get_tree().physics_frame

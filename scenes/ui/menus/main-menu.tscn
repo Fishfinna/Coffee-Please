@@ -3,9 +3,24 @@
 [ext_resource type="Script" uid="uid://bjhxdbf4yt81o" path="res://scripts/rooms/main_menu.gd" id="1_8ja6j"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="2_ms1f1"]
 [ext_resource type="Texture2D" uid="uid://jo6vmbwp8mkw" path="res://icon.svg" id="3_k5ptj"]
+[ext_resource type="AudioStream" uid="uid://dye618fdvasnp" path="res://assets/audio/music/coffee.wav" id="4_ms1f1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tkf5"]
 bg_color = Color(0.9647059, 0.94509804, 0.9254902, 1)
+
+[sub_resource type="Animation" id="Animation_ms1f1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_k5ptj"]
+resource_name = "shake_coffee"
+length = 3.0
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kci8y"]
+_data = {
+&"RESET": SubResource("Animation_ms1f1"),
+&"shake_coffee": SubResource("Animation_k5ptj")
+}
 
 [node name="MainMenu" type="Node2D" unique_id=692940998]
 script = ExtResource("1_8ja6j")
@@ -110,10 +125,17 @@ theme_override_font_sizes/font_size = 32
 text = "Coffee Please"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=484831163]
-position = Vector2(317, 69.2697)
-rotation = -0.0113014085
+position = Vector2(322, 72)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_k5ptj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1447402110]
+stream = ExtResource("4_ms1f1")
+autoplay = true
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1638780954]
+libraries/ = SubResource("AnimationLibrary_kci8y")
 
 [connection signal="pressed" from="Panel/Control/contine" to="." method="_on_contine_button_down"]
 [connection signal="button_down" from="Panel/Control/settings" to="." method="_on_settings_button_down"]

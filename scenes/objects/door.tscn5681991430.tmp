@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bstbi5s8lqisf"]
+
+[ext_resource type="Script" uid="uid://be8cc85w0ljq1" path="res://scripts/objects/door.gd" id="1_xm0wp"]
+[ext_resource type="Texture2D" uid="uid://cshnccg1y3fv8" path="res://assets/art/tiles/door.png" id="1_yar34"]
+[ext_resource type="Script" uid="uid://5u403mtdww36" path="res://scripts/ui/interactable.gd" id="2_uw3m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yar34"]
+size = Vector2(24, 3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uw3m6"]
+radius = 24.083189
+
+[node name="Door" type="Node2D" unique_id=69540908]
+script = ExtResource("1_xm0wp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=679667291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1933252977]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_yar34")
+
+[node name="Door" type="Sprite2D" parent="StaticBody2D" unique_id=307948450]
+texture = ExtResource("1_yar34")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=522788261]
+script = ExtResource("2_uw3m6")
+metadata/_custom_type_script = "uid://5u403mtdww36"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=458499404]
+position = Vector2(0, 31)
+shape = SubResource("CircleShape2D_uw3m6")
