@@ -244,8 +244,23 @@ position = Vector2(62, 36)
 z_as_relative = false
 position = Vector2(-19, 44)
 
+[node name="Customer4" parent="environment" unique_id=1519482900 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+position = Vector2(247, 76)
+collision_mask = 33
+target = NodePath("../Register")
+
+[node name="Customer3" parent="environment" unique_id=2082704127 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+position = Vector2(218, 128)
+collision_mask = 33
+target = NodePath("../Register")
+
+[node name="Customer2" parent="environment" unique_id=833753758 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
+position = Vector2(134, 146)
+collision_mask = 33
+target = NodePath("../Register")
+
 [node name="Customer" parent="environment" unique_id=2125466650 node_paths=PackedStringArray("target") instance=ExtResource("8_7fs5h")]
-position = Vector2(194, 42)
+position = Vector2(155, 70)
 collision_mask = 33
 target = NodePath("../Register")
 
@@ -256,7 +271,8 @@ position = Vector2(15, 6)
 position = Vector2(-117, 38)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="environment" unique_id=628101150]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_yo8p7")
 
 [node name="Door" parent="environment" unique_id=69540908 instance=ExtResource("10_6paru")]
-position = Vector2(204, -28)
+position = Vector2(205, -31)

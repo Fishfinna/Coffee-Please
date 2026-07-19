@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Customer
 
 var id: String
-var movement_speed = 200 #50.0
+var movement_speed = 50.0
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
 
@@ -31,7 +31,6 @@ func set_status(new_status: CustomerStatus.order_status):
 
 func seeker_setup():
 	await get_tree().physics_frame
-	navigation_agent_2d.target_desired_distance = 30.0
 	if target:
 		navigation_agent_2d.target_position = target.global_position
 

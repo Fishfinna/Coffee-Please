@@ -49,7 +49,7 @@ func get_customer(id: String) -> Customer:
 	return CustomerRegistry.get_customer(id)
 	
 func customer_picks_up_item(customer: Customer) -> bool:
-	if item and item in customer.order:
+	if item and item in customer.get("order"):
 		customer.order.erase(item)
 		remove_item()
 		if len(customer.order) == 0 and customer.id in waiting_customers:

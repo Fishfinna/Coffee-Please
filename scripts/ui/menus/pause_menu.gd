@@ -36,6 +36,7 @@ func _input(event: InputEvent) -> void:
 			_pause_game()
 
 func _pause_game():
+	pause_menu.grab_focus()
 	is_transitioning = true
 	pause_menu.show()
 	save_menu.hide()

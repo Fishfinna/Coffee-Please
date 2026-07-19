@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhl6pgda68rww" path="res://scenes/ui/hud-components/ticket-board.tscn" id="5_136eg"]
 
 [node name="Hud" type="Control" unique_id=2133758882]
+z_index = 100
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 3
 anchors_preset = 15

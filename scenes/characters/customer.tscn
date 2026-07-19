@@ -20,6 +20,7 @@ target_desired_distance = 26.22
 path_postprocessing = 2
 simplify_path = true
 avoidance_enabled = true
+radius = 15.0
 time_horizon_obstacles = 0.75
 max_speed = 4000.0
 debug_path_custom_color = Color(0.45809126, 0.00019045339, 0.4744525, 1)

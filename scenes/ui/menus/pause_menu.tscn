@@ -175,6 +175,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 2
+focus_behavior_recursive = 2
 
 [node name="Panel" type="NinePatchRect" parent="pause" unique_id=101651499]
 layout_mode = 1
@@ -239,6 +241,8 @@ offset_right = 140.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 3
+focus_behavior_recursive = 2
 
 [node name="Panel" type="NinePatchRect" parent="save" unique_id=461557810]
 layout_mode = 1
@@ -371,6 +375,8 @@ anchor_right = 0.71875
 anchor_bottom = 0.8666667
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 3
+focus_behavior_recursive = 2
 script = ExtResource("6_2f5f3")
 metadata/_edit_use_anchors_ = true
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1hmpdgmm1cqw" path="res://dialog/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://cw4g8slpglhfy" path="res://dialog/textbox.png" id="2_nily6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://h3gci7bxir3g" path="res://assets/art/ui/icons/coffee-bean-normal.png" id="3_fxkot"]
 
@@ -64,16 +65,10 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5emyn"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.14, 0.14, 0.14, 0.8784314)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nily6"]
+texture = ExtResource("2_nily6")
+expand_margin_top = 6.0
+modulate_color = Color(0.47627783, 0.42737922, 0.4537471, 1)
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -142,7 +137,7 @@ grow_vertical = 0
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_5emyn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_nily6")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
 layout_mode = 2
