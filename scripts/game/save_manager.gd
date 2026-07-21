@@ -15,7 +15,6 @@ func create_directory(path: String) -> void:
 		push_error("Failed to create directory: %s (err %s)" % [path, err])
 #endregion
 
-# region List Saves
 func list_saves() -> Array[Dictionary]:
 	var saves: Array[Dictionary] = []
 
