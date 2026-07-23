@@ -6,7 +6,6 @@ class_name Register
 @onready var purchase_audio := $Purchase_Audio
 @onready var pick_up_area = $"../Pickup"
 @onready var ticket_board = get_node("../../../Hud/TicketBoard")
-const MenuItems = preload("uid://cdnt7p2irvk7i")
 
 var customer_line: Array[String] = []
 var is_loading := false

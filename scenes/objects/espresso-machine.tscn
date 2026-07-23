@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://cfpara4iestdp" path="res://scripts/objects/espresso_machine.gd" id="1_j7a0y"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="2_78fss"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_s5gdy"]
-[ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="3_j7a0y"]
+[ext_resource type="AudioStream" uid="uid://ce0pexmyw2ayp" path="res://assets/audio/objects/espresso-interaction.wav" id="4_1xo6n"]
+[ext_resource type="AudioStream" uid="uid://dyanbvdo4lb10" path="res://assets/audio/objects/espresso-grind.wav" id="6_1xo6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]
 size = Vector2(20, 7)
@@ -28,7 +29,7 @@ shape = SubResource("RectangleShape2D_78fss")
 [node name="Indicator" parent="StaticBody2D" unique_id=1503045415 node_paths=PackedStringArray("interactable") instance=ExtResource("2_s5gdy")]
 position = Vector2(0, -17)
 interactable = NodePath("../Interactable")
-appear_audio = ExtResource("3_j7a0y")
+appear_audio = ExtResource("4_1xo6n")
 
 [node name="Interactable" parent="StaticBody2D" unique_id=1415010887 instance=ExtResource("2_78fss")]
 position = Vector2(0, -4)
@@ -38,3 +39,7 @@ is_interactable = true
 position = Vector2(0, 4.9499993)
 scale = Vector2(1, 0.7200002)
 shape = SubResource("RectangleShape2D_s5gdy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1559005253]
+stream = ExtResource("6_1xo6n")
+bus = &"FX"
