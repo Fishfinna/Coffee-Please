@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cfpara4iestdp" path="res://scripts/objects/espresso_machine.gd" id="1_j7a0y"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="2_78fss"]
 [ext_resource type="PackedScene" uid="uid://b4me8nw6ia6p7" path="res://scenes/ui/indicator.tscn" id="2_s5gdy"]
-[ext_resource type="AudioStream" uid="uid://ce0pexmyw2ayp" path="res://assets/audio/objects/espresso-interaction.wav" id="4_1xo6n"]
+[ext_resource type="AudioStream" uid="uid://dfcobbrf5w1cl" path="res://assets/audio/objects/espresso-interaction.wav" id="4_1xo6n"]
 [ext_resource type="AudioStream" uid="uid://dyanbvdo4lb10" path="res://assets/audio/objects/espresso-grind.wav" id="6_1xo6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78fss"]

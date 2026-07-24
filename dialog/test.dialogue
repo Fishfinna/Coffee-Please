@@ -10,5 +10,5 @@ else:
 		Robin: You made some money today, that is great!
 	else:
 		Robin: [speed=0.8]this is ok bu[wait=0.2] [next]
-		Fey: Ok got to go bye!
+		Fey: Ok got to go bye!!
 => END
