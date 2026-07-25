@@ -97,7 +97,7 @@ func _on_save_deleted(file_name: String) -> void:
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-	Global.money = 100
+	
 
 func swap_menu(from_menu: Control, to_menu: Control) -> void:
 	if not from_menu or not to_menu:

@@ -29,7 +29,7 @@ func _delete() -> void:
 
 func _save_over() -> void:
 	save_manager.save_game(game.get_state(save_file))
-
+	
 func _load_slot() -> void:
 	var data = save_manager.load_game(save_file)
 	if data == null:

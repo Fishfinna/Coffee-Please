@@ -4,7 +4,7 @@
 bg_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 12
-anti_aliasing_size = 0.01
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 20
+anti_aliasing_size = 0.5
