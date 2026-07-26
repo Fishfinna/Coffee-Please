@@ -9,7 +9,9 @@ var money_today: int = 0
 var stars = 2
 
 # Staff (update this...)
-var staff = [{name: "robin"}]
+var staff: Array[Staff] =  [
+	Staff.new(&"fey", "Robin", 3, 2, 3, 0, true),
+]
 
 # the date
 # unlocked items...

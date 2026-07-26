@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://6lo0xoyjgsqb"]
 
+[ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scripts/ui/menus/settings.gd" id="1_81oq2"]
+[ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="2_x0vp0"]
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_t45wk"]
+
 [node name="Settings" type="Control" unique_id=103375151]
 layout_mode = 3
 anchors_preset = 15
@@ -7,18 +11,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_81oq2")
 
-[node name="fullscreen" type="CheckButton" parent="." unique_id=517589757]
+[node name="settings" type="Control" parent="." unique_id=1216690650]
+custom_minimum_size = Vector2(280, 180)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -8.0
-offset_right = 52.0
-offset_bottom = 8.0
+anchor_left = 0.28125
+anchor_top = 0.17777778
+anchor_right = 0.71875
+anchor_bottom = 0.8666667
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 3
+focus_behavior_recursive = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="NinePatchRect" parent="settings" unique_id=11216566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x0vp0")
+
+[node name="resume" type="Button" parent="settings" unique_id=1395079846]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.74285716
+anchor_top = 0.09274194
+anchor_right = 0.9285714
+anchor_bottom = 0.15725806
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_t45wk")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "resume >"
+flat = true
+
+[node name="fullscreen" type="CheckButton" parent="settings" unique_id=1122871194]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073214285
+anchor_top = 0.38709676
+anchor_right = 0.48035714
+anchor_bottom = 0.4516129
+offset_left = 1.5
+offset_right = -1.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
@@ -27,26 +73,43 @@ theme_override_colors/font_pressed_color = Color(0.27450982, 0.24705882, 0.21960
 theme_override_colors/font_hover_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
 text = "Fullscreen:"
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="." unique_id=2030578472]
+[node name="back" type="Button" parent="settings" unique_id=595373825]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -39.0
-offset_right = 94.0
-offset_bottom = -6.0
+anchors_preset = -1
+anchor_left = 0.07857143
+anchor_top = 0.10483871
+anchor_right = 0.21071428
+anchor_bottom = 0.16935484
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_t45wk")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "< back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="settings" unique_id=838041408]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25714287
+anchor_top = 0.2217742
+anchor_right = 0.92142856
+anchor_bottom = 0.3550179
 grow_horizontal = 2
 grow_vertical = 2
 accessibility_name = "sound"
 accessibility_description = "master audio"
 max_value = 1.0
 step = 0.01
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="HSlider" unique_id=1852676737]
+[node name="Label" type="Label" parent="settings/HSlider" unique_id=486508335]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.26881716
@@ -56,3 +119,20 @@ anchor_bottom = 0.69603235
 theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
 text = "Sound:"
 metadata/_edit_use_anchors_ = true
+
+[node name="save-label" type="Label" parent="settings" unique_id=76834189]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 3.0
+offset_right = 38.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[connection signal="toggled" from="settings/fullscreen" to="settings" method="_on_check_button_toggled"]
+[connection signal="value_changed" from="settings/HSlider" to="settings" method="_on_h_slider_value_changed"]
