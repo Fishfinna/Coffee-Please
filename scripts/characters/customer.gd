@@ -3,6 +3,7 @@ class_name Customer
 
 var id: String
 var movement_speed = 500.0
+var default_starting_position = Vector2(550, 255)
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
 const MenuItems = preload("uid://cdnt7p2irvk7i")
@@ -11,9 +12,15 @@ var target: Node2D
 @onready var navigation_agent_2d = $NavigationAgent2D
 @onready var sprite = $Sprite
 
+@onready var register = get_node("../Register")
+
 func _ready() -> void:
 	setup()
 
+func kick_off():
+	global_position = default_starting_position
+	aquire_target(register)
+	
 func setup() -> void:
 	if id == "" or id == null:
 		id = str(randi(), "_", Time.get_ticks_usec())

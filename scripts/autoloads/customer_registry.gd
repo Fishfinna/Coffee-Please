@@ -23,8 +23,7 @@ func create_customer():
 	var scene_root = get_tree().current_scene
 	var placed_scene = scene_root.get_node("Coffee Shop/environment")
 	placed_scene.add_child(customer)
-	customer.global_position = Vector2(550, 255)
-	customer.aquire_target(scene_root.get_node("Coffee Shop/environment/Register"))
+	customer.kick_off()
 	
 	#for save in saves:
 		#var slot: SaveSlot = save_slot_scene.instantiate()
