@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx3g4uolw7xpb"]
 
 [ext_resource type="Script" uid="uid://bjhxdbf4yt81o" path="res://scripts/rooms/main_menu.gd" id="1_8ja6j"]
+[ext_resource type="PackedScene" uid="uid://6lo0xoyjgsqb" path="res://scenes/ui/menus/settings.tscn" id="2_kci8y"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="2_ms1f1"]
 [ext_resource type="Texture2D" uid="uid://bne45u0cch8gp" path="res://assets/art/main-menu/temp-menu.png" id="3_kci8y"]
 [ext_resource type="AudioStream" uid="uid://dye618fdvasnp" path="res://assets/audio/music/coffee.wav" id="4_ms1f1"]
@@ -48,19 +49,18 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 
-[node name="title" type="Label" parent="Panel/Control" unique_id=828206927]
+[node name="Settings" parent="Panel/Control" unique_id=103375151 instance=ExtResource("2_kci8y")]
+visible = false
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -85.0
-offset_top = -34.0
-offset_right = 87.0
-offset_bottom = -2.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
-theme_override_font_sizes/font_size = 32
-text = "Coffee Please"
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -119.5
+offset_right = 65.0
+offset_bottom = 90.5
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Panel/Control" unique_id=2053419611]
 layout_mode = 1
@@ -69,13 +69,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -77.5
-offset_right = 65.0
-offset_bottom = 77.5
+offset_left = -86.0
+offset_top = -133.25
+offset_right = 86.0
+offset_bottom = 133.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
+
+[node name="title" type="Label" parent="Panel/Control/HBoxContainer" unique_id=828206927]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_font_sizes/font_size = 32
+text = "Coffee Please"
 
 [node name="contine" type="Button" parent="Panel/Control/HBoxContainer" unique_id=454872548]
 layout_mode = 2
@@ -127,5 +133,5 @@ texture = ExtResource("5_k5ptj")
 
 [connection signal="pressed" from="Panel/Control/HBoxContainer/contine" to="." method="_on_contine"]
 [connection signal="pressed" from="Panel/Control/HBoxContainer/new_game" to="." method="_on_new_game"]
-[connection signal="pressed" from="Panel/Control/HBoxContainer/settings" to="." method="_on_settings_button_down"]
+[connection signal="pressed" from="Panel/Control/HBoxContainer/settings" to="." method="_on_settings"]
 [connection signal="pressed" from="Panel/Control/HBoxContainer/exit" to="." method="_on_exit"]

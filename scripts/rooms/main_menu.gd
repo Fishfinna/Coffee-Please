@@ -18,7 +18,7 @@ func _on_new_game() -> void:
 	get_tree().change_scene_to_file("res://scenes/Game.tscn")
 	
 func _on_settings() -> void:
-	print("show settings")
+	get_tree().change_scene_to_file("res://scenes/ui/menus/settings.tscn")
 
 func _on_exit() -> void:
 	get_tree().quit()

@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
 [ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
 [ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scripts/ui/menus/settings.gd" id="6_2f5f3"]
-[ext_resource type="Texture2D" uid="uid://r2py3j0ylgjk" path="res://assets/art/ui/asprite/book.png" id="7_a3xc8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
 shader = ExtResource("2_0lmf7")
@@ -491,10 +490,6 @@ horizontal_alignment = 1
 
 [node name="blur" type="AnimationPlayer" parent="." unique_id=664259877]
 libraries/ = SubResource("AnimationLibrary_8uki6")
-
-[node name="Book" type="Sprite2D" parent="." unique_id=1063970998]
-position = Vector2(313, 191)
-texture = ExtResource("7_a3xc8")
 
 [connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
 [connection signal="pressed" from="pause/settings" to="." method="_on_settings_menu_pressed"]

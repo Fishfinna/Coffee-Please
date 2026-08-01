@@ -2,25 +2,26 @@ extends CharacterBody2D
 class_name Customer
 
 var id: String
-var movement_speed = 50.0
+var movement_speed = 500.0
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
-
 const MenuItems = preload("uid://cdnt7p2irvk7i")
 
-@export var target: Node2D
+var target: Node2D
 @onready var navigation_agent_2d = $NavigationAgent2D
 @onready var sprite = $Sprite
 
 func _ready() -> void:
-	call_deferred("seeker_setup")
-	var ordered_item: Item = MenuItems.DRINKS.pick_random()
-	order.append(ordered_item)
+	setup()
+
+func setup() -> void:
 	if id == "" or id == null:
 		id = str(randi(), "_", Time.get_ticks_usec())
-	
+
+	var ordered_item: Item = MenuItems.DRINKS.pick_random()
+	order.append(ordered_item)
 	CustomerRegistry.register(self)
-	
+	call_deferred("seeker_setup")
 
 func _exit_tree():
 	CustomerRegistry.unregister(self)
@@ -53,33 +54,3 @@ func _physics_process(delta: float) -> void:
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = velocity.lerp(safe_velocity, 0.25)
-
-func _restore_target(path: NodePath) -> void:
-	if has_node(path):
-		target = get_node(path)
-
-#region Saving
-func get_customer_data() -> Dictionary:
-	var data := {
-		"id": id,
-		"scene": scene_file_path,
-		"transform": global_transform,
-		"z_index": z_index,
-		"movement_speed": movement_speed,
-		"status": status,
-		"target_path": target.get_path() if target else NodePath()
-	}
-	return data
-
-func load_customer_data(data: Dictionary) -> void:
-	CustomerRegistry.unregister(self)
-	id = data.id
-	global_transform = data.transform
-	z_index = data.z_index
-	movement_speed = data.movement_speed
-	status = data.status
-	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-	if data.target_path != NodePath():
-		call_deferred("_restore_target", data.target_path)
-	CustomerRegistry.register(self)
-#endregion
