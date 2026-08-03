@@ -13,6 +13,7 @@ var target: Node2D
 @onready var sprite = $Sprite
 
 @onready var register = get_node("../Register")
+@onready var pickup = get_node("../Pickup")
 
 func _ready() -> void:
 	setup()
@@ -29,12 +30,15 @@ func setup() -> void:
 	order.append(ordered_item)
 	CustomerRegistry.register(self)
 	call_deferred("seeker_setup")
+	aquire_target(register)
 
 func _exit_tree():
 	CustomerRegistry.unregister(self)
 
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
+	if new_status == CustomerStatus.order_status.PLACED:
+		aquire_target(pickup)
 	print(new_status)
 
 func seeker_setup():
