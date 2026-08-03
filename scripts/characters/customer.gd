@@ -14,6 +14,7 @@ var target: Node2D
 
 @onready var register = get_node("../Register")
 @onready var pickup = get_node("../Pickup")
+@onready var door = get_node("../Door")
 
 func _ready() -> void:
 	setup()
@@ -39,6 +40,8 @@ func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
 	if new_status == CustomerStatus.order_status.PLACED:
 		aquire_target(pickup)
+	elif new_status == CustomerStatus.order_status.RECIEVED:
+		aquire_target(door)
 	print(new_status)
 
 func seeker_setup():

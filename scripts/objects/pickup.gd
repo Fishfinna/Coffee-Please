@@ -56,7 +56,6 @@ func customer_picks_up_item(customer: Customer) -> bool:
 			waiting_customers.erase(customer.id)
 			ticket_board.remove_ticket(customer.id)
 			customer.set_status(CustomerStatus.order_status.RECIEVED)
-			customer.aquire_target(next_target)
 		return true
 	return false
 
