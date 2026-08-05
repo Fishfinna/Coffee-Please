@@ -36,17 +36,8 @@ func _load_slot() -> void:
 		return
 	register.is_loading = true
 
-	for customer in get_tree().get_nodes_in_group(customer_group):
-		customer.queue_free()
-
 	player.global_position = data.player_position
 	Global.money = data.money
-
-	for customer in data.customers:
-		var shop_node = get_node("/root/Game/Coffee Shop/environment")
-		var inst = load(customer.scene).instantiate()
-		shop_node.add_child(inst)
-		inst.load_customer_data(customer)
 
 	if register:
 		register.customer_line = data.register_line

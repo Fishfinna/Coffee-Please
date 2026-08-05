@@ -2,7 +2,7 @@ extends Control
 
 @export var weather_index: int = 1
 
-@onready var image: Sprite2D = $Image
+@onready var image: Sprite2D = $background_weather
 
 func _ready() -> void:
 	image.texture = load("res://assets/art/ui/weather-sheet.png")

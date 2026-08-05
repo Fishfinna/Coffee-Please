@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hnicdwj70dj8" path="res://scripts/ui/weather.gd" id="1_k0to0"]
 [ext_resource type="Texture2D" uid="uid://kywdiip7khtf" path="res://assets/art/ui/weather-frame.png" id="2_k0to0"]
+[ext_resource type="Texture2D" uid="uid://cdcgdlfvnma8m" path="res://assets/art/ui/sun.png" id="2_q8qva"]
 
 [node name="Weather" type="Control" unique_id=545630948]
 layout_mode = 3
@@ -15,7 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_k0to0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Image" type="Sprite2D" parent="." unique_id=264075373]
+[node name="background_weather" type="Sprite2D" parent="." unique_id=264075373]
+
+[node name="solar_body" type="Sprite2D" parent="." unique_id=1463463618]
+texture = ExtResource("2_q8qva")
 
 [node name="frame" type="Sprite2D" parent="." unique_id=1809951175]
 texture = ExtResource("2_k0to0")

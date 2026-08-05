@@ -91,9 +91,6 @@ func save_game(args: Dictionary) -> void:
 	if player:
 		data.player_position = player.global_position
 	
-	for customer in customers:
-		data.customers.append(customer.get_customer_data())
-	
 	if register_line:
 		data.register_line = register_line
 

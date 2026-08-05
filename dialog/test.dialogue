@@ -1,6 +1,6 @@
 ~ start
 if Inventory.get_focused_item() != null:
-	Robin: Wow you are holding a {{Inventory.get_focused_item().display_name}}!
+	Robin: Wow you are holding a [wave amp=10 freq=5]{{Inventory.get_focused_item().display_name}}[/wave]!
 	Robin: How... did you know how to make that?
 else:
 	Robin: Hello, it's {{DaytimeClock.get_day_of_week_string()}}...[wait]\nHow are you?
@@ -10,5 +10,5 @@ else:
 		Robin: You made some money today, that is great!
 	else:
 		Robin: [speed=0.8]this is ok bu[wait=0.2] [next]
-		Fey: Ok got to go bye!!
+		Fey: [rainbow freq=1.0 sat=0.8 val=0.8]Ok got to go bye!![/rainbow]
 => END
