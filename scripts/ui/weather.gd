@@ -3,6 +3,7 @@ extends Control
 @export var weather_index: int = 1
 
 @onready var image: Sprite2D = $background_weather
+@onready var solar_body: Sprite2D = $solar_body
 
 func _ready() -> void:
 	image.texture = load("res://assets/art/ui/weather-sheet.png")
@@ -16,6 +17,11 @@ func set_weather(index: int) -> void:
 	image.frame = clamp(index - 1, 0, 2)
 
 func _update_weather_from_time(hour: int) -> void:
+	if hour <= 12:
+		solar_body.position.y = 12-hour
+	else:
+		solar_body.position.y = hour + (-12)
+		
 	if hour < 9:
 		set_weather(1)
 	elif hour >= 16:
