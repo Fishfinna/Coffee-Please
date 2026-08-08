@@ -8,11 +8,10 @@ Top Priorities:
 	- update settings to be it's own scene
 	- redo the menu as a note book
 
-Quick gimmes:
+Quick art:
 	- re-do the ticket arrow
 	- re-do the coin spin
 	- draw the window frame
-	- try making a sun that raises and falls
 
 Big Things:
 	- break down fey into parts

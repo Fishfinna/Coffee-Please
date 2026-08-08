@@ -81,3 +81,13 @@ is_interactable = true
 position = Vector2(0, 1)
 scale = Vector2(1.3599991, 0.5599989)
 shape = SubResource("CircleShape2D_msgss")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2006314331]
+target_desired_distance = 26.22
+path_postprocessing = 2
+simplify_path = true
+avoidance_enabled = true
+radius = 15.0
+time_horizon_obstacles = 0.75
+max_speed = 4000.0
+debug_path_custom_color = Color(0.45809126, 0.00019045339, 0.4744525, 1)
