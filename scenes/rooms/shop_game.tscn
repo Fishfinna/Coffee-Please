@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bxuvuy8cnlk12"]
+
+[ext_resource type="PackedScene" uid="uid://cshgepy31u2sx" path="res://scenes/rooms/background.tscn" id="1_mvioj"]
+[ext_resource type="Script" uid="uid://sult5gu40scl" path="res://scripts/rooms/shop_game.gd" id="1_vrb5n"]
+[ext_resource type="PackedScene" uid="uid://dbo33q6tr6sh0" path="res://scenes/rooms/coffee-shop.tscn" id="2_vrb5n"]
+[ext_resource type="PackedScene" uid="uid://7jf6e4julwkk" path="res://scenes/ui/menus/pause_menu.tscn" id="3_gh3oq"]
+[ext_resource type="PackedScene" uid="uid://55vcj8umj2yy" path="res://scenes/ui/hud.tscn" id="4_qt42y"]
+
+[node name="ShopGame" type="Node2D" unique_id=1831312155]
+script = ExtResource("1_vrb5n")
+
+[node name="Background" parent="." unique_id=760617795 instance=ExtResource("1_mvioj")]
+
+[node name="Coffee Shop" parent="." unique_id=1103702953 instance=ExtResource("2_vrb5n")]
+
+[node name="Pause Menu" parent="." unique_id=250378609 instance=ExtResource("3_gh3oq")]
+
+[node name="Hud" parent="." unique_id=2133758882 instance=ExtResource("4_qt42y")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://b0p1bqu6dwn88"]
 
-[ext_resource type="StyleBox" uid="uid://yqds0otirc0o" path="res://themes/panels/scroll-panel.tres" id="1_avclk"]
+[ext_resource type="Script" uid="uid://cp0p8iunh1sw6" path="res://scripts/rooms/end_day.gd" id="1_avclk"]
 
 [node name="EndDay" type="Panel" unique_id=920883508]
+custom_minimum_size = Vector2(640, 360)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_avclk")
 
 [node name="Title" type="Label" parent="." unique_id=1544932603]
 layout_mode = 1
@@ -29,28 +31,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.5
-offset_top = 12.0
-offset_right = 40.5
-offset_bottom = 28.0
+offset_left = -41.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "May 3rd, 2025"
 horizontal_alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1080187043]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3703125
-anchor_top = 0.35555556
-anchor_right = 0.6203125
-anchor_bottom = 0.80833334
-offset_bottom = -1.5258789e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_avclk")
-metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1284732694]
 layout_mode = 1
@@ -59,37 +48,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -73.0
-offset_right = 93.0
-offset_bottom = 140.0
+offset_left = -79.0
+offset_top = -44.0
+offset_right = 79.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 8
 columns = 2
 
 [node name="revenue-lable" type="Label" parent="GridContainer" unique_id=1217186677]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 text = "Revenue Today:"
 
 [node name="revenue" type="Label" parent="GridContainer" unique_id=1730326051]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "10"
+size_flags_horizontal = 8
+text = "10$"
 horizontal_alignment = 2
 
-[node name="payment" type="Label" parent="GridContainer" unique_id=1750343722]
+[node name="staff-lable" type="Label" parent="GridContainer" unique_id=1921556974]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
-text = "Staff: 10$"
+text = "Staff:"
 horizontal_alignment = 1
 
-[node name="today\'s profit" type="Label" parent="GridContainer" unique_id=1450048854]
+[node name="staff" type="Label" parent="GridContainer" unique_id=1750343722]
 layout_mode = 2
-text = "Profit Today: 10$"
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
+text = "10$"
 horizontal_alignment = 1
 
-[node name="total" type="Label" parent="GridContainer" unique_id=192653830]
+[node name="profit-today-label" type="Label" parent="GridContainer" unique_id=1580069666]
 layout_mode = 2
-text = "Total: 100$"
+size_flags_horizontal = 0
+text = "Profit Today:"
+horizontal_alignment = 1
+
+[node name="profit-today" type="Label" parent="GridContainer" unique_id=1450048854]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "10$"
+horizontal_alignment = 1
+
+[node name="total-label" type="Label" parent="GridContainer" unique_id=192653830]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "
+Total:"
+horizontal_alignment = 1
+
+[node name="total" type="Label" parent="GridContainer" unique_id=2138590386]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "
+100$"
 horizontal_alignment = 1
