@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://caeodaqay7wx6"]
 
-[ext_resource type="Script" uid="uid://bkstujxpqruub" path="res://scripts/game/game.gd" id="1_78awf"]
+[ext_resource type="Script" uid="uid://sult5gu40scl" path="res://scripts/rooms/shop_game.gd" id="1_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://bxuvuy8cnlk12" path="res://scenes/rooms/shop_game.tscn" id="2_qbsmt"]
 
 [node name="Game" type="Node2D" unique_id=1052908169]
-script = ExtResource("1_78awf")
+script = ExtResource("1_qbsmt")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1783741589]
 anchor_mode = 0

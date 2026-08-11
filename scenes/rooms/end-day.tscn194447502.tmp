@@ -108,18 +108,3 @@ size_flags_horizontal = 8
 text = "
 100$"
 horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="." unique_id=727595366]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = 88.0
-offset_right = 38.0
-offset_bottom = 112.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Keep Going!"

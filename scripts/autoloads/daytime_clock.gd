@@ -24,7 +24,7 @@ var current_day_of_week: int = START_DAY_OF_WEEK
 var is_running     : bool = true
 
 var _elapsed : float = 0.0
-var speed: float = 1
+var speed: float = 0.001
 
 # Days per month (non-leap-year; adjust if needed)
 const DAYS_IN_MONTH := [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -33,26 +33,37 @@ const DAYS_IN_MONTH := [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 func _process(delta: float) -> void:
 	if not is_running:
 		return
-
 	_elapsed += delta
-
 	while _elapsed >= speed:
 		_elapsed -= speed
 		_advance_one_minute()
+		if not is_running:
+			break
 
+func reset_time():
+	current_minute = 0
+	current_hour   = DAY_START_HOUR
+
+func end_day_and_pause():
+	is_running = false
+
+func start_next_day():
+	is_running = true
+	reset_time()
+	_advance_day()
 
 func _advance_one_minute() -> void:
 	current_minute += 1
-
 	if current_minute >= 60:
 		current_minute = 0
 		current_hour  += 1
 
 	if current_hour >= DAY_END_HOUR:
-		current_hour   = DAY_START_HOUR
+		current_hour   = DAY_END_HOUR
 		current_minute = 0
+		emit_signal("time_changed", current_hour, current_minute)
 		emit_signal("day_ended")
-		_advance_day()
+		end_day_and_pause()
 		return
 
 	emit_signal("time_changed", current_hour, current_minute)

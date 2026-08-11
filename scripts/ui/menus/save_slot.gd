@@ -8,9 +8,8 @@ var save_manager: SaveManager = SaveManager.new()
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customer_group = "customer"
-@onready var register: Register = get_node("/root/Game/Coffee Shop/environment/Register")
 
-@onready var game := get_tree().current_scene
+@onready var shop_game = get_tree().root.get_node("Game/ShopGame")
 
 @onready var delete_button = $delete
 @onready var trash_open_icon := preload("res://assets/art/ui/icons/trash-opened.png")
@@ -19,6 +18,7 @@ var save_manager: SaveManager = SaveManager.new()
 signal deleted(file_name: String)
 
 func setup(data: Dictionary) -> void:
+	print(shop_game.found())
 	save_file = data.file
 	file_label.text = data.file.split(".")[0]
 	time_label.text = data.modified
@@ -28,23 +28,16 @@ func _delete() -> void:
 	emit_signal("deleted", save_file)
 
 func _save_over() -> void:
-	save_manager.save_game(game.get_state(save_file))
+	save_manager.save_game(shop_game.get_state(save_file))
 	
 func _load_slot() -> void:
 	var data = save_manager.load_game(save_file)
 	if data == null:
 		return
-	register.is_loading = true
 
 	player.global_position = data.player_position
 	Global.money = data.money
-
-	if register:
-		register.customer_line = data.register_line
-		register.interactable.is_interactable = not register.customer_line.is_empty()
-
 	await get_tree().process_frame
-	register.is_loading = false
 		
 func _delete_hovered() -> void:
 	if delete_button:

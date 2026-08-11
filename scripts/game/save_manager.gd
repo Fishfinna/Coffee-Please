@@ -74,8 +74,6 @@ func get_next_save_filename() -> String:
 #region Save / Load
 func save_game(args: Dictionary) -> void:
 	var player: Node2D = args.player
-	var customers: Array = args.customers
-	var register_line = args.get("register_line", "")
 	var filename: String = args.get("filename", "")
 	
 	create_directory(save_dir)
@@ -90,9 +88,6 @@ func save_game(args: Dictionary) -> void:
 	var data := SceneData.new()
 	if player:
 		data.player_position = player.global_position
-	
-	if register_line:
-		data.register_line = register_line
 
 	var err := ResourceSaver.save(data, full_path)
 	if err != OK:

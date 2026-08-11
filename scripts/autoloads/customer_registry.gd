@@ -21,7 +21,7 @@ func create_customer():
 	print("create customer")
 	var customer: Customer = customer_scene.instantiate()
 	var scene_root = get_tree().current_scene
-	var placed_scene = scene_root.get_node("Coffee Shop/environment")
+	var placed_scene = scene_root.get_node("ShopGame/Coffee Shop/environment")
 	placed_scene.add_child(customer)
 	customer.kick_off()
 	
