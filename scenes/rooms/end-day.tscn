@@ -109,7 +109,7 @@ text = "
 100$"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=727595366]
+[node name="Keep going" type="Button" parent="." unique_id=727595366]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,3 +123,5 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Keep Going!"
+
+[connection signal="pressed" from="Keep going" to="." method="keep_going"]

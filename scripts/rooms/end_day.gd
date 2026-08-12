@@ -35,3 +35,7 @@ func _ready() -> void:
 		
 	
 	total.text = "\n%s$" % total_saved
+
+
+func keep_going() -> void:
+	print("Keep going!")
