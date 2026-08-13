@@ -12,6 +12,7 @@ extends Panel
 var good_color = "#57634e"
 var bad_color = "#915665"
 
+signal continue_pressed
 
 func _ready() -> void:
 	title.text = "End of Day %s" % DaytimeClock.current_day
@@ -38,4 +39,4 @@ func _ready() -> void:
 
 
 func keep_going() -> void:
-	print("Keep going!")
+	emit_signal("continue_pressed")
