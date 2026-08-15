@@ -1,8 +1,6 @@
 extends Node2D
-
 const END_DAY_SCENE = preload("res://scenes/rooms/end-day.tscn")
 const SHOP_GAME_SCENE = preload("uid://bxuvuy8cnlk12")
-
 @onready var shop_game: Node = $ShopGame
 
 func _ready():
@@ -21,4 +19,8 @@ func _on_day_ended():
 func _on_end_day_continue(end_day_instance: Node) -> void:
 	end_day_instance.queue_free()
 	DaytimeClock.start_next_day()
-	# re-instantiate shop_game here if needed
+	_spawn_shop_game()
+
+func _spawn_shop_game() -> void:
+	shop_game = SHOP_GAME_SCENE.instantiate()
+	add_child(shop_game)
