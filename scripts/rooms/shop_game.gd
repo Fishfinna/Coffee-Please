@@ -8,5 +8,5 @@ func get_state(filename: String = "") -> Dictionary:
 		"filename": filename
 	}
 
-func found():
-	print
+func start_new_day():
+	Inventory.clear()

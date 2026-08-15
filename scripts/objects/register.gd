@@ -46,7 +46,7 @@ func place_customer_order(customer: Node) -> void:
 		"items": customer.order
 	}
 
-	Global.money += total_price
+	Global.add_money(total_price)
 	ticket_board.add_ticket(ticket)
 
 func customer_entered(customer: Node) -> void:

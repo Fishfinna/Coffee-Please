@@ -24,3 +24,4 @@ func _on_end_day_continue(end_day_instance: Node) -> void:
 func _spawn_shop_game() -> void:
 	shop_game = SHOP_GAME_SCENE.instantiate()
 	add_child(shop_game)
+	shop_game.start_new_day()

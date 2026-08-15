@@ -20,6 +20,11 @@ func pickup(item: Item) -> bool:
 				return true
 	return false
 
+func clear():
+	for i in range(len(inventory)):
+		inventory[i] = null
+		item_removed.emit(i)
+	
 func remove_focused_item():
 	inventory[focused_slot] = null
 	item_removed.emit(focused_slot)
