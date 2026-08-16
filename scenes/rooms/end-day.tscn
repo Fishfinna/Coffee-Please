@@ -109,6 +109,18 @@ text = "
 100$"
 horizontal_alignment = 1
 
+[node name="debt-label" type="Label" parent="GridContainer" unique_id=443647075]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Debt:"
+horizontal_alignment = 1
+
+[node name="debt" type="Label" parent="GridContainer" unique_id=1963088819]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100,000$"
+horizontal_alignment = 1
+
 [node name="Keep going" type="Button" parent="." unique_id=727595366]
 layout_mode = 1
 anchors_preset = 8

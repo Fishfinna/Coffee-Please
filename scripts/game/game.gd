@@ -19,6 +19,7 @@ func _on_day_ended():
 func _on_end_day_continue(end_day_instance: Node) -> void:
 	end_day_instance.queue_free()
 	DaytimeClock.start_next_day()
+	Global.reset_day()
 	_spawn_shop_game()
 
 func _spawn_shop_game() -> void:

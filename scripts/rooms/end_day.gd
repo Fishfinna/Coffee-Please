@@ -8,6 +8,8 @@ extends Panel
 @onready var profit_today: Label = $"GridContainer/profit-today"
 @onready var total_label: Label = $"GridContainer/total-label"
 @onready var total: Label = $GridContainer/total
+@onready var debt_label: Label = $"GridContainer/debt-label"
+@onready var debt: Label = $GridContainer/debt
 
 var good_color = "#57634e"
 var bad_color = "#915665"
@@ -38,8 +40,6 @@ func _ready() -> void:
 	if total_saved <= 0:
 		total.add_theme_color_override("font_color", bad_color)
 		total_label.add_theme_color_override("font_color", bad_color)
-
-	Global.reset_day()
 
 func keep_going() -> void:
 	emit_signal("continue_pressed")
