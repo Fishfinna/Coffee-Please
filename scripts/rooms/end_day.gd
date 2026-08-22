@@ -2,14 +2,15 @@ extends Panel
 
 @onready var title: Label = $Title
 @onready var date: Label = $Title/date
-@onready var revenue: Label = $GridContainer/revenue
-@onready var staff: Label = $GridContainer/staff
-@onready var profit_today_label: Label = $"GridContainer/profit-today-label"
-@onready var profit_today: Label = $"GridContainer/profit-today"
-@onready var total_label: Label = $"GridContainer/total-label"
-@onready var total: Label = $GridContainer/total
-@onready var debt_label: Label = $"GridContainer/debt-label"
-@onready var debt: Label = $GridContainer/debt
+
+@onready var revenue: Label = %revenue
+@onready var staff: Label = %staff
+@onready var profit_today_label: Label = %"profit-today-label"
+@onready var profit_today: Label = %"profit-today"
+@onready var total_label: Label = %"total-label"
+@onready var total: Label = %total
+@onready var debt_label: Label = %"debt-label"
+@onready var debt: Label = %debt
 
 var good_color = "#57634e"
 var bad_color = "#915665"

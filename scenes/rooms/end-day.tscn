@@ -2,6 +2,30 @@
 
 [ext_resource type="Script" uid="uid://cp0p8iunh1sw6" path="res://scripts/rooms/end_day.gd" id="1_avclk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avclk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.9647059, 0.94509804, 0.9254902, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8f1p"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.9035799, 0.8890803, 0.8649298, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="EndDay" type="Panel" unique_id=920883508]
 custom_minimum_size = Vector2(640, 360)
 anchors_preset = 15
@@ -9,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avclk")
 script = ExtResource("1_avclk")
 
 [node name="Title" type="Label" parent="." unique_id=1544932603]
@@ -41,86 +66,6 @@ theme_override_colors/font_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "May 3rd, 2025"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1284732694]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -44.0
-offset_right = 79.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 40
-theme_override_constants/v_separation = 8
-columns = 2
-
-[node name="revenue-lable" type="Label" parent="GridContainer" unique_id=1217186677]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Revenue Today:"
-
-[node name="revenue" type="Label" parent="GridContainer" unique_id=1730326051]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "10$"
-horizontal_alignment = 2
-
-[node name="staff-lable" type="Label" parent="GridContainer" unique_id=1921556974]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
-text = "Staff:"
-horizontal_alignment = 1
-
-[node name="staff" type="Label" parent="GridContainer" unique_id=1750343722]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
-text = "10$"
-horizontal_alignment = 1
-
-[node name="profit-today-label" type="Label" parent="GridContainer" unique_id=1580069666]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Profit Today:"
-horizontal_alignment = 1
-
-[node name="profit-today" type="Label" parent="GridContainer" unique_id=1450048854]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "10$"
-horizontal_alignment = 1
-
-[node name="total-label" type="Label" parent="GridContainer" unique_id=192653830]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "
-Total:"
-horizontal_alignment = 1
-
-[node name="total" type="Label" parent="GridContainer" unique_id=2138590386]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "
-100$"
-horizontal_alignment = 1
-
-[node name="debt-label" type="Label" parent="GridContainer" unique_id=443647075]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Debt:"
-horizontal_alignment = 1
-
-[node name="debt" type="Label" parent="GridContainer" unique_id=1963088819]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "100,000$"
-horizontal_alignment = 1
-
 [node name="Keep going" type="Button" parent="." unique_id=727595366]
 layout_mode = 1
 anchors_preset = 8
@@ -135,5 +80,110 @@ offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Keep Going!"
+
+[node name="Panel" type="Panel" parent="." unique_id=53890522]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.1875
+offset_top = -76.25
+offset_right = 101.1875
+offset_bottom = 76.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8f1p")
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1284732694]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -65.5
+offset_right = 91.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="revenue-lable" type="Label" parent="Panel/GridContainer" unique_id=1217186677]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Revenue Today:"
+
+[node name="revenue" type="Label" parent="Panel/GridContainer" unique_id=1730326051]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "10$"
+horizontal_alignment = 2
+
+[node name="staff-lable" type="Label" parent="Panel/GridContainer" unique_id=1921556974]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
+text = "Staff:"
+horizontal_alignment = 1
+
+[node name="staff" type="Label" parent="Panel/GridContainer" unique_id=1750343722]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5686275, 0.3372549, 0.39607844, 1)
+text = "10$"
+horizontal_alignment = 1
+
+[node name="profit-today-label" type="Label" parent="Panel/GridContainer" unique_id=1580069666]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Profit Today:"
+horizontal_alignment = 1
+
+[node name="profit-today" type="Label" parent="Panel/GridContainer" unique_id=1450048854]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "10$"
+horizontal_alignment = 1
+
+[node name="total-label" type="Label" parent="Panel/GridContainer" unique_id=192653830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "
+Total:"
+horizontal_alignment = 1
+
+[node name="total" type="Label" parent="Panel/GridContainer" unique_id=2138590386]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "
+100$"
+horizontal_alignment = 1
+
+[node name="debt-label" type="Label" parent="Panel/GridContainer" unique_id=443647075]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Debt:"
+horizontal_alignment = 1
+
+[node name="debt" type="Label" parent="Panel/GridContainer" unique_id=1963088819]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "100,000$"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Keep going" to="." method="keep_going"]
