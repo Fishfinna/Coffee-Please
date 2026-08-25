@@ -6,6 +6,7 @@ static var DRINKS: Array[Item] = [
 	Item.new(&"water", "Water", true, 0, "res://assets/art/items/water.png"),
 	Item.new(&"coffee", "Coffee", true, 3, "res://assets/art/items/coffee.png"),
 ]
+
 static var FOOD: Array[Item] = []
 
 static var OTHER: Array[Item] = [

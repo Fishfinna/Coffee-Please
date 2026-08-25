@@ -50,9 +50,12 @@ func get_customer(id: String) -> Customer:
 	
 func customer_picks_up_item(customer: Customer) -> bool:
 	if item and item in customer.get("order"):
+		customer.handle_item_pickup(item)
+		print("on pickup:", item)
 		customer.order.erase(item)
 		remove_item()
-		if len(customer.order) == 0 and customer.id in waiting_customers:
+		var order_complete: bool = len(customer.order) == 0
+		if order_complete and customer.id in waiting_customers:
 			waiting_customers.erase(customer.id)
 			ticket_board.remove_ticket(customer.id)
 			customer.set_status(CustomerStatus.order_status.RECIEVED)

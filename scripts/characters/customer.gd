@@ -15,6 +15,7 @@ var target: Node2D
 @onready var register = get_node("../Register")
 @onready var pickup = get_node("../Pickup")
 @onready var door = get_node("../Door")
+@onready var ticket_board: TicketBoard = get_node("../../../Hud/TicketBoard")
 
 func _ready() -> void:
 	setup()
@@ -26,9 +27,10 @@ func kick_off():
 func setup() -> void:
 	if id == "" or id == null:
 		id = str(randi(), "_", Time.get_ticks_usec())
-
-	var ordered_item: Item = MenuItems.DRINKS.pick_random()
-	order.append(ordered_item)
+	var drink_count: int = get_weighted_drink_count()
+	for i in range(drink_count):
+		var ordered_item: Item = MenuItems.DRINKS.pick_random()
+		order.append(ordered_item)
 	CustomerRegistry.register(self)
 	call_deferred("seeker_setup")
 	aquire_target(register)
@@ -36,13 +38,23 @@ func setup() -> void:
 func _exit_tree():
 	CustomerRegistry.unregister(self)
 
+func get_weighted_drink_count() -> int:
+	var roll: float = randf() * 100.0
+	if roll < 20.0:
+		return 1
+	elif roll < 80.0:
+		return 2
+	elif roll < 95.0:
+		return 3
+	else:
+		return 4
+		
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
 	if new_status == CustomerStatus.order_status.PLACED:
 		aquire_target(pickup)
 	elif new_status == CustomerStatus.order_status.RECIEVED:
 		aquire_target(door)
-	print(new_status)
 
 func seeker_setup():
 	await get_tree().physics_frame
@@ -68,3 +80,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = velocity.lerp(safe_velocity, 0.25)
+
+
+func handle_item_pickup(item: Item) -> void:
+	print("to customer", item)
+	if !len(order):
+		return
+	ticket_board.mark_item_complete(id, item)

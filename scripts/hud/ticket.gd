@@ -14,6 +14,7 @@ var id: String
 var created_hour: int
 var created_minute: int
 var order_items: Array[Item] = []
+var completed_flags: Array[bool] = []
 
 func _ready() -> void:
 	DaytimeClock.time_changed.connect(_on_time_changed)
@@ -40,15 +41,23 @@ func setup(ticket_data: Dictionary) -> void:
 	created_hour = timestamp.get("hour", 0)
 	created_minute = timestamp.get("minute", 0)
 	order_name.text = customer_name
-
 	var items: Array = ticket_data.get("items", [])
 	order_items.clear()
-
+	completed_flags.clear()
 	for child in items_container.get_children():
 		child.queue_free()
-
 	for item in items:
 		order_items.append(item)
+		completed_flags.append(false)
 		var row: TicketItem = ItemRowScene.instantiate()
 		items_container.add_child(row)
 		row.set_item(item)
+
+func complete_item(item: Item) -> void:
+	for i in range(order_items.size()):
+		if order_items[i] == item and not completed_flags[i]:
+			completed_flags[i] = true
+			var row = items_container.get_child(i)
+			if row:
+				row.complete()
+			return

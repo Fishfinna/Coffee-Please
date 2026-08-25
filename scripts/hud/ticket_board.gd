@@ -55,12 +55,27 @@ func _on_toggle_tickets() -> void:
 	toggle.flip_v = !toggle.flip_v
 
 func add_ticket(ticket_data: Dictionary) -> void:
+	if len(tickets) == 0 and is_open == false:
+		_on_toggle_tickets()
 	var ticket: Ticket = ticket_scene.instantiate()
 	ticket_list.add_child(ticket)
 	ticket.setup(ticket_data)
 
 func remove_ticket(id: String) -> void:
-	var tickets = ticket_list.get_children()
-	for ticket in tickets:
+	for ticket in ticket_list.get_children():
 		if ticket.id == id:
+			ticket_list.remove_child(ticket)
 			ticket.queue_free()
+			break
+
+	tickets = ticket_list.get_children()
+	if len(tickets) == 0 and is_open == true:
+		_on_toggle_tickets()
+	print(tickets)
+
+func mark_item_complete(ticket_id: String, item: Item) -> void:
+	print("on ticket:", item)
+	for ticket in ticket_list.get_children():
+		if ticket.id == ticket_id:
+			ticket.complete_item(item)
+			break

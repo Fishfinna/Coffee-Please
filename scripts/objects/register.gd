@@ -29,7 +29,7 @@ func _on_interact():
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 
-func place_customer_order(customer: Node) -> void:
+func place_customer_order(customer: Customer) -> void:
 	Rumble.high()
 	customer.set_status(CustomerStatus.order_status.PLACED)
 	var total_price := 0

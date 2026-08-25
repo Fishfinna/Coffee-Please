@@ -244,6 +244,10 @@ position = Vector2(62, 36)
 z_as_relative = false
 position = Vector2(-19, 44)
 
+[node name="Customer2" parent="environment" unique_id=833753758 instance=ExtResource("8_7fs5h")]
+position = Vector2(137, 140)
+collision_mask = 33
+
 [node name="Customer" parent="environment" unique_id=2125466650 instance=ExtResource("8_7fs5h")]
 position = Vector2(204, 58)
 collision_mask = 33

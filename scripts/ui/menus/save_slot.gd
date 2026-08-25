@@ -18,7 +18,6 @@ var save_manager: SaveManager = SaveManager.new()
 signal deleted(file_name: String)
 
 func setup(data: Dictionary) -> void:
-	print(shop_game.found())
 	save_file = data.file
 	file_label.text = data.file.split(".")[0]
 	time_label.text = data.modified

@@ -3,10 +3,16 @@
 Top Priorities:
 	- break down fey into parts
 	- make random customers
+	- update settings to be it's own scene
+	- redo the menu as a note book
+
+Coding things:
 	- allow many customers at once
 	- get staff to also work
 	- update settings to be it's own scene
-	- redo the menu as a note book
+	- make cutscenes
+	- make the games opening scene
+	- order updates with multiple items and weights
 
 Quick art:
 	- re-do the ticket arrow
@@ -20,4 +26,3 @@ Big Things:
 	- make customers
 	- music
 	- game ui
-	- holding 2 items

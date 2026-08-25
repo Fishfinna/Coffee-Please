@@ -69,8 +69,6 @@ func force_hide() -> void:
 func hide_after_load_out() -> void:
 	sprite.play("load-out")
 	await sprite.animation_finished
-
 	if not is_in_range:
 		sprite.visible = false
-
 	is_hiding = false
