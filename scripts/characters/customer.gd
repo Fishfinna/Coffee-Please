@@ -29,7 +29,7 @@ func setup() -> void:
 		id = str(randi(), "_", Time.get_ticks_usec())
 	var drink_count: int = get_weighted_drink_count()
 	for i in range(drink_count):
-		var ordered_item: Item = MenuItems.DRINKS.pick_random()
+		var ordered_item: Item = MenuItems.get_random_item(MenuItems.DRINKS)
 		order.append(ordered_item)
 	CustomerRegistry.register(self)
 	call_deferred("seeker_setup")

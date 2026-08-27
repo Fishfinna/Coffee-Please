@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b7jj10uq4ivgs"]
+
+[node name="OpeningLetter" type="Node2D" unique_id=914508458]
+
+[node name="Label" type="Label" parent="." unique_id=378854583]
+offset_right = 872.0
+offset_bottom = 434.0
+text = "Subject: The Estate of Stefanie Chu.
+
+Dear Fey Chu,
+
+We write on behalf of Stein and Co. Law Office regarding the estate of your late aunt, Stefanie Chu.
+
+Please accept our condolences for your loss. Under the terms of her estate, ownership of her business, ‘Coffee, Please’, has been left to you.
+Should you choose to accept, you would be required to assume the remainder of the lease, and the license to operate the business would be
+transferred into your name.
+
+We must advise, in the strongest terms, against accepting this arrangement. The business is currently subject to outstanding debt totalling
+$102,500 CAD.
+
+Please contact our office at your earliest convenience to inform us of your decision.
+
+Sincerely,
+Stein and Co. Law Office.
+
+
+February 1st 2028
+Saturday, 7:00AM 
+Vancouver Canada
+"

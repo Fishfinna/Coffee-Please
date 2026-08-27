@@ -7,16 +7,19 @@ var display_name: String
 var unlocked: bool
 var price: int
 var image: String
+var popularity: int
 
 func _init(
 	p_id: StringName,
 	p_display_name: String,
 	p_unlocked: bool = false,
 	p_price: int = 0,
-	p_image: String = "res://assets/art/items/coffee.png"
+	p_image: String = "res://assets/art/items/coffee.png",
+	p_popularity: int = 2
 ) -> void:
 	id = p_id
 	display_name = p_display_name
 	unlocked = p_unlocked
 	price = p_price
 	image = p_image
+	popularity = p_popularity
