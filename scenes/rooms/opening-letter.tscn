@@ -5,6 +5,7 @@
 [node name="Label" type="Label" parent="." unique_id=378854583]
 offset_right = 872.0
 offset_bottom = 434.0
+theme_override_font_sizes/font_size = 11
 text = "Subject: The Estate of Stefanie Chu.
 
 Dear Fey Chu,
