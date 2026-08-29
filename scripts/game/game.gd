@@ -1,20 +1,46 @@
 extends Node2D
 const END_DAY_SCENE = preload("res://scenes/rooms/end-day.tscn")
 const SHOP_GAME_SCENE = preload("uid://bxuvuy8cnlk12")
-const SHOP_GAME = preload("uid://bxuvuy8cnlk12")
 const MAIN_MENU = preload("uid://dx3g4uolw7xpb")
+const NEW_GAME_SCENE = preload("uid://b7jj10uq4ivgs")
 
 @onready var shop_game: Node = $ShopGame
+
+var main_menu_instance: Node = null
+var new_game_instance: Node = null
 
 func _ready():
 	randomize() # randomizes the whole game!
 	DaytimeClock.day_ended.connect(_on_day_ended)
-	var main_menu = MAIN_MENU.instantiate()
-	main_menu.position = Vector2.ZERO
-	add_child(main_menu)
+	if Global.debug_mode:
+		Global.reset_day()
+		_spawn_shop_game()
+		return
+	else:
+		_spawn_main_menu()
 
-func new_game():
-	print("show open game")
+func _spawn_main_menu() -> void:
+	main_menu_instance = MAIN_MENU.instantiate()
+	main_menu_instance.position = Vector2.ZERO
+	main_menu_instance.new_game_pressed.connect(new_game)
+	add_child(main_menu_instance)
+
+func new_game() -> void:
+	if main_menu_instance:
+		main_menu_instance.queue_free()
+		main_menu_instance = null
+	Global.money = Global.default_starting_money
+	new_game_instance = NEW_GAME_SCENE.instantiate()
+	new_game_instance.position = Vector2.ZERO
+	new_game_instance.read_letter.connect(_on_letter_read)
+	add_child(new_game_instance)
+
+func _on_letter_read() -> void:
+	if new_game_instance:
+		new_game_instance.queue_free()
+		new_game_instance = null
+	Global.reset_day()
+	_spawn_shop_game()
 
 func _on_day_ended():
 	if shop_game:

@@ -1,5 +1,9 @@
 extends Node
 
+#region DevConfigs
+var debug_mode = false
+#endregion
+
 #region Money
 var default_starting_money = 100
 var starting_debt = 100000
