@@ -1,11 +1,20 @@
 extends Node2D
 const END_DAY_SCENE = preload("res://scenes/rooms/end-day.tscn")
 const SHOP_GAME_SCENE = preload("uid://bxuvuy8cnlk12")
+const SHOP_GAME = preload("uid://bxuvuy8cnlk12")
+const MAIN_MENU = preload("uid://dx3g4uolw7xpb")
+
 @onready var shop_game: Node = $ShopGame
 
 func _ready():
 	randomize() # randomizes the whole game!
 	DaytimeClock.day_ended.connect(_on_day_ended)
+	var main_menu = MAIN_MENU.instantiate()
+	main_menu.position = Vector2.ZERO
+	add_child(main_menu)
+
+func new_game():
+	print("show open game")
 
 func _on_day_ended():
 	if shop_game:

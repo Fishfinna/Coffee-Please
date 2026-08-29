@@ -1,31 +1,90 @@
 [gd_scene format=3 uid="uid://b7jj10uq4ivgs"]
 
-[node name="OpeningLetter" type="Node2D" unique_id=914508458]
+[ext_resource type="Script" uid="uid://u01w6wpekhp7" path="res://scripts/rooms/opening_letter.gd" id="1_xbgnw"]
+[ext_resource type="Script" uid="uid://cjkvlqu1hqrcg" path="res://scripts/rooms/float_typewriter_label.gd" id="2_c3qeu"]
 
-[node name="Label" type="Label" parent="." unique_id=378854583]
-offset_right = 872.0
-offset_bottom = 434.0
-theme_override_font_sizes/font_size = 11
-text = "Subject: The Estate of Stefanie Chu.
+[node name="OpeningLetter" type="Node2D" unique_id=914508458]
+script = ExtResource("1_xbgnw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1500535433]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel" unique_id=834734951]
+
+[node name="FloatTypewriterLabel" type="Control" parent="Panel/CanvasLayer" unique_id=1842861359]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_c3qeu")
+word_delay = 0.1
+source_label_path = NodePath("SourceLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=762346675]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SourceLabel" type="RichTextLabel" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1513823424]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+bbcode_enabled = true
+text = "[font_size=18]Subject: The Estate of Stefanie Chu[/font_size]
+[font_size=12]February 1st 2025[/font_size]
 
 Dear Fey Chu,
 
 We write on behalf of Stein and Co. Law Office regarding the estate of your late aunt, Stefanie Chu.
 
-Please accept our condolences for your loss. Under the terms of her estate, ownership of her business, ‘Coffee, Please’, has been left to you.
-Should you choose to accept, you would be required to assume the remainder of the lease, and the license to operate the business would be
-transferred into your name.
+Please accept our condolences for your loss.
+Under the terms of her estate, ownership of her business, [color=black]Coffee, Please[/color], has been left to you.
 
-We must advise, in the strongest terms, against accepting this arrangement. The business is currently subject to outstanding debt totalling
-$102,500 CAD.
+We must advise, in the [i]strongest[/i] terms, against accepting this arrangement.
+The business is currently subject to an outstanding debt totalling [color=#915665]$102,500 CAD[/color].
 
 Please contact our office at your earliest convenience to inform us of your decision.
 
 Sincerely,
-Stein and Co. Law Office.
-
-
-February 1st 2028
-Saturday, 7:00AM 
-Vancouver Canada
+Stein and Co. Law Offices | Vancouver, Canada.
 "
+
+[node name="Button" type="Button" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1997320745]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8515625
+anchor_top = 0.87777776
+anchor_right = 0.965625
+anchor_bottom = 0.96666664
+grow_horizontal = 2
+grow_vertical = 0
+text = "BEGIN"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/CanvasLayer/FloatTypewriterLabel/Button" to="." method="_on_button_pressed"]

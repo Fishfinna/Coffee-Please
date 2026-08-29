@@ -15,7 +15,7 @@ func _on_contine() -> void:
 
 func _on_new_game() -> void:
 	Global.money = Global.default_starting_money
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
+	get_tree().change_scene_to_file("uid://b7jj10uq4ivgs")
 	
 func _on_settings() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/menus/settings.tscn")
