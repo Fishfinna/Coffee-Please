@@ -6,13 +6,16 @@ extends Control
 @export var paragraph_spacing: float = 12.0
 @export var start_on_ready: bool = true
 @export var source_label_path: NodePath
-@onready var button: Button = $Button
+@export var skip_action: String = "ui_accept"
 
+@onready var button: Button = $Button
 @onready var container: VBoxContainer = $VBoxContainer
 
 var default_color: Color = Color.WHITE
 var _total_words := 0
 var _finished_words := 0
+var _pending_timers: Array = []
+var _active_tweens: Array = []
 
 
 func _ready() -> void:
@@ -20,9 +23,16 @@ func _ready() -> void:
 		var src := get_node(source_label_path)
 		reveal_from_node(src)
 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(skip_action) and _finished_words < _total_words:
+		skip_to_end()
+		get_viewport().set_input_as_handled()
+
 func reveal_finished():
 	button.visible = true
-	
+
+
 func reveal_from_node(source: Node, hide_source: bool = true) -> void:
 	var content := ""
 
@@ -56,6 +66,9 @@ func reveal_from_node(source: Node, hide_source: bool = true) -> void:
 func reveal_text(paragraph_text: String) -> void:
 	for child in container.get_children():
 		child.queue_free()
+
+	_pending_timers.clear()
+	_active_tweens.clear()
 
 	var paragraphs := paragraph_text.strip_edges().split("\n")
 	var lines: Array = []
@@ -92,6 +105,19 @@ func reveal_text(paragraph_text: String) -> void:
 		for word in words:
 			_spawn_word(word, word_index, line)
 			word_index += 1
+
+
+func skip_to_end() -> void:
+	for timer in _pending_timers:
+		if is_instance_valid(timer):
+			timer.time_left = 0.0
+
+	for tween in _active_tweens:
+		if is_instance_valid(tween) and tween.is_valid():
+			tween.custom_step(1000.0)
+
+	_pending_timers.clear()
+	_active_tweens.clear()
 
 
 func _split_bbcode_words(text: String) -> Array:
@@ -185,13 +211,16 @@ func _spawn_word(word: String, index: int, line: HBoxContainer) -> void:
 	label.position.y = float_distance
 
 	if index > 0:
-		await get_tree().create_timer(index * word_delay).timeout
+		var delay_timer := get_tree().create_timer(index * word_delay)
+		_pending_timers.append(delay_timer)
+		await delay_timer.timeout
 
 	if not is_instance_valid(label):
 		_word_finished()
 		return
 
 	var tween := create_tween()
+	_active_tweens.append(tween)
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_OUT)
