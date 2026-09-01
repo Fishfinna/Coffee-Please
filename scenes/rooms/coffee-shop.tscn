@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dojgtwkuwtlhk" path="res://scenes/characters/customer.tscn" id="8_7fs5h"]
 [ext_resource type="PackedScene" uid="uid://bstbi5s8lqisf" path="res://scenes/objects/door.tscn" id="10_6paru"]
 [ext_resource type="PackedScene" uid="uid://dyfkdg3rv3oox" path="res://scenes/objects/pickup.tscn" id="10_c7qof"]
+[ext_resource type="PackedScene" uid="uid://iak77di8xo8j" path="res://scenes/characters/staff.tscn" id="11_6paru"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7fs5h"]
 load_path = "res://.godot/imported/floor.png-a1d18bbeb292a54eba7bb4438895a97d.ctex"
@@ -219,6 +220,9 @@ tile_map_data = PackedByteArray("AADs//X/AAAAAAAAAADs//b/AAAAAAEAAADs//f/AAAAAAE
 tile_set = SubResource("TileSet_7fs5h")
 script = ExtResource("2_7fs5h")
 
+[node name="Staff" parent="tiles" unique_id=1859487112 instance=ExtResource("11_6paru")]
+position = Vector2(-36, 117)
+
 [node name="environment" type="Node2D" parent="." unique_id=1960842609]
 y_sort_enabled = true
 position = Vector2(320, 158)
@@ -264,3 +268,6 @@ navigation_polygon = SubResource("NavigationPolygon_yo8p7")
 
 [node name="Door" parent="environment" unique_id=69540908 instance=ExtResource("10_6paru")]
 position = Vector2(205, -31)
+
+[node name="Staff" parent="environment" unique_id=1996096093 instance=ExtResource("11_6paru")]
+position = Vector2(-14, 133)
