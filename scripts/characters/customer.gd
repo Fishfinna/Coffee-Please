@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Customer
 
 var id: String
-var movement_speed = 200.0
+var movement_speed = 150.0
 var default_starting_position = Vector2(550, 255)
 var status = CustomerStatus.order_status.TO_PLACE
 var order: Array[Item] = []
