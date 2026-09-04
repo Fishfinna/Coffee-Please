@@ -15,7 +15,9 @@ var is_transitioning := false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customer_group_name = "customer"
 
-@export var swipe_sound: AudioStream = preload("res://assets/audio/ui/swipe.mp3")
+# these sounds bad, redo them
+@export var swipe_sound: AudioStream = preload("res://assets/audio/objects/book.wav")
+@export var open_sound: AudioStream = preload("res://assets/audio/objects/book.wav")
 var fx_player: AudioStreamPlayer
 
 var save_manager = SaveManager.new()
@@ -36,6 +38,8 @@ func _input(event: InputEvent) -> void:
 			_pause_game()
 
 func _pause_game():
+	fx_player.stream = open_sound
+	fx_player.play()
 	pause_menu.grab_focus()
 	is_transitioning = true
 	pause_menu.show()
@@ -102,8 +106,8 @@ func _on_restart_pressed() -> void:
 func swap_menu(from_menu: Control, to_menu: Control) -> void:
 	if not from_menu or not to_menu:
 		return
-	#fx_player.stream = swipe_sound
-	#fx_player.play()
+	fx_player.stream = swipe_sound
+	fx_player.play()
 
 	from_menu.hide()
 	to_menu.show()

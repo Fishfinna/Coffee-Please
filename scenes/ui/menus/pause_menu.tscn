@@ -4,8 +4,8 @@
 [ext_resource type="Shader" uid="uid://dlip7xu7lb1mo" path="res://scripts/shaders/pause_menu.gdshader" id="2_0lmf7"]
 [ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_idy5m"]
-[ext_resource type="Texture2D" uid="uid://cghntb7cjymkd" path="res://assets/art/ui/panel.png" id="5_hf471"]
 [ext_resource type="Script" uid="uid://beueukktcjn1p" path="res://scripts/ui/menus/settings.gd" id="6_2f5f3"]
+[ext_resource type="Texture2D" uid="uid://r2py3j0ylgjk" path="res://assets/art/ui/book.png" id="7_a3xc8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6eus"]
 shader = ExtResource("2_0lmf7")
@@ -159,6 +159,20 @@ material = SubResource("ShaderMaterial_f6eus")
 offset_right = 640.0
 offset_bottom = 368.0
 
+[node name="Book" type="TextureRect" parent="." unique_id=254710581]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -170.0
+offset_right = 310.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_a3xc8")
+
 [node name="pause" type="Control" parent="." unique_id=779354205]
 custom_minimum_size = Vector2(128, 180)
 layout_mode = 3
@@ -177,18 +191,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 2
 focus_behavior_recursive = 2
-
-[node name="Panel" type="NinePatchRect" parent="pause" unique_id=101651499]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.1
-anchor_right = 1.1
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_idy5m")
-texture = ExtResource("5_hf471")
-metadata/_edit_use_anchors_ = true
 
 [node name="save" type="Button" parent="pause" unique_id=1764854574]
 layout_mode = 1
@@ -244,17 +246,6 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 3
 focus_behavior_recursive = 2
-
-[node name="Panel" type="NinePatchRect" parent="save" unique_id=461557810]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -26.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_hf471")
 
 [node name="resume" type="Button" parent="save" unique_id=1817608063]
 layout_mode = 1
@@ -367,6 +358,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="settings" type="Control" parent="." unique_id=496855907]
+visible = false
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 3
 anchor_left = 0.28125
@@ -379,15 +371,6 @@ focus_mode = 3
 focus_behavior_recursive = 2
 script = ExtResource("6_2f5f3")
 metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="NinePatchRect" parent="settings" unique_id=801685957]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_hf471")
 
 [node name="resume" type="Button" parent="settings" unique_id=1146897924]
 layout_mode = 1
