@@ -2,14 +2,36 @@
 
 [ext_resource type="Script" uid="uid://u01w6wpekhp7" path="res://scripts/rooms/opening_letter.gd" id="1_xbgnw"]
 [ext_resource type="Script" uid="uid://cjkvlqu1hqrcg" path="res://scripts/rooms/float_typewriter_label.gd" id="2_c3qeu"]
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="3_c3qeu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbgnw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+bg_color = Color(0.91, 0.91, 0.91, 1)
+border_width_left = 2
+border_width_top = 57
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.46666667, 0.4117647, 0.40784314, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="OpeningLetter" type="Node2D" unique_id=914508458]
 script = ExtResource("1_xbgnw")
 
 [node name="Panel" type="Panel" parent="." unique_id=1500535433]
 custom_minimum_size = Vector2(640, 360)
+offset_top = -1.0
 offset_right = 640.0
-offset_bottom = 360.0
+offset_bottom = 359.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Panel" unique_id=834734951]
 
@@ -24,40 +46,58 @@ script = ExtResource("2_c3qeu")
 word_delay = 0.1
 source_label_path = NodePath("SourceLabel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=762346675]
-custom_minimum_size = Vector2(600, 300)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -150.0
-offset_right = 300.0
-offset_bottom = 150.0
+[node name="PanelContainer" type="PanelContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1682242689]
+custom_minimum_size = Vector2(540, 270)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 45.0
+offset_right = 590.0
+offset_bottom = 315.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbgnw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel/PanelContainer" unique_id=762346675]
+custom_minimum_size = Vector2(540, 270)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel/PanelContainer" unique_id=1517638866]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_right = -4
+theme_override_constants/margin_bottom = -7
+
+[node name="Button" type="Button" parent="Panel/CanvasLayer/FloatTypewriterLabel/PanelContainer/MarginContainer" unique_id=1997320745]
+visible = false
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_c3qeu")
+text = "BEGIN"
 
 [node name="SourceLabel" type="RichTextLabel" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1513823424]
-custom_minimum_size = Vector2(600, 300)
+custom_minimum_size = Vector2(540, 270)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -150.0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -268.0
+offset_top = -135.0
+offset_right = 278.0
+offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 15
 bbcode_enabled = true
-text = "[font_size=18]Subject: The Estate of Stefanie Chu[/font_size]
-[font_size=12]February 1st 2025[/font_size]
+text = "[color=f6f1ec][font_size=16]To: fey.chu@mail.to[/font_size][/color]
+[color=f6f1ec][font_size=16]Subject: The Estate of Stefanie Chu[/font_size][/color]
+[color=d5cfc5][font_size=10]February 1st 2025[/font_size][/color]
 
 Dear Fey Chu,
 
@@ -75,17 +115,4 @@ Sincerely,
 Stein and Co. Law Offices | Vancouver, Canada.
 "
 
-[node name="Button" type="Button" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1997320745]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8515625
-anchor_top = 0.87777776
-anchor_right = 0.965625
-anchor_bottom = 0.96666664
-grow_horizontal = 2
-grow_vertical = 0
-text = "BEGIN"
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Panel/CanvasLayer/FloatTypewriterLabel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer/FloatTypewriterLabel/PanelContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

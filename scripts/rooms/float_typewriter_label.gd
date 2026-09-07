@@ -8,10 +8,11 @@ extends Control
 @export var source_label_path: NodePath
 @export var skip_action: String = "ui_accept"
 
-@onready var button: Button = $Button
-@onready var container: VBoxContainer = $VBoxContainer
+@onready var button: Button = $PanelContainer/MarginContainer/Button
+@onready var container: VBoxContainer = $PanelContainer/VBoxContainer
 
 var default_color: Color = Color.WHITE
+var default_font_size: int = 16
 var _total_words := 0
 var _finished_words := 0
 var _pending_timers: Array = []
@@ -40,6 +41,7 @@ func reveal_from_node(source: Node, hide_source: bool = true) -> void:
 		var rtl := source as RichTextLabel
 		content = rtl.text
 		default_color = rtl.get_theme_color("default_color")
+		default_font_size = rtl.get_theme_font_size("normal_font_size")
 
 	elif source is Label:
 		var lbl := source as Label
@@ -49,6 +51,11 @@ func reveal_from_node(source: Node, hide_source: bool = true) -> void:
 			default_color = lbl.label_settings.font_color
 		else:
 			default_color = lbl.get_theme_color("font_color")
+
+		if lbl.label_settings and lbl.label_settings.font_size > 0:
+			default_font_size = lbl.label_settings.font_size
+		else:
+			default_font_size = lbl.get_theme_font_size("font_size")
 
 	elif "text" in source:
 		content = source.text
@@ -201,6 +208,10 @@ func _spawn_word(word: String, index: int, line: HBoxContainer) -> void:
 	label.scroll_active = false
 	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.add_theme_color_override("default_color", default_color)
+	label.add_theme_font_size_override("normal_font_size", default_font_size)
+	label.add_theme_font_size_override("bold_font_size", default_font_size)
+	label.add_theme_font_size_override("italic_font_size", default_font_size)
+	label.add_theme_font_size_override("bold_italic_font_size", default_font_size)
 	label.text = word
 	slot.add_child(label)
 
