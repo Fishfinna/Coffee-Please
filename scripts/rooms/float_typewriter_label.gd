@@ -17,12 +17,21 @@ var _total_words := 0
 var _finished_words := 0
 var _pending_timers: Array = []
 var _active_tweens: Array = []
+var fx_player: AudioStreamPlayer
 
 
 func _ready() -> void:
 	if source_label_path != NodePath(""):
 		var src := get_node(source_label_path)
 		reveal_from_node(src)
+	fx_player = AudioStreamPlayer.new()
+	fx_player.bus = "FX"
+	add_child(fx_player)
+	var stream = preload("res://assets/audio/objects/typing.mp3")
+	stream.loop = true
+	stream.loop_offset = 0.0 
+	fx_player.stream = stream
+	fx_player.play()
 
 
 func _input(event: InputEvent) -> void:
@@ -32,6 +41,7 @@ func _input(event: InputEvent) -> void:
 
 func reveal_finished():
 	button.visible = true
+	fx_player.stop()
 
 
 func reveal_from_node(source: Node, hide_source: bool = true) -> void:

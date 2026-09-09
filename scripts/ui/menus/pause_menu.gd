@@ -79,7 +79,6 @@ func _on_settings_back_pressed() -> void:
 	swap_menu(settings_menu, pause_menu)
 
 func _on_save_pressed() -> void:
-	save_manager.save_game(game.get_state())
 	display_saves()
 	
 func display_saves() -> void:

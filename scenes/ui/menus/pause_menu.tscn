@@ -150,14 +150,22 @@ _data = {
 [node name="Pause Menu" type="CanvasLayer" unique_id=250378609]
 process_mode = 3
 layer = 100
-follow_viewport_enabled = true
 script = ExtResource("1_6tw0m")
 save_slot_scene = ExtResource("2_idy5m")
 
 [node name="blur_bg" type="ColorRect" parent="." unique_id=1803990581]
 material = SubResource("ShaderMaterial_f6eus")
-offset_right = 640.0
-offset_bottom = 368.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -184.0
+offset_right = 320.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Book" type="TextureRect" parent="." unique_id=254710581]
 anchors_preset = 8

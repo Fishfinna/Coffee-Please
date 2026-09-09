@@ -43,7 +43,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_c3qeu")
-word_delay = 0.1
+word_delay = 0.25
 source_label_path = NodePath("SourceLabel")
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel/CanvasLayer/FloatTypewriterLabel" unique_id=1682242689]
@@ -65,8 +65,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_constants/margin_right = -4
-theme_override_constants/margin_bottom = -7
+theme_override_constants/margin_right = -3
+theme_override_constants/margin_bottom = -5
 
 [node name="Button" type="Button" parent="Panel/CanvasLayer/FloatTypewriterLabel/PanelContainer/MarginContainer" unique_id=1997320745]
 visible = false

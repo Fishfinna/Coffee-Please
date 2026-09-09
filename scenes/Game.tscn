@@ -4,6 +4,3 @@
 
 [node name="Game" type="Node2D" unique_id=1052908169]
 script = ExtResource("1_78awf")
-
-[node name="camera" type="Camera2D" parent="." unique_id=1783741589]
-anchor_mode = 0

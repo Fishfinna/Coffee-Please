@@ -2,6 +2,8 @@ extends Node2D
 signal new_game_pressed
 
 @onready var contine: Button = $Panel/Control/HBoxContainer/contine
+@onready var coffee: Sprite2D = $Coffee
+
 var save_manager = SaveManager.new()
 
 func _ready() -> void:
@@ -26,3 +28,7 @@ func _on_exit() -> void:
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+func _process(delta):
+	coffee.look_at(get_global_mouse_position())
+	coffee.rotation -= PI / 2

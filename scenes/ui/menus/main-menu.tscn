@@ -102,6 +102,7 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
 theme_override_font_sizes/font_size = 24
+disabled = true
 text = "settings
 "
 
@@ -109,6 +110,7 @@ text = "settings
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
+theme_type_variation = &"delete_button"
 theme_override_font_sizes/font_size = 24
 text = "exit
 "
