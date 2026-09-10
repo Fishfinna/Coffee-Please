@@ -3,6 +3,8 @@ extends Control
 @onready var slider: HSlider = $HSlider
 @onready var fullscreen_toggle: CheckButton = $fullscreen
 
+signal redirect_back()
+
 func _ready() -> void:
 	slider.value = Settings.get_setting("master_volume")
 	fullscreen_toggle.button_pressed = Settings.get_setting("fullscreen")
@@ -18,3 +20,6 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 func _on_fullscreen_changed(value: bool) -> void:
 	if fullscreen_toggle.button_pressed != value:
 		fullscreen_toggle.button_pressed = value
+
+func _on_back_pressed() -> void:
+	emit_signal("redirect_back")

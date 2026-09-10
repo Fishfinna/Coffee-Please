@@ -12,41 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_81oq2")
 
-[node name="resume" type="Button" parent="." unique_id=1908464413]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.74285716
-anchor_top = 0.09274194
-anchor_right = 0.9285714
-anchor_bottom = 0.15725806
-offset_left = 3.7142944
-offset_top = 35.612904
-offset_right = 3.7142944
-offset_bottom = 35.612904
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-theme = ExtResource("3_t45wk")
-theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
-theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
-theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
-theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
-text = "resume >"
-flat = true
-
 [node name="back" type="Button" parent="." unique_id=45986569]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07857143
-anchor_top = 0.10483871
-anchor_right = 0.21071428
-anchor_bottom = 0.16935484
-offset_left = 3.714283
-offset_top = 33.612907
-offset_right = 3.7142792
-offset_bottom = 33.612907
-grow_horizontal = 2
+anchor_left = 0.0171875
+anchor_top = 0.22222222
+anchor_right = 0.075
+anchor_bottom = 0.26666668
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_t45wk")
@@ -56,21 +28,25 @@ theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.41176
 theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
 text = "< back"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="." unique_id=1611863110]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.496875
-anchor_top = 0.47777778
-anchor_right = 0.86875
-anchor_bottom = 0.5222222
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -8.0
+offset_right = 123.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 accessibility_name = "sound"
 accessibility_description = "master audio"
 max_value = 1.0
 step = 0.01
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="HSlider" unique_id=1144488568]
 layout_mode = 1
@@ -104,15 +80,6 @@ theme_override_colors/font_hover_color = Color(0.27450982, 0.24705882, 0.2196078
 text = "Fullscreen:"
 flat = true
 
-[node name="save-label" type="Label" parent="." unique_id=110071774]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -38.0
-offset_right = 38.0
-offset_bottom = 27.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 26
-text = "OPTIONS"
-horizontal_alignment = 1
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="fullscreen" to="." method="_on_check_button_toggled"]

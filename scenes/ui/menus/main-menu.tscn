@@ -33,7 +33,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3tkf5")
 
-[node name="Control" type="Control" parent="Panel" unique_id=1826360988]
+[node name="Buttons" type="Control" parent="Panel" unique_id=1826360988]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -49,20 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 
-[node name="Settings" parent="Panel/Control" unique_id=103375151 instance=ExtResource("2_kci8y")]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -119.5
-offset_right = 65.0
-offset_bottom = 90.5
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Panel/Control" unique_id=2053419611]
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel/Buttons" unique_id=2053419611]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,36 +64,36 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="title" type="Label" parent="Panel/Control/HBoxContainer" unique_id=828206927]
+[node name="title" type="Label" parent="Panel/Buttons/HBoxContainer" unique_id=828206927]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
 theme_override_font_sizes/font_size = 32
 text = "Coffee Please"
+horizontal_alignment = 1
 
-[node name="contine" type="Button" parent="Panel/Control/HBoxContainer" unique_id=454872548]
+[node name="contine" type="Button" parent="Panel/Buttons/HBoxContainer" unique_id=454872548]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
 theme_override_font_sizes/font_size = 24
 text = "continue"
 
-[node name="new_game" type="Button" parent="Panel/Control/HBoxContainer" unique_id=821102150]
+[node name="new_game" type="Button" parent="Panel/Buttons/HBoxContainer" unique_id=821102150]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
 theme_override_font_sizes/font_size = 24
 text = "new game"
 
-[node name="settings" type="Button" parent="Panel/Control/HBoxContainer" unique_id=276648416]
+[node name="settings" type="Button" parent="Panel/Buttons/HBoxContainer" unique_id=276648416]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
 theme_override_font_sizes/font_size = 24
-disabled = true
 text = "settings
 "
 
-[node name="exit" type="Button" parent="Panel/Control/HBoxContainer" unique_id=1808416684]
+[node name="exit" type="Button" parent="Panel/Buttons/HBoxContainer" unique_id=1808416684]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ms1f1")
@@ -114,6 +101,49 @@ theme_type_variation = &"delete_button"
 theme_override_font_sizes/font_size = 24
 text = "exit
 "
+
+[node name="Settings" type="Control" parent="Panel" unique_id=1018372274]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 42.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="Panel/Settings" unique_id=1553215826]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = -38.0
+offset_right = 86.0
+offset_bottom = -6.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Settings" parent="Panel/Settings" unique_id=103375151 instance=ExtResource("2_kci8y")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -88.0
+offset_right = 106.0
+offset_bottom = 122.5
 
 [node name="TempMenu" type="Sprite2D" parent="Panel" unique_id=1268163938]
 visible = false
@@ -133,7 +163,8 @@ libraries/ = SubResource("AnimationLibrary_kci8y")
 position = Vector2(320, 73)
 texture = ExtResource("5_k5ptj")
 
-[connection signal="pressed" from="Panel/Control/HBoxContainer/contine" to="." method="_on_contine"]
-[connection signal="pressed" from="Panel/Control/HBoxContainer/new_game" to="." method="_on_new_game"]
-[connection signal="pressed" from="Panel/Control/HBoxContainer/settings" to="." method="_on_settings"]
-[connection signal="pressed" from="Panel/Control/HBoxContainer/exit" to="." method="_on_exit"]
+[connection signal="pressed" from="Panel/Buttons/HBoxContainer/contine" to="." method="_on_contine"]
+[connection signal="pressed" from="Panel/Buttons/HBoxContainer/new_game" to="." method="_on_new_game"]
+[connection signal="pressed" from="Panel/Buttons/HBoxContainer/settings" to="." method="_on_settings"]
+[connection signal="pressed" from="Panel/Buttons/HBoxContainer/exit" to="." method="_on_exit"]
+[connection signal="redirect_back" from="Panel/Settings/Settings" to="." method="_on_settings_redirect_back"]

@@ -235,3 +235,4 @@ delete_button/base_type = &"Button"
 delete_button/styles/hover = ExtResource("5_d3e7e")
 delete_button/styles/hover_pressed = ExtResource("5_d3e7e")
 delete_button/styles/normal = ExtResource("6_cgbfu")
+delete_button/styles/pressed = ExtResource("6_cgbfu")
