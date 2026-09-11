@@ -8,11 +8,13 @@ Top Priorities:
 
 Coding things:
 	- allow many customers at once
+		- fix some of the glitchy movement
 	- get staff to also work
 	- update settings to be it's own scene
 	- make cutscenes
 	- make the games opening scene
 	- order updates with multiple items and weights
+	- save end of day
 
 Quick art:
 	- re-do the ticket arrow

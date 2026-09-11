@@ -1,9 +1,8 @@
-extends CharacterBody2D
+extends Person
 
 @export var speed = 250
 
 var target = position
-
 var last_x := 0
 var last_y := 0
 
@@ -33,5 +32,7 @@ func get_input():
 	velocity = Vector2(x, y).normalized() * speed
 
 func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
 	get_input()
 	move_and_slide()
+	handle_collisions()

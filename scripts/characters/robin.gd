@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Person
 
 @onready var interactable: Area2D = $Interactable
 @onready var indicator: Indicator = $Indicator
@@ -12,3 +12,8 @@ func _on_interact():
 	if interactable.is_interactable and not Dialog.active:
 		indicator.play_audio()
 		Dialog.show(test, "start", self)
+
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
+	move_and_slide()
+	handle_collisions()

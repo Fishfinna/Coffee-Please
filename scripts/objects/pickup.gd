@@ -21,8 +21,8 @@ func place_item(new_item: Item):
 	sprite.texture = load(item.image)
 	await get_tree().create_timer(.4).timeout
 	if waiting_customers:
-		print(waiting_customers)
-		customer_picks_up_item(get_customer(waiting_customers[0]))
+		for customer_id in waiting_customers.duplicate():
+			if customer_picks_up_item(get_customer(customer_id)): break
 
 func pickup_item():
 	Inventory.pickup(item)
@@ -49,6 +49,8 @@ func get_customer(id: String) -> Customer:
 	return CustomerRegistry.get_customer(id)
 	
 func customer_picks_up_item(customer: Customer) -> bool:
+	if not customer:
+		return false
 	if item and item in customer.get("order"):
 		customer.handle_item_pickup(item)
 		print("on pickup:", item)
@@ -63,5 +65,7 @@ func customer_picks_up_item(customer: Customer) -> bool:
 	return false
 
 func customer_entered(customer: Node) -> void:
+	if customer.id in waiting_customers:
+		return
 	waiting_customers.append(customer.id)
 	customer_picks_up_item(customer)

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Person
 class_name Customer
 
 var id: String
@@ -23,7 +23,7 @@ func _ready() -> void:
 func kick_off():
 	global_position = default_starting_position
 	aquire_target(register)
-	
+
 func setup() -> void:
 	if id == "" or id == null:
 		id = str(randi(), "_", Time.get_ticks_usec())
@@ -48,7 +48,7 @@ func get_weighted_drink_count() -> int:
 		return 3
 	else:
 		return 4
-		
+
 func set_status(new_status: CustomerStatus.order_status):
 	status = new_status
 	if new_status == CustomerStatus.order_status.PLACED:
@@ -65,9 +65,12 @@ func aquire_target(new_target: Node2D):
 	target = new_target
 
 func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
 	if target:
 		navigation_agent_2d.target_position = target.global_position
 	if navigation_agent_2d.is_navigation_finished():
+		move_and_slide()
+		handle_collisions()
 		return
 	var next_path_position = navigation_agent_2d.get_next_path_position()
 	var new_velocity = global_position.direction_to(next_path_position) * movement_speed
@@ -76,11 +79,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		_on_navigation_agent_2d_velocity_computed(new_velocity)
 	move_and_slide()
+	handle_collisions()
 	sprite.flip_h = true if velocity.x > 0 else false
-
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = velocity.lerp(safe_velocity, 0.25)
-
 
 func handle_item_pickup(item: Item) -> void:
 	print("to customer", item)

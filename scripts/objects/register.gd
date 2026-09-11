@@ -62,6 +62,8 @@ func customer_exited(customer: Node) -> void:
 	if is_loading:
 		return
 	customer_line.erase(customer.id)
+	if customer.status == CustomerStatus.order_status.IN_LINE:
+		customer.set_status(CustomerStatus.order_status.TO_PLACE)
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 
