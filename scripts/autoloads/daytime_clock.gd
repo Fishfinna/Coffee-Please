@@ -21,7 +21,7 @@ var current_month  : int = START_MONTH
 var current_year   : int = START_YEAR
 var current_day_of_week: int = START_DAY_OF_WEEK
 
-var is_running     : bool = true
+var is_running     : bool = false
 
 var _elapsed : float = 0.0
 var speed: float = .1
@@ -44,8 +44,11 @@ func reset_time():
 	current_minute = 0
 	current_hour   = DAY_START_HOUR
 
-func end_day_and_pause():
+func pause_timer():
 	is_running = false
+
+func start_timer():
+	is_running = true
 
 func start_next_day():
 	is_running = true
@@ -63,7 +66,7 @@ func _advance_one_minute() -> void:
 		current_minute = 0
 		emit_signal("time_changed", current_hour, current_minute)
 		emit_signal("day_ended")
-		end_day_and_pause()
+		pause_timer()
 		return
 
 	emit_signal("time_changed", current_hour, current_minute)

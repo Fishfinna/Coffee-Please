@@ -10,3 +10,4 @@ func get_state(filename: String = "") -> Dictionary:
 
 func start_new_day():
 	Inventory.clear()
+	DaytimeClock.start_timer()
