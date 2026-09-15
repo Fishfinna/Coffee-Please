@@ -16,8 +16,8 @@ var is_transitioning := false
 @onready var customer_group_name = "customer"
 
 # these sounds bad, redo them
-@export var swipe_sound: AudioStream = preload("res://assets/audio/objects/book.wav")
-@export var open_sound: AudioStream = preload("res://assets/audio/objects/book.wav")
+@export var swipe_sound: AudioStream = preload("res://assets/audio/objects/book-page.wav")
+@export var open_sound: AudioStream = preload("res://assets/audio/objects/book-open.wav")
 var fx_player: AudioStreamPlayer
 
 var save_manager = SaveManager.new()
