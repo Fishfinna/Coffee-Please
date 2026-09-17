@@ -1,7 +1,7 @@
 extends Node
 
 #region DevConfigs
-var debug_mode = true
+var debug_mode = false
 #endregion
 
 #region Money

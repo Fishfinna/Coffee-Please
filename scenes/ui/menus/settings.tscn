@@ -30,7 +30,7 @@ text = "< back"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="." unique_id=1611863110]
+[node name="Master" type="HSlider" parent="." unique_id=1611863110]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,7 +48,7 @@ accessibility_description = "master audio"
 max_value = 1.0
 step = 0.01
 
-[node name="Label" type="Label" parent="HSlider" unique_id=1144488568]
+[node name="Label" type="Label" parent="Master" unique_id=1144488568]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -59,7 +59,69 @@ offset_right = -20.0
 offset_bottom = 9.016136
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
-text = "Sound:"
+text = "Master:"
+
+[node name="Music" type="HSlider" parent="." unique_id=1339254127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 19.0
+offset_right = 123.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "sound"
+accessibility_description = "master audio"
+max_value = 1.0
+step = 0.01
+
+[node name="Label" type="Label" parent="Music" unique_id=2095367459]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -6.983864
+offset_right = -20.0
+offset_bottom = 9.016136
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+text = "Music:"
+
+[node name="Effects" type="HSlider" parent="." unique_id=241349243]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 46.0
+offset_right = 123.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "sound"
+accessibility_description = "master audio"
+max_value = 1.0
+step = 0.01
+
+[node name="Label" type="Label" parent="Effects" unique_id=1501640180]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -6.983864
+offset_right = -20.0
+offset_bottom = 9.016136
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
+text = "Effects:"
 
 [node name="fullscreen" type="CheckButton" parent="." unique_id=371607582]
 layout_mode = 1
@@ -69,8 +131,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -52.0
-offset_top = -16.0
+offset_top = -33.0
 offset_right = 52.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.27450982, 0.24705882, 0.21960784, 1)
@@ -81,5 +144,5 @@ text = "Fullscreen:"
 flat = true
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
-[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Master" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="fullscreen" to="." method="_on_check_button_toggled"]

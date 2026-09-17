@@ -1,12 +1,12 @@
 extends Control
 
-@onready var slider: HSlider = $HSlider
+@onready var master: HSlider = $Master
 @onready var fullscreen_toggle: CheckButton = $fullscreen
 
 signal redirect_back()
 
 func _ready() -> void:
-	slider.value = Settings.get_setting("master_volume")
+	master.value = Settings.get_setting("master_volume")
 	fullscreen_toggle.button_pressed = Settings.get_setting("fullscreen")
 
 	Settings.fullscreen_changed.connect(_on_fullscreen_changed)

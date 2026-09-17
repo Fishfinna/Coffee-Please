@@ -15,7 +15,6 @@ var is_transitioning := false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customer_group_name = "customer"
 
-# these sounds bad, redo them
 @export var swipe_sound: AudioStream = preload("res://assets/audio/objects/book-page.wav")
 @export var open_sound: AudioStream = preload("res://assets/audio/objects/book-open.wav")
 var fx_player: AudioStreamPlayer
@@ -53,6 +52,8 @@ func _pause_game():
 	is_transitioning = false
 
 func _resume_game():
+	fx_player.stream = open_sound
+	fx_player.play()
 	is_transitioning = true
 	hide()
 	get_tree().paused = false
