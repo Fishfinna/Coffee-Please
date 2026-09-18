@@ -1,14 +1,17 @@
 # settings_autoload.gd
-# settings_autoload.gd
 extends Node
 
 signal fullscreen_changed(value: bool)
 signal master_volume_changed(value: float)
+signal music_volume_changed(value: float)
+signal effects_volume_changed(value: float)
 signal resolution_changed(value: Vector2i)
 
 const SETTINGS_PATH := "user://settings.tres"
 
 var master_volume: float = 1.0
+var music_volume: float = 1.0
+var effects_volume: float = 1.0
 var fullscreen: bool = false
 var resolution: Vector2i = Vector2i(1280, 720)
 
@@ -17,7 +20,7 @@ func _ready() -> void:
 	apply_settings()
 
 func update_setting(key: String, value) -> bool:
-	if not key in ["master_volume", "fullscreen", "resolution"]:
+	if not key in ["master_volume", "music_volume", "effects_volume", "fullscreen", "resolution"]:
 		push_warning("Settings: unknown key '%s'" % key)
 		return false
 
@@ -33,6 +36,10 @@ func update_setting(key: String, value) -> bool:
 			fullscreen_changed.emit(fullscreen)
 		"master_volume":
 			master_volume_changed.emit(master_volume)
+		"music_volume":
+			music_volume_changed.emit(music_volume)
+		"effects_volume":
+			effects_volume_changed.emit(effects_volume)
 		"resolution":
 			resolution_changed.emit(resolution)
 
@@ -46,10 +53,16 @@ func apply_settings() -> void:
 	_apply_display()
 
 func _apply_audio() -> void:
-	var bus := AudioServer.get_bus_index("Master")
+	_set_bus_volume("Master", master_volume)
+	_set_bus_volume("Music", music_volume)
+	_set_bus_volume("FX", effects_volume)
+
+func _set_bus_volume(bus_name: String, value: float) -> void:
+	var bus := AudioServer.get_bus_index(bus_name)
 	if bus == -1:
+		push_warning("Settings: bus '%s' not found." % bus_name)
 		return
-	AudioServer.set_bus_volume_db(bus, linear_to_db(clamp(master_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(bus, linear_to_db(clamp(value, 0.0, 1.0)))
 
 func _apply_display() -> void:
 	DisplayServer.window_set_mode(
@@ -62,6 +75,8 @@ func _apply_display() -> void:
 func save_settings() -> void:
 	var config := ConfigFile.new()
 	config.set_value("settings", "master_volume", master_volume)
+	config.set_value("settings", "music_volume", music_volume)
+	config.set_value("settings", "effects_volume", effects_volume)
 	config.set_value("settings", "fullscreen", fullscreen)
 	config.set_value("settings", "resolution", resolution)
 	config.save(SETTINGS_PATH)
@@ -70,6 +85,8 @@ func _load_from_disk() -> void:
 	var config := ConfigFile.new()
 	if config.load(SETTINGS_PATH) == OK:
 		master_volume = config.get_value("settings", "master_volume", 1.0)
+		music_volume = config.get_value("settings", "music_volume", 1.0)
+		effects_volume = config.get_value("settings", "effects_volume", 1.0)
 		fullscreen = config.get_value("settings", "fullscreen", false)
 		resolution = config.get_value("settings", "resolution", Vector2i(1280, 720))
 	else:

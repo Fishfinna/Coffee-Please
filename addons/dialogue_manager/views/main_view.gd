@@ -481,13 +481,11 @@ func apply_theme() -> void:
 #region Helpers
 
 
-# Move the cursor to a given title in the dialogue editor
 func go_to_title(title: String, create_if_none: bool = false) -> void:
 	code_edit.go_to_title(title, create_if_none)
 	code_edit.grab_focus()
 
 
-# Refresh the open menu with the latest files
 func build_open_menu() -> void:
 	var menu = open_button.get_popup()
 	menu.clear()

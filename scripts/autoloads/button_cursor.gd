@@ -16,12 +16,16 @@ func _ready():
 func set_cursor_for_buttons(node):
 	if node is Button:
 		_setup_button(node)
+	elif node is Slider:
+		_setup_slider(node)
 	for child in node.get_children():
 		set_cursor_for_buttons(child)
 
 func _on_node_added(node):
 	if node is Button:
 		_setup_button(node)
+	elif node is Slider:
+		_setup_slider(node)
 
 func _setup_button(node: Button) -> void:
 	node.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -30,6 +34,14 @@ func _setup_button(node: Button) -> void:
 		node.mouse_entered.connect(_play_hover)
 	if not node.pressed.is_connected(_play_pressed):
 		node.pressed.connect(_play_pressed)
+
+func _setup_slider(node: Slider) -> void:
+	if not node.drag_ended.is_connected(_on_slider_drag_ended):
+		node.drag_ended.connect(_on_slider_drag_ended)
+
+func _on_slider_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		_play_pressed()
 
 func _play_hover() -> void:
 	if hover_sound and is_instance_valid(fx_player):
