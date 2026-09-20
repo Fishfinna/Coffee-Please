@@ -34,7 +34,7 @@ func _load_slot() -> void:
 	if data == null:
 		return
 
-	player.global_position = data.player_position
+	player.global_position = data.date
 	Global.money = data.money
 	await get_tree().process_frame
 		

@@ -1,5 +1,5 @@
 extends Resource
 class_name SceneData
 
-@export var money:= Global.money
-@export var day:= DaytimeClock.get_time_string()
+@export var money: float = Global.money
+@export var date: String = DaytimeClock.get_time_string()

@@ -1,5 +1,6 @@
 extends Node2D
 signal new_game_pressed
+signal continue_game_pressed
 
 @onready var contine: Button = $Panel/Buttons/HBoxContainer/contine
 @onready var coffee: Sprite2D = $Coffee
@@ -16,8 +17,10 @@ func _ready() -> void:
 
 func _on_contine() -> void:
 	var save_path = save_manager.list_saves()[0].file
-	get_tree().change_scene_to_file("res://scenes/Game.tscn")
 	save_manager.load_game(save_path)
+#	TODO: get this hooked in
+	#emit_signal("continue_game_pressed")
+	
 
 func _on_new_game() -> void:
 	emit_signal("new_game_pressed")
