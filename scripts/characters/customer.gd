@@ -23,14 +23,15 @@ func _ready() -> void:
 
 func _setup_avoidance() -> void:
 	navigation_agent_2d.avoidance_enabled = true
-	navigation_agent_2d.radius = 14.0              # roughly your collision shape's radius
-	navigation_agent_2d.neighbor_distance = 150.0  # how far it "sees" other customers
+	navigation_agent_2d.radius = 14
+	navigation_agent_2d.neighbor_distance = 150
 	navigation_agent_2d.max_neighbors = 10
-	navigation_agent_2d.time_horizon_agents = 1.5  # look-ahead; raise for earlier avoidance
+	navigation_agent_2d.time_horizon_agents = 1.5
 	navigation_agent_2d.max_speed = movement_speed
-	navigation_agent_2d.avoidance_priority = 1.0
+	navigation_agent_2d.avoidance_priority = 1
 	if not navigation_agent_2d.velocity_computed.is_connected(_on_navigation_agent_2d_velocity_computed):
 		navigation_agent_2d.velocity_computed.connect(_on_navigation_agent_2d_velocity_computed)
+
 func kick_off():
 	global_position = default_starting_position
 	aquire_target(register)
