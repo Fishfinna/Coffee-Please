@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cwl0b1wleht5"]
+
+[ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="1_c5jky"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhmra"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7411765, 0.7176471, 0.6784314, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="save" type="Control" unique_id=589810857]
+custom_minimum_size = Vector2(280, 180)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 3
+focus_behavior_recursive = 2
+
+[node name="resume" type="Button" parent="." unique_id=679457808]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71212125
+anchor_top = -0.011111122
+anchor_right = 1.0
+anchor_bottom = 0.1295139
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_c5jky")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "resume >"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="." unique_id=299479040]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.005902778
+anchor_right = 0.24285714
+anchor_bottom = 0.12951387
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_c5jky")
+theme_override_colors/font_color = Color(0.34117648, 0.3882353, 0.30588236, 1)
+theme_override_colors/font_focus_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_pressed_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+theme_override_colors/font_hover_color = Color(0.47058824, 0.54901963, 0.4117647, 1)
+text = "< back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="border-panel" type="Panel" parent="." unique_id=1466332601]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035714272
+anchor_top = 0.11111111
+anchor_right = 0.9607143
+anchor_bottom = 1.0222223
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_xhmra")
+metadata/_edit_use_anchors_ = true
+
+[node name="scroll_saves" type="ScrollContainer" parent="." unique_id=1347995923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035714295
+anchor_top = 0.12222223
+anchor_right = 0.96
+anchor_bottom = 1.0152519
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_c5jky")
+theme_override_constants/scrollbar_h_separation = 1
+follow_focus = true
+draw_focus_border = true
+vertical_scroll_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="scroll_saves" unique_id=771246464]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll_saves/MarginContainer" unique_id=613864813]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_c5jky")
+
+[node name="save" type="Button" parent="." unique_id=382394725]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06060607
+anchor_top = 1.0555556
+anchor_right = 0.39560607
+anchor_bottom = 1.1805556
+grow_vertical = 0
+text = "new save"
+metadata/_edit_use_anchors_ = true
+
+[node name="load" type="Button" parent="." unique_id=52363000]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63571435
+anchor_top = 1.0555556
+anchor_right = 0.925
+anchor_bottom = 1.1805556
+grow_horizontal = 0
+grow_vertical = 0
+text = "restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="save-label" type="Label" parent="." unique_id=1132911697]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.12777779
+anchor_right = 1.0
+anchor_bottom = 0.022222212
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "SAVE"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Save" type="Node2D" parent="." unique_id=170421358]
