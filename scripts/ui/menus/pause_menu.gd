@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-@export var save_slot_scene: PackedScene
-
 @onready var blur_anim: AnimationPlayer = $blur
 var is_transitioning := false
 
@@ -10,16 +8,12 @@ var is_transitioning := false
 @onready var settings_menu = $settings
 @onready var game := get_tree().current_scene
 
-@onready var save_list = $save/scroll_saves/MarginContainer/VBoxContainer
-
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var customer_group_name = "customer"
 
 @export var swipe_sound: AudioStream = preload("res://assets/audio/objects/book-page.wav")
 @export var open_sound: AudioStream = preload("res://assets/audio/objects/book-open.wav")
 var fx_player: AudioStreamPlayer
-
-var save_manager = SaveManager.new()
 
 func _ready():
 	hide()
@@ -68,7 +62,6 @@ func _on_exit_pressed() -> void:
 
 func _on_save_menu_pressed() -> void:
 	swap_menu(pause_menu, save_menu)
-	display_saves()
 
 func _on_save_back_pressed() -> void:
 	swap_menu(save_menu, pause_menu)
@@ -78,25 +71,6 @@ func _on_settings_menu_pressed() -> void:
 
 func _on_settings_back_pressed() -> void:
 	swap_menu(settings_menu, pause_menu)
-
-func _on_save_pressed() -> void:
-	display_saves()
-	
-func display_saves() -> void:
-	if not save_menu.is_visible_in_tree():
-		return
-	for child in save_list.get_children():
-		child.queue_free()
-
-	var saves := save_manager.list_saves()
-	for save in saves:
-		var slot: SaveSlot = save_slot_scene.instantiate()
-		save_list.add_child(slot)
-		slot.setup(save)
-		slot.deleted.connect(_on_save_deleted)
-
-func _on_save_deleted(file_name: String) -> void:
-	display_saves()
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false

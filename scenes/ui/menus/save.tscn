@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwl0b1wleht5"]
 
 [ext_resource type="Theme" uid="uid://c3bgqwco8c3eg" path="res://themes/default.tres" id="1_c5jky"]
+[ext_resource type="Script" uid="uid://dt1vdcpbqt0ox" path="res://scripts/ui/menus/save.gd" id="1_xhmra"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhmra"]
 content_margin_left = 0.0
@@ -30,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 3
 focus_behavior_recursive = 2
+script = ExtResource("1_xhmra")
 
 [node name="resume" type="Button" parent="." unique_id=679457808]
 layout_mode = 1
