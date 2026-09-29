@@ -144,3 +144,5 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Save" type="Node2D" parent="." unique_id=170421358]
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

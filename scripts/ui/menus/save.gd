@@ -4,6 +4,8 @@ extends Control
 @export var save_slot_scene: PackedScene
 var save_manager = SaveManager.new()
 
+signal redirect_back()
+
 func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)
 
@@ -27,3 +29,6 @@ func display_saves() -> void:
 
 func _on_save_deleted(file_name: String) -> void:
 	display_saves()
+
+func _on_back_pressed() -> void:
+	emit_signal("redirect_back")

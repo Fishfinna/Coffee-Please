@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://qvv7o44v7if3" path="res://scripts/ui/menus/pause_menu.gd" id="1_6tw0m"]
 [ext_resource type="Shader" uid="uid://dlip7xu7lb1mo" path="res://scripts/shaders/pause_menu.gdshader" id="2_0lmf7"]
-[ext_resource type="PackedScene" uid="uid://dq8yvt5t514qm" path="res://scenes/ui/menus/save_slot.tscn" id="2_idy5m"]
 [ext_resource type="PackedScene" uid="uid://cwl0b1wleht5" path="res://scenes/ui/menus/save.tscn" id="5_2f5f3"]
 [ext_resource type="PackedScene" uid="uid://6lo0xoyjgsqb" path="res://scenes/ui/menus/settings.tscn" id="6_2f5f3"]
 [ext_resource type="Texture2D" uid="uid://r2py3j0ylgjk" path="res://assets/art/ui/book.png" id="7_a3xc8"]
@@ -139,7 +138,6 @@ _data = {
 process_mode = 3
 layer = 100
 script = ExtResource("1_6tw0m")
-save_slot_scene = ExtResource("2_idy5m")
 
 [node name="blur_bg" type="ColorRect" parent="." unique_id=1803990581]
 material = SubResource("ShaderMaterial_f6eus")
@@ -281,4 +279,5 @@ libraries/ = SubResource("AnimationLibrary_8uki6")
 [connection signal="pressed" from="pause/save" to="." method="_on_save_menu_pressed"]
 [connection signal="pressed" from="pause/settings" to="." method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="pause/exit" to="." method="_on_exit_pressed"]
+[connection signal="redirect_back" from="save" to="." method="_on_save_redirect_back"]
 [connection signal="redirect_back" from="settings/settings" to="." method="_on_settings_back_pressed"]

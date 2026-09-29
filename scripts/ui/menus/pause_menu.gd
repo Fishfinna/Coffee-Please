@@ -85,3 +85,7 @@ func swap_menu(from_menu: Control, to_menu: Control) -> void:
 
 	from_menu.hide()
 	to_menu.show()
+
+
+func _on_save_redirect_back() -> void:
+	swap_menu(save_menu, pause_menu)
