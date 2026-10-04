@@ -5,6 +5,7 @@ extends Control
 var save_manager = SaveManager.new()
 
 signal redirect_back()
+signal resume()
 
 func _ready() -> void:
 	visibility_changed.connect(_on_visibility_changed)
@@ -32,3 +33,7 @@ func _on_save_deleted(file_name: String) -> void:
 
 func _on_back_pressed() -> void:
 	emit_signal("redirect_back")
+
+
+func _on_resume_pressed() -> void:
+	emit_signal("resume")

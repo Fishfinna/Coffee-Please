@@ -109,6 +109,7 @@ size_flags_vertical = 3
 theme = ExtResource("1_c5jky")
 
 [node name="save" type="Button" parent="." unique_id=382394725]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.06060607
@@ -145,4 +146,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Save" type="Node2D" parent="." unique_id=170421358]
 
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
