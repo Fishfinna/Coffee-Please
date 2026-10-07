@@ -13,7 +13,7 @@ func _ready() -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		display_saves()
-		
+
 func _on_save_pressed() -> void:
 	display_saves()
 	
