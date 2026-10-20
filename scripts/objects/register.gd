@@ -20,14 +20,17 @@ func _on_interact():
 	if customer_line.is_empty():
 		interactable.is_interactable = false
 		return
+	take_order()
+	if customer_line.is_empty():
+		interactable.is_interactable = false
+
+func take_order() -> void:
 	purchase_audio.play()
 	var id = customer_line.pop_front()
 	var customer = get_customer(id)
 	if customer == null:
 		return
 	place_customer_order(customer)
-	if customer_line.is_empty():
-		interactable.is_interactable = false
 
 func place_customer_order(customer: Customer) -> void:
 	Rumble.high()
