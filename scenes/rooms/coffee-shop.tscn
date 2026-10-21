@@ -200,9 +200,14 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_6paru")
 sources/0 = SubResource("TileSetAtlasSource_fxbdo")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6paru"]
+vertices = PackedVector2Array(-90.88281, 14.5, 88.63281, 16.421875, 86.65625, 45, -88.65625, 17.453125, -127.53125, 15.5, -127.46094, 14.1015625, -86.6875, 45)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 0), PackedInt32Array(3, 2, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(142, 7, 142, 27, 98, 26, 96, 55, -96, 55, -98, 27, -138, 25, -137, 4, -90.76408, 4.497162, 94.969345, 6.494297)])
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yo8p7"]
-vertices = PackedVector2Array(136.89063, 2.046875, 293.89063, 2.9375, 292.10156, 172, 135.89844, 96.921875, -292.04688, 172, -91.5625, 119.00781, -292.9375, 2.9375, -138.78906, 2.046875, -136.88281, 95.09375, -40.398438, 98.3125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(4, 6, 7, 8), PackedInt32Array(4, 8, 5), PackedInt32Array(3, 5, 9)])
+vertices = PackedVector2Array(136.89063, 2.046875, 293.89063, 2.9375, 292.10156, 172, 135.89844, 96.921875, -292.04688, 172, -97.171875, 121.28125, -292.9375, 2.9375, -136.21875, 2.0390625, -40.398438, 98.3125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(4, 6, 7, 5), PackedInt32Array(3, 5, 8)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-129, -8, -303, -7, -302, 182, 302, 182, 304, -7, 127, -8, 126, 87, -42.38777, 88.33113, -91, 108, -127, 89)])
 
 [node name="Coffee Shop" type="Node2D" unique_id=1103702953]
@@ -262,7 +267,10 @@ position = Vector2(14, 5)
 [node name="Pickup" parent="environment" unique_id=670009555 instance=ExtResource("10_c7qof")]
 position = Vector2(-117, 38)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="environment" unique_id=628101150]
+[node name="staff area" type="NavigationRegion2D" parent="environment" unique_id=1118304318]
+navigation_polygon = SubResource("NavigationPolygon_6paru")
+
+[node name="customer-area" type="NavigationRegion2D" parent="environment" unique_id=628101150]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_yo8p7")
 

@@ -6,5 +6,5 @@
 script = ExtResource("1_1lpcr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=180050885]
-navigation_layers = 2
+navigation_layers = 3
 avoidance_layers = 3
