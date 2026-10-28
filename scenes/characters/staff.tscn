@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbnr5lmmhs5cv" path="res://scripts/characters/staff.gd" id="1_1lpcr"]
 
-[node name="Staff" type="Node2D" unique_id=1859487112]
+[node name="Staff" type="CharacterBody2D" unique_id=1297322991]
 script = ExtResource("1_1lpcr")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=180050885]

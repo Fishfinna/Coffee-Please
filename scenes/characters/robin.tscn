@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtgvgjkjh6gae" path="res://assets/art/characters/animations/robin-idle.png" id="3_xj118"]
 [ext_resource type="PackedScene" uid="uid://ddp764mbvh82l" path="res://scenes/ui/interactable.tscn" id="4_jfe28"]
 [ext_resource type="AudioStream" uid="uid://bdrrna3gcrnev" path="res://assets/audio/chip.wav" id="4_msgss"]
+[ext_resource type="PackedScene" uid="uid://iak77di8xo8j" path="res://scenes/characters/staff.tscn" id="7_xj118"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irpul"]
 atlas = ExtResource("3_xj118")
@@ -91,3 +92,6 @@ radius = 15.0
 time_horizon_obstacles = 0.75
 max_speed = 4000.0
 debug_path_custom_color = Color(0.45809126, 0.00019045339, 0.4744525, 1)
+
+[node name="Staff" parent="." unique_id=1297322991 instance=ExtResource("7_xj118")]
+position = Vector2(-2, -1)
