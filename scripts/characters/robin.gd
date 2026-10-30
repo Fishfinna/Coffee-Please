@@ -26,8 +26,8 @@ func _ready() -> void:
 
 func _setup_avoidance() -> void:
 	navigation_agent_2d.avoidance_enabled = true
-	navigation_agent_2d.radius = 14
-	navigation_agent_2d.neighbor_distance = 150
+	navigation_agent_2d.radius = 1
+	navigation_agent_2d.neighbor_distance = 10
 	navigation_agent_2d.max_neighbors = 10
 	navigation_agent_2d.time_horizon_agents = 1.5
 	navigation_agent_2d.max_speed = movement_speed
