@@ -201,9 +201,9 @@ sources/2 = SubResource("TileSetAtlasSource_6paru")
 sources/0 = SubResource("TileSetAtlasSource_fxbdo")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yo8p7"]
-vertices = PackedVector2Array(-292.04688, 172, -292.9375, 2.9375, -139.10938, 2.046875, -139.78906, 59.140625, -150.88281, 80.1875, -140.54688, 109.6875, 136.89063, 2.046875, 293.89063, 2.9375, 292.10156, 172, 135.89844, 96.921875, -97.25781, 118.35156, -40.632813, 98.3125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 0, 10), PackedInt32Array(0, 5, 10), PackedInt32Array(9, 10, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-129, -8, -303, -7, -302, 182, 302, 182, 304, -7, 127, -8, 126, 87, -42.38777, 88.33113, -98, 108, -133, 101, -140, 81, -129.81972, 61.67627)])
+vertices = PackedVector2Array(148.46094, 72.53125, 138.50781, 2.0625, 293.89063, 2.9375, 292.10156, 172, -292.04688, 172, -292.9375, 2.9375, -139.10938, 2.046875, -139.78906, 59.140625, -150.88281, 80.1875, -140.54688, 109.6875, 131.21094, 96.96094, -97.25781, 118.35156, -40.632813, 98.3125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(4, 8, 9), PackedInt32Array(10, 0, 3), PackedInt32Array(10, 3, 4, 11), PackedInt32Array(4, 9, 11), PackedInt32Array(10, 11, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-129, -8, -303, -7, -302, 231, 302, 231, 304, -7, 127, -8, 138, 70, 126, 87, -42.38777, 88.33113, -98, 108, -133, 101, -140, 81, -129.81972, 61.67627)])
 
 [node name="Coffee Shop" type="Node2D" unique_id=1103702953]
 
